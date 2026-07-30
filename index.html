@@ -14,14 +14,14 @@
   --ink: #241b3a;
   --ink-soft: #6a5f85;
   --line: #e2dbf2;
-  --rail: #6d28d9;      /* design-tool violet - the "thread" */
-  --rail-bright: #a78bfa;
-  --spark: #f59e0b;     /* amber - travels the thread, CTAs */
-  --spark-dark: #c9790a;
-  --volt: #fcd34d;      /* warm amber - highlights / remember boxes */
+  --rail: #0095d9;      /* Stella Maris blue - the "thread" */
+  --rail-bright: #3fb6ea;
+  --spark: #c9962e;     /* college gold - travels the thread, CTAs */
+  --spark-dark: #a97a1c;
+  --volt: #f2c96b;      /* warm gold - highlights / remember boxes */
   --wrong: #e0503a;
   --right: #1f9d63;
-  --station-shadow: 0 6px 0 rgba(109,40,217,0.18);
+  --station-shadow: 0 6px 0 rgba(0,149,217,0.18);
   --radius: 18px;
   --font-display: 'Baloo 2', system-ui, sans-serif;
   --font-body: 'Atkinson Hyperlegible', system-ui, sans-serif;
@@ -33,11 +33,11 @@
   --ink: #f1ecfb;
   --ink-soft: #b5a8d6;
   --line: #382a4d;
-  --rail: #a78bfa;
-  --rail-bright: #c9b6fc;
-  --spark: #fbbf5c;
-  --spark-dark: #f59e0b;
-  --volt: #fcd34d;
+  --rail: #3fb6ea;
+  --rail-bright: #7dd0f5;
+  --spark: #e0b45c;
+  --spark-dark: #c9962e;
+  --volt: #f2c96b;
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -166,7 +166,7 @@ section.station.active{display:block;}
 .explain-card h3{display:flex; align-items:center; gap:8px; font-size:18px;}
 
 .analogy-card{
-  background:linear-gradient(135deg, rgba(109,40,217,.07), rgba(245,158,11,.07));
+  background:linear-gradient(135deg, rgba(0,149,217,.07), rgba(201,150,46,.07));
   border:2px dashed var(--rail);
 }
 .analogy-card h3{color:var(--rail);}
@@ -259,10 +259,10 @@ details.more .more-inner{padding:16px 20px;}
 .demo-pane.active{display:block;}
 .demo-frame{width:100%; border:none; display:block; background:#fff;}
 .code-block{
-  margin:0; padding:16px 18px; background:#1e1730; color:#e8dfff; overflow-x:auto;
+  margin:0; padding:16px 18px; background:#101d26; color:#dbeeff; overflow-x:auto;
   font-family:var(--font-mono); font-size:13.5px; line-height:1.55; max-height:420px; overflow-y:auto;
 }
-[data-theme="dark"] .code-block{background:#0f0a1a;}
+[data-theme="dark"] .code-block{background:#081118;}
 .code-block code{white-space:pre;}
 
 /* MCQ */

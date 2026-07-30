@@ -1,47 +1,41 @@
 /* =========================================================
    SMC — Simplify • Master • Continue
    23CS/PE/XI15 · UI, UX and Design Thinking
-   Part 1: UI/UX & Design Thinking Concepts
-   Part 2: HTML & HTML5 Building Blocks (with live examples)
-   Part 3: Practical Exercises Walkthrough (Ex 1–3)
+   Content follows the categories in the CA1 Portions document:
+   "HTML and HTML5" (Exercises 1–3, the ones covered so far),
+   with supporting tag-reference stations plus the exercise
+   walkthroughs themselves.
    ========================================================= */
 
 const STATIONS = [
   { id:"home", icon:"🏠", label:"Home", kind:"home" },
 
-  { id:"whatisuiux",   icon:"🎯", label:"What is UI? What is UX?", kind:"topic", group:"p1" },
-  { id:"uivsux",       icon:"⚖️", label:"UI vs UX", kind:"topic", group:"p1" },
-  { id:"designthink",  icon:"💡", label:"What is Design Thinking?", kind:"topic", group:"p1" },
-  { id:"dtstages",     icon:"🧭", label:"The 5 Stages of Design Thinking", kind:"topic", group:"p1" },
-  { id:"wireframe",    icon:"📐", label:"Wireframing & Prototyping", kind:"topic", group:"p1" },
-  { id:"principles",   icon:"✨", label:"Principles of Good UI/UX", kind:"topic", group:"p1" },
-  { id:"quiz1",        icon:"🧠", label:"UI/UX Quiz", kind:"quiz", group:"p1", quizId:"quiz1" },
+  { id:"uiuxintro", icon:"✨", label:"Introduction to UI & UX", kind:"topic", group:"intro" },
 
-  { id:"htmlstructure",icon:"🏗️", label:"Document Structure", kind:"topic", group:"p2" },
-  { id:"htmlheadings",  icon:"📝", label:"Headings & Paragraphs", kind:"topic", group:"p2" },
-  { id:"htmlformat",    icon:"🔤", label:"Text Formatting Tags", kind:"topic", group:"p2" },
-  { id:"htmlfontlegacy",icon:"🎨", label:"Legacy Styling: font, color & align", kind:"topic", group:"p2" },
-  { id:"htmllists",     icon:"📋", label:"Lists", kind:"topic", group:"p2" },
-  { id:"htmllinks",     icon:"🔗", label:"Links & Navigation", kind:"topic", group:"p2" },
-  { id:"htmlimages",    icon:"🖼️", label:"Images, Figure & Figcaption", kind:"topic", group:"p2" },
-  { id:"htmltables",    icon:"📊", label:"Tables", kind:"topic", group:"p2" },
-  { id:"htmlsemantic",  icon:"🧱", label:"Semantic Layout Tags", kind:"topic", group:"p2" },
-  { id:"htmlinteractive",icon:"🎛️", label:"Interactive HTML5 Tags", kind:"topic", group:"p2" },
-  { id:"htmlforms",     icon:"📮", label:"Forms & Input Elements", kind:"topic", group:"p2" },
-  { id:"quiz2",         icon:"🧠", label:"HTML Quiz", kind:"quiz", group:"p2", quizId:"quiz2" },
+  { id:"htmlstructure",icon:"🏗️", label:"Document Structure", kind:"topic", group:"html" },
+  { id:"htmlheadings",  icon:"📝", label:"Headings & Paragraphs", kind:"topic", group:"html" },
+  { id:"htmlformat",    icon:"🔤", label:"Text Formatting Tags", kind:"topic", group:"html" },
+  { id:"htmlfontlegacy",icon:"🎨", label:"Legacy Styling: font, color & align", kind:"topic", group:"html" },
+  { id:"htmllists",     icon:"📋", label:"Lists", kind:"topic", group:"html" },
+  { id:"htmllinks",     icon:"🔗", label:"Links & Navigation", kind:"topic", group:"html" },
+  { id:"htmlimages",    icon:"🖼️", label:"Images, Figure & Figcaption", kind:"topic", group:"html" },
+  { id:"htmltables",    icon:"📊", label:"Tables", kind:"topic", group:"html" },
+  { id:"htmlsemantic",  icon:"🧱", label:"Semantic Layout Tags", kind:"topic", group:"html" },
+  { id:"htmlinteractive",icon:"🎛️", label:"Interactive HTML5 Tags", kind:"topic", group:"html" },
+  { id:"htmlforms",     icon:"📮", label:"Forms & Input Elements", kind:"topic", group:"html" },
+  { id:"quizHtml",      icon:"🧠", label:"HTML Quiz", kind:"quiz", group:"html", quizId:"quizHtml" },
 
-  { id:"ex1walk", icon:"1️⃣", label:"Exercise 1 — Personal Profile", kind:"topic", group:"p3" },
-  { id:"ex2walk", icon:"2️⃣", label:"Exercise 2 — Travel Blog", kind:"topic", group:"p3" },
-  { id:"ex3walk", icon:"3️⃣", label:"Exercise 3 — Input Form", kind:"topic", group:"p3" },
-  { id:"quiz3",   icon:"🧠", label:"Practical Recap Quiz", kind:"quiz", group:"p3", quizId:"quiz3" },
+  { id:"ex1walk", icon:"1️⃣", label:"Exercise 1 — Personal Profile", kind:"topic", group:"html" },
+  { id:"ex2walk", icon:"2️⃣", label:"Exercise 2 — Travel Blog", kind:"topic", group:"html" },
+  { id:"ex3walk", icon:"3️⃣", label:"Exercise 3 — Input Form", kind:"topic", group:"html" },
+  { id:"quizPractical",   icon:"🧠", label:"Practical Recap Quiz", kind:"quiz", group:"html", quizId:"quizPractical" },
 
   { id:"summary", icon:"📄", label:"Summary & Download", kind:"summary" },
 ];
 
 const GROUP_META = {
-  p1: { title:"Part 1 · UI/UX & Design Thinking", eyebrow:"PART 1" },
-  p2: { title:"Part 2 · HTML & HTML5", eyebrow:"PART 2" },
-  p3: { title:"Part 3 · Practical Exercises", eyebrow:"PART 3" },
+  intro: { title:"Introduction to UI & UX", eyebrow:"INTRO TO UI & UX" },
+  html: { title:"HTML and HTML5", eyebrow:"HTML AND HTML5" },
 };
 
 /* ---------- helper builders ---------- */
@@ -70,175 +64,87 @@ CONTENT.home = `
     <div class="hero-deco">🎨</div>
     <span class="eyebrow" style="background:rgba(255,255,255,.22);">SMC PORTAL</span>
     <h1>Simplify • Master • Continue</h1>
-    <p>Welcome! This portal covers <strong>UI, UX and Design Thinking</strong> — one small idea at a time, with pictures, real code, live outputs, and quick checks along the way.</p>
+    <p>Welcome! This portal covers <strong>UI/UX basics and HTML/HTML5</strong>, following the CA1 portions — one small idea at a time, with pictures, real code, live outputs, and quick checks along the way.</p>
     <div class="stat-row">
-      <div class="stat-pill">🎯 Part 1 · UI/UX Concepts</div>
-      <div class="stat-pill">🌐 Part 2 · HTML &amp; HTML5</div>
-      <div class="stat-pill">🧪 Part 3 · Practical Exercises</div>
+      <div class="stat-pill">✨ Introduction to UI &amp; UX</div>
+      <div class="stat-pill">🌐 HTML &amp; HTML5 Concepts</div>
+      <div class="stat-pill">🧪 Practical Exercises 1–3</div>
     </div>
   </div>
 
-  ${explain(`<p>This page is your travel guide. Every station explains <strong>one idea only</strong>, with a real-life comparison and a short "Remember" box so it's easy to recall later. In Part 2 and Part 3, you'll also see <strong>live, clickable code examples</strong> — tap "View Code" to see exactly what produced the output above it.</p>`)}
+  ${explain(`<p>This page is your travel guide. Every station explains <strong>one idea only</strong>, with a real-life comparison and a short "Remember" box so it's easy to recall later. You'll also see <strong>live, clickable code examples</strong> — tap "View Code" to see exactly what produced the output above it.</p>`)}
 
-  <h3 style="margin-top:26px;">Part 1 · UI/UX &amp; Design Thinking</h3>
+  <h3 style="margin-top:26px;">Introduction to UI &amp; UX</h3>
   <div class="route-preview">
-    ${STATIONS.filter(s=>s.group==="p1" && s.kind==="topic").map(s=>`<div class="route-item"><span class="emoji">${s.icon}</span>${s.label}</div>`).join("")}
+    ${STATIONS.filter(s=>s.group==="intro" && s.kind==="topic").map(s=>`<div class="route-item"><span class="emoji">${s.icon}</span>${s.label}</div>`).join("")}
   </div>
 
-  <h3 style="margin-top:26px;">Part 2 · HTML &amp; HTML5</h3>
+  <h3 style="margin-top:26px;">HTML and HTML5</h3>
   <div class="route-preview">
-    ${STATIONS.filter(s=>s.group==="p2" && s.kind==="topic").map(s=>`<div class="route-item"><span class="emoji">${s.icon}</span>${s.label}</div>`).join("")}
-  </div>
-
-  <h3 style="margin-top:26px;">Part 3 · Practical Exercises</h3>
-  <div class="route-preview">
-    ${STATIONS.filter(s=>s.group==="p3" && s.kind==="topic").map(s=>`<div class="route-item"><span class="emoji">${s.icon}</span>${s.label}</div>`).join("")}
+    ${STATIONS.filter(s=>s.group==="html" && s.kind==="topic").map(s=>`<div class="route-item"><span class="emoji">${s.icon}</span>${s.label}</div>`).join("")}
   </div>
 
   ${more("🎒 Tips for using this page","<p>Use the ⬅️➡️ buttons at the bottom of each page, or tap any station on the left. Tap boxes, diagrams and the 'View Code' tabs — they're all clickable! Turn on <strong>Dark mode</strong> or <strong>Easy-read spacing</strong> from the side menu if that helps you read more comfortably.</p>")}
 `;
 
-CONTENT.whatisuiux = `
+CONTENT.uiuxintro = `
   ${explain(`
-    <p>Every app or website you use has two things working together: how it <strong>looks</strong>, and how it <strong>feels</strong> to use. These are called UI and UX.</p>
+    <p>Before we touch any code, let's pause on a simple question: <strong>think of the app you use the most. Why do you keep coming back to it?</strong></p>
+    <p>Most people answer with the same handful of words, without even realizing it — those words are really just everyday descriptions of good <strong>UI</strong> and <strong>UX</strong>.</p>
   `)}
 
-  <div class="flow-grid">
-    <div class="flow-card">
-      <h4>🖌️ UI — User Interface</h4>
-      <p style="font-size:14.5px;">The <strong>visual, touchable part</strong> of a product — the buttons, colors, fonts, icons, spacing, and layout. UI is everything you can actually <strong>see and click</strong> on a screen.</p>
-    </div>
-    <div class="flow-card">
-      <h4>🧭 UX — User Experience</h4>
-      <p style="font-size:14.5px;">The <strong>overall feeling and journey</strong> a person has while using a product — is it easy to find what you need? Does it save you time? Does it frustrate or delight you? UX is about the whole experience, not just the screen.</p>
-    </div>
-  </div>
-
-  ${analogy(`<p>Think of a restaurant. <strong>UI</strong> is like the plating and presentation of the food, the menu design, and the interior decor — everything you can visually notice. <strong>UX</strong> is the entire dining experience — how easy it was to book a table, how quickly you were served, how comfortable the chairs were, and whether you'd want to come back.</p>`)}
-
-  ${remember(["UI = how a product looks (visuals, layout, buttons)","UX = how a product feels to use (the whole journey)","A product can look beautiful (great UI) but still be frustrating to use (bad UX)"])}
-
-  ${mistake(`<p>Many beginners think UI and UX are the same job. A UI designer focuses on the visual design; a UX designer focuses on research, flow, and how easy something is to use. In small teams, one person often does both — but they are two different skill sets.</p>`)}
-`;
-
-CONTENT.uivsux = `
-  ${explain(`<p>Since UI and UX are so often confused, let's place them side-by-side and compare directly.</p>`)}
-
-  <div class="diagram">
-    <div class="node clickable" data-pop="UI is concerned with the LOOK of a product — colors, typography, icons, spacing, and visual style.">
-      <span class="emoji">🎨</span>UI focuses on Look
-      <div class="node-pop"></div>
-    </div>
-    <div class="node clickable" data-pop="UX is concerned with the FEEL and FLOW of a product — how intuitive, efficient, and satisfying it is to use.">
-      <span class="emoji">🧩</span>UX focuses on Feel
-      <div class="node-pop"></div>
-    </div>
-    <div class="node clickable" data-pop="A UI designer typically works with visual design tools — choosing colors, fonts, icons, and building the interface's look.">
-      <span class="emoji">🖥️</span>UI is Visual Design
-      <div class="node-pop"></div>
-    </div>
-    <div class="node clickable" data-pop="A UX designer typically does user research, creates wireframes, tests prototypes, and maps out the user's journey.">
-      <span class="emoji">🔍</span>UX is Research &amp; Flow
-      <div class="node-pop"></div>
-    </div>
-  </div>
-
-  <h3 style="margin-top:20px;">A simple way to remember it</h3>
-  <p><strong>UX comes first, UI comes after.</strong> Before you decide how something should <em>look</em>, you first need to understand how it should <em>work</em> — what problem it solves, and how people will move through it. Only after that flow is figured out (UX) do designers decide on colors, fonts, and buttons (UI).</p>
-
-  ${analogy(`<p>Building a house: UX is like the architect's floor plan — deciding where rooms go, how people will move from the kitchen to the living room, and whether the layout makes sense. UI is the interior decorator's job — choosing paint colors, furniture, and lighting once the floor plan already works.</p>`)}
-
-  ${remember(["UI = visual layer (what you see)","UX = experience layer (how it works and feels)","Good design needs BOTH — UX decides the flow, UI decides the look","UX planning usually comes before UI decoration"])}
-`;
-
-CONTENT.designthink = `
-  ${explain(`
-    <p><strong>Design Thinking</strong> is a problem-solving approach that puts <strong>people first</strong>. Instead of jumping straight to a solution, designers spend time deeply understanding the people they're designing for — their needs, frustrations, and goals — before building anything.</p>
-    <p>It's called <strong>human-centered</strong> because every decision is checked against one question: <em>"Does this actually help the real person using it?"</em></p>
-  `)}
-
-  ${analogy(`<p>Imagine a doctor who prescribes medicine without ever asking what's wrong — that would be reckless! Design Thinking is like a doctor's approach applied to products: first understand the "symptoms" (user problems) deeply, then diagnose (define the real problem), and only then prescribe a solution (design it).</p>`)}
-
-  ${remember(["Design Thinking = a human-centered approach to solving problems","It focuses on understanding real people before jumping to solutions","It's iterative — designers revisit and refine their ideas repeatedly, not just once"])}
-
-  ${more("🔎 Want to know more? Why not just design the 'obvious' solution?","<p>The first idea that comes to mind is often based on assumptions, not on what real users actually need. Design Thinking forces designers to slow down, gather real evidence from real people, and avoid wasting time and money building the wrong thing.</p>")}
-`;
-
-CONTENT.dtstages = `
-  ${explain(`<p>Design Thinking is usually broken into <strong>5 stages</strong>. They aren't always followed in strict order — designers often loop back to earlier stages as they learn more. Tap each stage below to learn what happens in it.</p>`)}
-
-  <div class="diagram">
-    <div class="node clickable" data-pop="Step into the user's shoes. Talk to real users, observe how they behave, and understand their needs, frustrations, and motivations — without judging or assuming.">
-      <span class="emoji">❤️</span>1. Empathize
-      <div class="node-pop"></div>
-    </div>
-    <div class="node clickable" data-pop="Combine everything learned during Empathize into one clear problem statement — what exactly are we trying to solve, and for whom?">
-      <span class="emoji">🎯</span>2. Define
-      <div class="node-pop"></div>
-    </div>
-    <div class="node clickable" data-pop="Brainstorm as many possible solutions as you can, without judging them yet. Quantity over quality at this stage — wild ideas are welcome!">
-      <span class="emoji">💭</span>3. Ideate
-      <div class="node-pop"></div>
-    </div>
-    <div class="node clickable" data-pop="Build a quick, low-cost, simplified version of the idea — a wireframe, sketch, or mockup — just enough to test the concept.">
-      <span class="emoji">🛠️</span>4. Prototype
-      <div class="node-pop"></div>
-    </div>
-    <div class="node clickable" data-pop="Show the prototype to real users and gather feedback. Their reactions often send designers back to earlier stages to refine the idea.">
-      <span class="emoji">🧪</span>5. Test
-      <div class="node-pop"></div>
-    </div>
-  </div>
-
-  ${analogy(`<p>Think of designing a new school canteen menu. <strong>Empathize</strong> = talking to students about what they actually want to eat. <strong>Define</strong> = realizing the real problem is "lunch lines are too slow," not just "food is boring." <strong>Ideate</strong> = brainstorming ideas like pre-ordering apps, express counters, or grab-and-go meals. <strong>Prototype</strong> = setting up a trial express counter for one week. <strong>Test</strong> = asking students if the wait time actually improved — and adjusting based on what they say.</p>`)}
-
-  ${mistake(`<p>Design Thinking is NOT a strict one-way staircase! Teams often bounce back and forth — for example, testing a prototype might reveal you misunderstood the problem, sending you all the way back to Empathize. This looping is normal and expected, not a failure.</p>`)}
-
-  ${remember(["Empathize → Define → Ideate → Prototype → Test","It's iterative, not strictly linear — you can loop back anytime","Empathize = understand people · Define = state the real problem","Ideate = brainstorm widely · Prototype = build a quick sample · Test = get real feedback"])}
-`;
-
-CONTENT.wireframe = `
-  ${explain(`
-    <p>Before writing a single line of code, designers usually sketch out the <strong>structure</strong> of a screen — where the header goes, where buttons sit, how content is arranged. This early, simplified sketch is called a <strong>wireframe</strong>.</p>
-    <p>A wireframe intentionally leaves out colors, images, and fonts — it's just boxes, lines, and labels — so everyone can focus purely on <strong>layout and flow</strong>, without getting distracted by visual polish too early.</p>
-  `)}
-
-  <h3>Low-Fidelity vs High-Fidelity</h3>
-  <div class="flow-grid">
-    <div class="flow-card">
-      <h4>✏️ Low-Fidelity</h4>
-      <p style="font-size:14.5px;">Simple, rough sketches — often just boxes and placeholder text (like the "X" placeholder boxes standing in for images). Fast to create and easy to change. Tools like <strong>Pencil</strong> are used for this.</p>
-    </div>
-    <div class="flow-card">
-      <h4>🖥️ High-Fidelity</h4>
-      <p style="font-size:14.5px;">A detailed, realistic version that looks almost like the final product — real colors, real fonts, real content. Takes longer to build, usually done after the layout is already approved.</p>
-    </div>
-  </div>
-
-  <h3 style="margin-top:20px;">What is a Prototype?</h3>
-  <p>A <strong>prototype</strong> goes one step further than a wireframe — it's often <strong>clickable</strong>, letting users tap through screens as if the app were real, even though nothing is actually built yet. This lets designers test an idea cheaply, before any developer writes real code.</p>
-
-  ${analogy(`<p>A wireframe is like an architect's blueprint — it shows where each room goes, but has no paint or furniture. A prototype is like a furnished model home you can actually walk through — it feels real, but it isn't permanently built yet.</p>`)}
-
-  ${remember(["Wireframe = a simplified structural sketch of a screen (layout only, no styling)","Low-fidelity = quick & rough · High-fidelity = detailed & realistic","Prototype = an often-clickable mockup used to test ideas before real development"])}
-`;
-
-CONTENT.principles = `
-  ${explain(`<p>Good UI/UX design follows a few timeless principles. These apply whether you're designing a mobile app, a website, or even a physical product.</p>`)}
-
+  <h3>What people usually say about apps they love</h3>
   <div class="chiprow">
-    <span class="chip">🔁 Consistency — similar elements should look and behave the same way throughout, so users don't have to relearn things on every screen</span>
-    <span class="chip">📣 Feedback — the system should always respond to a user's action (a button press, a form submit) so they know something happened</span>
-    <span class="chip">🧹 Simplicity — remove anything that doesn't help the user achieve their goal; don't make people think harder than necessary</span>
-    <span class="chip">♿ Accessibility — designs should work for people with different abilities, including those using screen readers or who have low vision</span>
-    <span class="chip">🕹️ User Control — users should feel in control, with clear ways to undo actions or go back</span>
-    <span class="chip">👁️ Visibility — important actions and information should be easy to notice, not hidden away</span>
+    <span class="chip">✔️ Easy to Use</span>
+    <span class="chip">✔️ Simple and Neat Design</span>
+    <span class="chip">✔️ Easy Navigation</span>
+    <span class="chip">✔️ Seamless Interaction</span>
+    <span class="chip">✔️ User Friendly</span>
   </div>
 
-  ${analogy(`<p>Think of a well-designed classroom. <strong>Consistency</strong> = the same bell always means the same thing. <strong>Feedback</strong> = the teacher nods or says "correct" when you answer. <strong>Simplicity</strong> = the timetable isn't cluttered with unnecessary information. <strong>Accessibility</strong> = ramps and clear signs exist for everyone. <strong>User control</strong> = you can raise your hand and ask a question anytime. <strong>Visibility</strong> = the exit sign is clearly lit and easy to spot.</p>`)}
+  <p style="font-size:20px; font-weight:800; text-align:center; color:var(--rail); margin:26px 0; line-height:1.4;">⚡ It takes just <u>50 milliseconds</u> for someone to form an opinion about an app — less time than a single blink!</p>
 
-  ${remember(["Consistency, Feedback, Simplicity, Accessibility, User Control, Visibility","These principles apply to almost any interface — physical or digital","Good design is often invisible — users don't notice it because everything just works"])}
+  <div class="flow-grid">
+    <div class="flow-card">
+      <h4>🖌️ User Interface (UI)</h4>
+      <p style="font-size:14.5px;">The <strong>look and feel</strong> of a product — its fonts, colors, buttons, layout, and spaces. UI is everything you can actually see.</p>
+    </div>
+    <div class="flow-card">
+      <h4>🧭 User Experience (UX)</h4>
+      <p style="font-size:14.5px;">The <strong>overall experience</strong> of the product — not just how it looks, but how it works and how it makes you feel while using it.</p>
+    </div>
+  </div>
+
+  ${analogy(`<p>Think of a restaurant. <strong>UI</strong> is the plating, the menu design, and the interior decor — everything you can visually notice. <strong>UX</strong> is the whole dining experience — how easy it was to book a table, how quickly you were served, and whether you'd want to come back.</p>`)}
+
+  <h3 style="margin-top:22px;">What makes up UX Design?</h3>
+  <p>UX Design isn't just one skill — it's actually a combination of four areas working together. Tap each one below.</p>
+  <div class="diagram">
+    <div class="node clickable" data-pop="The actual information inside the product — the text, images, and media a user reads or engages with.">
+      <span class="emoji">📄</span>Content
+      <div class="node-pop"></div>
+    </div>
+    <div class="node clickable" data-pop="How easy and efficient the product is to actually use.">
+      <span class="emoji">🧩</span>Usability
+      <div class="node-pop"></div>
+    </div>
+    <div class="node clickable" data-pop="The visual look and feel of the product — fonts, colors, buttons, layout.">
+      <span class="emoji">🎨</span>UI Design
+      <div class="node-pop"></div>
+    </div>
+    <div class="node clickable" data-pop="How the user actually interacts with and moves through the product — the flow between actions and screens.">
+      <span class="emoji">🕹️</span>User Interaction Design
+      <div class="node-pop"></div>
+    </div>
+  </div>
+
+  ${mistake(`<p>Even popular, well-known apps sometimes get UI/UX wrong — cluttered layouts, poor color contrast, inconsistent buttons, or confusing navigation can quickly frustrate a user, no matter how powerful the app is underneath.</p>`)}
+
+  <p style="text-align:center; font-style:italic; font-size:18px; color:var(--ink-soft); margin:26px 10px; border-left:4px solid var(--spark); padding-left:16px; text-align:left;">"If you want users to like and use your product, give them a reason to love it."</p>
+
+  ${remember(["UI = look and feel (fonts, colors, buttons, layout, spaces)","UX = the overall experience of using the product","UX Design = Content + Usability + UI Design + User Interaction Design","Users form an opinion about an app in just 50 milliseconds — first impressions matter!"])}
 `;
+
 
 /* ================= PART 2: HTML & HTML5 CONTENT ================= */
 
@@ -773,7 +679,7 @@ DEMOS.ex2 = `<!DOCTYPE html>
 
 CONTENT.ex2walk = `
   ${explain(`
-    <p><strong>Exercise 2 — Blog Page using HTML5 Tags.</strong> The brief: design a blog page using HTML5 semantic tags — header, footer, main, article, section, aside, mark, nav (with internal AND external links), dialog, img, table, figure/figcaption, details/summary. This exercise is really a showcase of everything we covered in Part 2's "Semantic Layout" and "Interactive HTML5" stations, all working together on one real page.</p>
+    <p><strong>Exercise 2 — Blog Page using HTML5 Tags.</strong> The brief: design a blog page using HTML5 semantic tags — header, footer, main, article, section, aside, mark, nav (with internal AND external links), dialog, img, table, figure/figcaption, details/summary. This exercise is really a showcase of everything covered in the "Semantic Layout" and "Interactive HTML5" stations, all working together on one real page.</p>
   `)}
 
   ${demoCard("ex2", "Live Output — Exercise 2", 1500)}
@@ -784,7 +690,7 @@ CONTENT.ex2walk = `
     <li><code>&lt;header&gt;</code> holds the blog's title and tagline; <code>&lt;nav&gt;</code> right below it holds four links — two <strong>internal</strong> (<code>Ex2Demo.html</code> and <code>#expenses</code>, an anchor jump) and two <strong>external</strong> (opened with <code>target="_blank"</code> so visitors don't lose their place).</li>
     <li>Inside <code>&lt;main&gt;</code>, the first <code>&lt;section&gt;</code> is the actual blog post: an <code>&lt;article&gt;</code> holding the story text, with <code>&lt;mark&gt;</code> highlighting the publish date, and a <code>&lt;figure&gt;</code>+<code>&lt;figcaption&gt;</code> pairing the mountain photo with its caption.</li>
     <li>A second <code>&lt;section id="expenses"&gt;</code> (matching the nav's <code>#expenses</code> link) holds a <code>&lt;table&gt;</code> of costs, followed by a <code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code> block hiding budgeting tips until clicked.</li>
-    <li>A <code>&lt;dialog&gt;</code> sits ready with a future-plans message — notice it has no <code>open</code> attribute here, so (unlike our Part 2 demo) it stays invisible unless opened with JavaScript.</li>
+    <li>A <code>&lt;dialog&gt;</code> sits ready with a future-plans message — notice it has no <code>open</code> attribute here, so (unlike our earlier demo) it stays invisible unless opened with JavaScript.</li>
     <li><code>&lt;aside id="about-me"&gt;</code> — matching the nav's "About Me" link — holds bio text separate from the main blog content.</li>
     <li><code>&lt;footer&gt;</code> closes the page with a copyright line, using <code>&amp;copy;</code> to print the © symbol.</li>
   </ul>
@@ -853,7 +759,7 @@ DEMOS.ex3 = `<!DOCTYPE html>
 
 CONTENT.ex3walk = `
   ${explain(`
-    <p><strong>Exercise 3 — User Input Form using HTML5 Form Tags.</strong> The brief: build the form shown in the practical sheet, using proper HTML5 form tags. This exercise is a direct application of everything in Part 2's "Forms & Input Elements" station.</p>
+    <p><strong>Exercise 3 — User Input Form using HTML5 Form Tags.</strong> The brief: build the form shown in the practical sheet, using proper HTML5 form tags. This exercise is a direct application of everything in the "Forms & Input Elements" station.</p>
   `)}
 
   ${demoCard("ex3", "Live Output — Exercise 3", 620)}
@@ -875,21 +781,7 @@ CONTENT.ex3walk = `
 
 /* ================= QUIZ DATA ================= */
 const QUIZZES = {
-  quiz1: [
-    {q:"UI stands for:", opts:["User Interface","User Instructions","Unified Interface","User Interaction"], a:0},
-    {q:"UX stands for:", opts:["User Experience","User Extension","Unified Experience","User Execution"], a:0},
-    {q:"Which one focuses on how a product LOOKS (colors, buttons, layout)?", opts:["UX","UI","Design Thinking","Wireframe"], a:1},
-    {q:"Which one focuses on the overall FEELING and journey of using a product?", opts:["UI","UX","Prototype","Font"], a:1},
-    {q:"Design Thinking is best described as:", opts:["A coding language","A human-centered problem-solving approach","A type of database","A CSS framework"], a:1},
-    {q:"Which stage of Design Thinking involves talking to and observing real users?", opts:["Define","Ideate","Empathize","Test"], a:2},
-    {q:"In which stage do you brainstorm as many ideas as possible without judging them yet?", opts:["Empathize","Ideate","Prototype","Test"], a:1},
-    {q:"A low-fidelity wireframe usually contains:", opts:["Real photos and final colors","Simple boxes and placeholder text","Working code","Database tables"], a:1},
-    {q:"A clickable mockup used to test an idea before real development is called a:", opts:["Wireframe","Prototype","Framework","Backend"], a:1},
-    {q:"Which UI/UX principle means similar elements should look and behave the same way throughout an app?", opts:["Feedback","Consistency","Accessibility","Visibility"], a:1},
-    {q:"Which principle ensures a system responds so users know their action worked (e.g. a button changing color when clicked)?", opts:["Consistency","Simplicity","Feedback","User Control"], a:2},
-    {q:"The correct Design Thinking process order is:", opts:["Test → Define → Empathize → Ideate → Prototype","Empathize → Define → Ideate → Prototype → Test","Ideate → Empathize → Test → Define → Prototype","Prototype → Test → Define → Empathize → Ideate"], a:1},
-  ],
-  quiz2: [
+  quizHtml: [
     {q:"Which tag holds everything visible on a webpage?", opts:["head","body","title","html"], a:1},
     {q:"Which heading tag is the biggest/most important?", opts:["h6","h1","h3","p"], a:1},
     {q:"Which tag creates a line break without starting a new paragraph?", opts:["hr","br","p","div"], a:1},
@@ -905,7 +797,7 @@ const QUIZZES = {
     {q:"In a form, which two attributes must match to properly link a label to an input?", opts:["name and id","for and id","for and name","id and type"], a:1},
     {q:"Which input type hides the characters a user types?", opts:["text","password","hidden","checkbox"], a:1},
   ],
-  quiz3: [
+  quizPractical: [
     {q:"In Exercise 1, which tag was used to cross out the age '36'?", opts:["del","strike","u","mark"], a:1},
     {q:"In Exercise 1, the Dreams list used which list type to get A, B, C numbering?", opts:["ul","ol type='A'","ol type='1'","dl"], a:1},
     {q:"In Exercise 2, which technique tiled the heart-pattern image across the whole page?", opts:["An img tag","The background attribute on body","A figure tag","An inline font tag"], a:1},
@@ -923,17 +815,16 @@ function buildSummaryHTML(){
   return `
     ${explain(`<p>Great job reaching the last station! Here's a one-page recap of everything covered.</p>`)}
     <div class="card">
-      <h3 style="margin-bottom:8px;">Part 1 · UI/UX &amp; Design Thinking</h3>
+      <h3 style="margin-bottom:8px;">Introduction to UI &amp; UX</h3>
       <ul>
-        <li><strong>UI vs UX:</strong> UI = how it looks (visual layer); UX = how it feels to use (the whole journey).</li>
-        <li><strong>Design Thinking:</strong> a human-centered problem-solving approach.</li>
-        <li><strong>5 Stages:</strong> Empathize → Define → Ideate → Prototype → Test (iterative, not strictly linear).</li>
-        <li><strong>Wireframing &amp; Prototyping:</strong> low-fidelity sketches vs high-fidelity realistic mockups; prototypes are often clickable.</li>
-        <li><strong>Design Principles:</strong> Consistency, Feedback, Simplicity, Accessibility, User Control, Visibility.</li>
+        <li><strong>UI (User Interface):</strong> the look and feel of a product — fonts, colors, buttons, layout, spaces.</li>
+        <li><strong>UX (User Experience):</strong> the overall experience of using the product.</li>
+        <li><strong>UX Design</strong> = Content + Usability + UI Design + User Interaction Design.</li>
+        <li>Users form an opinion about an app in just <strong>50 milliseconds</strong> — first impressions matter.</li>
       </ul>
     </div>
     <div class="card">
-      <h3 style="margin-bottom:8px;">Part 2 · HTML &amp; HTML5</h3>
+      <h3 style="margin-bottom:8px;">HTML &amp; HTML5 Concepts</h3>
       <ul>
         <li><strong>Structure:</strong> DOCTYPE → html → head (title) → body.</li>
         <li><strong>Text:</strong> headings (h1–h6), paragraphs, formatting tags (b/strong, i/em, u, strike/del, sub/sup, mark).</li>
@@ -948,7 +839,7 @@ function buildSummaryHTML(){
       </ul>
     </div>
     <div class="card">
-      <h3 style="margin-bottom:8px;">Part 3 · Practical Exercises</h3>
+      <h3 style="margin-bottom:8px;">Practical Exercises</h3>
       <ul>
         <li><strong>Exercise 1:</strong> Personal Profile — classic formatting tags (font, b, i, u, strike, big, center).</li>
         <li><strong>Exercise 2:</strong> Travel Blog — full semantic HTML5 layout with nav, figure, table, details, dialog.</li>
