@@ -2202,12 +2202,39 @@ document.getElementById("menubtn")?.addEventListener("click",()=>{
 });
 document.getElementById("scrim")?.addEventListener("click", closeMobileNav);
 
-document.getElementById("darkToggle").addEventListener("click",()=>{
-  const root = document.documentElement;
-  const isDark = root.getAttribute("data-theme")==="dark";
-  root.setAttribute("data-theme", isDark ? "light" : "dark");
-  document.getElementById("darkToggle").innerHTML = isDark ? "🌙 <span>Dark mode</span>" : "☀️ <span>Light mode</span>";
+/* ---- Color theme: Light / Dark / High Contrast ---- */
+const themeButtons = {
+  light: document.getElementById("themeLight"),
+  dark: document.getElementById("themeDark"),
+  highcontrast: document.getElementById("themeHC"),
+};
+function setTheme(name){
+  document.documentElement.setAttribute("data-theme", name);
+  Object.entries(themeButtons).forEach(([key,btn])=>{
+    btn.classList.toggle("active", key===name);
+  });
+}
+themeButtons.light.addEventListener("click",()=>setTheme("light"));
+themeButtons.dark.addEventListener("click",()=>setTheme("dark"));
+themeButtons.highcontrast.addEventListener("click",()=>setTheme("highcontrast"));
+
+/* ---- Text size: Small / Medium / Large / Extra Large ---- */
+const FONT_SIZES = ["sm","md","lg","xl"];
+const FONT_LABELS = {sm:"Small", md:"Medium", lg:"Large", xl:"Extra Large"};
+let fontSizeIdx = 1; // start at Medium
+function applyFontSize(){
+  document.documentElement.setAttribute("data-fontsize", FONT_SIZES[fontSizeIdx]);
+  document.getElementById("fontLabel").textContent = FONT_LABELS[FONT_SIZES[fontSizeIdx]];
+  document.getElementById("fontSmaller").disabled = fontSizeIdx===0;
+  document.getElementById("fontBigger").disabled = fontSizeIdx===FONT_SIZES.length-1;
+}
+document.getElementById("fontSmaller").addEventListener("click",()=>{
+  if(fontSizeIdx>0){ fontSizeIdx--; applyFontSize(); }
 });
+document.getElementById("fontBigger").addEventListener("click",()=>{
+  if(fontSizeIdx<FONT_SIZES.length-1){ fontSizeIdx++; applyFontSize(); }
+});
+applyFontSize();
 
 document.getElementById("spacingToggle").addEventListener("click",()=>{
   const root = document.documentElement;
