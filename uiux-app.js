@@ -1718,13 +1718,66 @@ DEMOS.ex5 = `<!DOCTYPE html>
     <meta charset="utf-8">
     <title>Example Document</title>
     <style>
-        html { font-family: sans-serif; }
-        body { margin: 0; }
-        header { background: purple; height: 50px; }
-        footer { background: purple; height: 50px; }
-        h1, h5 { text-align: center; color: white; line-height: 50px; margin: 0; }
-        article { padding: 5px; margin: 5px; background: aqua; }
-        p { display: inline; }
+      html 
+      {
+        font-family: sans-serif;
+      }
+      body 
+      {
+        margin: 0;
+      }
+      header
+      {
+        background: purple;
+        height: 50px;
+      }
+      footer 
+      {
+        background: purple;
+        height: 50px;
+      }
+      h1, h5 {
+        text-align: center;
+        color: white;
+        line-height: 50px;
+        margin: 0;
+      }
+      article
+      {
+        padding: 5px;
+        margin: 5px;
+        background: aqua;
+        /*flex: 200px;*/
+        flex: 1 200px; 
+        /*flex-wrap: nowrap;*/
+      }
+      article:nth-of-type(3) 
+      {
+        flex: 2 200px;
+      }
+      button 
+      {
+        font-size: 18px;
+        line-height: 1.5;
+        width: 15%;
+      }
+      div 
+      {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      p
+      {
+        display: inline;
+      }
+      section
+      {
+        display: flex;
+        /*flex-direction: row;
+        flex-wrap: wrap;*/
+        flex-flow: row wrap;
+      }
     </style>
   </head>
   <body>
@@ -1732,18 +1785,38 @@ DEMOS.ex5 = `<!DOCTYPE html>
       <h1>Sample HTML5 Page, and I'm the Header</h1>
     </header>
     <section>
-      <article id="a1">
+      <article>
         <h3>Article One</h3>
-        <p>"Attitude is a choice. Happiness is a choice. Optimism is a choice. Kindness is a choice. Giving is a choice. Respect is a choice. Whatever choice you make makes you. Choose wisely." — Roy T. Bennett, The Light in the Heart</p>
+        <p>"Attitude is a choice. 
+		Happiness is a choice. 
+		Optimism is a choice. 
+		Kindness is a choice. 
+		Giving is a choice. 
+		Respect is a choice. 
+		Whatever choice you make makes you. Choose wisely." — Roy T. Bennett, The Light in the Heart
+		</p>
       </article>
-      <article id="a2">
+      <article>
         <h3>Article Two</h3>
-        <p>"Be the reason someone smiles. Be the reason someone feels loved and believes in the goodness in people." — Roy T. Bennett, The Light in the Heart</p>
+        <p>"Be the reason someone smiles. 
+		Be the reason someone feels loved and believes in the goodness in people." 
+		— Roy T. Bennett, The Light in the Heart 
+		</p>
+		<div>
+			<button>Smile</button>
+			<button>Laugh</button>
+			<button>Wink</button>
+			<button>Shrug</button>
+			<button>Blush</button>
+		</div>
       </article>
-      <article id="a3">
+      <article>
         <h3>Article Three</h3>
-        <p>"Live the Life of Your Dreams"</p>
-        <p>I'm here to show how inline works!</p>
+        <p>"Live the Life of Your Dreams"
+		</p>
+		<p>
+		I'm here to show how inline works!
+		</p>
       </article>
     </section>
 	<footer>
@@ -1754,21 +1827,26 @@ DEMOS.ex5 = `<!DOCTYPE html>
 
 CONTENT.ex5walk = `
   ${explain(`
-    <p><strong>Exercise 5 — Webpage with Flexbox.</strong> The brief: create a website that demonstrates flexbox. Notice that this exercise's HTML is actually very simple — three &lt;article&gt; elements in a &lt;section&gt; — but a real understanding of flexbox transforms how it's arranged and how the <code>p { display: inline; }</code> rule affects Article Three's two paragraphs.</p>
+    <p><strong>Exercise 5 — Webpage with Flexbox.</strong> The brief: create a website that demonstrates flexbox. This version puts real flexbox properties to work in two places at once — the &lt;section&gt; that lays out the three articles, and the &lt;div&gt; that lays out the row of buttons inside Article Two.</p>
   `)}
 
-  ${demoCard("ex5", "Live Output — Exercise 5", 500)}
+  ${demoCard("ex5", "Live Output — Exercise 5", 520)}
 
   <h3 style="margin-top:24px;">Walking through the code</h3>
   <ul>
-    <li>The purple <code>header</code> and <code>footer</code> both center their heading text vertically using <code>line-height</code> equal to their own height — a neat one-line trick for single-line vertical centering.</li>
-    <li>Each <code>article</code> gets its own aqua background and margin, giving the "card" look for each quote.</li>
-    <li>Inside Article Three, <code>p { display: inline; }</code> makes the two separate &lt;p&gt; tags sit on the same line instead of stacking — a live example of the Block vs Inline Elements station in action.</li>
-    <li>Try changing <code>section</code> to <code>display: flex; flex-direction: row;</code> yourself in the "View Code" tab's mental model — that would lay all three articles out side-by-side instead of stacked, which is the heart of what this exercise is meant to explore.</li>
+    <li><code>section { display: flex; flex-flow: row wrap; }</code> turns the section into a flex container. <code>flex-flow</code> is shorthand for <code>flex-direction: row</code> plus <code>flex-wrap: wrap</code> — the three articles sit side-by-side, and will wrap onto a new line if the window gets too narrow to fit them.</li>
+    <li>Each <code>article</code> gets <code>flex: 1 200px;</code> — shorthand for <code>flex-grow: 1</code> with a <code>flex-basis</code> of 200px, meaning every article starts at 200px wide and then grows equally to fill any leftover space.</li>
+    <li><code>article:nth-of-type(3) { flex: 2 200px; }</code> singles out Article Three and doubles its <code>flex-grow</code> to 2 — so it claims twice as much of the extra space as Article One or Two. This is the same <code>:nth-child</code>-style selector you saw in the CSS Table/Form styling station, here picking out one flex item to treat differently.</li>
+    <li>Inside Article Two, <code>div { display: flex; align-items: center; justify-content: space-around; }</code> makes a SECOND, independent flex container just for the five buttons — <code>justify-content: space-around</code> spreads them evenly with space on both ends, and <code>align-items: center</code> keeps them vertically centered.</li>
+    <li>The purple <code>header</code> and <code>footer</code> still center their heading text vertically using <code>line-height</code> equal to their own height.</li>
+    <li>Inside Article Three, <code>p { display: inline; }</code> still makes the two separate &lt;p&gt; tags sit on the same line instead of stacking — a live example of the Block vs Inline Elements station in action.</li>
   </ul>
 
-  ${remember(["This exercise = flexbox applied to a real card-based layout","display: inline on p made two block-level-by-default elements share one line","header/footer text vertical-centering trick: line-height equal to the box height"])}
+  ${mistake(`<p>Notice that <code>flex</code> is being used as a shorthand for two values here (<code>flex-grow</code> and <code>flex-basis</code>) with <code>flex-shrink</code> left at its default of 1. It's easy to assume <code>flex: 1 200px</code> means "flex-grow: 1, width: 200px" — but flex-basis is only a *starting point* the browser grows or shrinks from, not a fixed width.</p>`)}
+
+  ${remember(["This exercise = two separate flex containers on one page: the section (articles) and the div (buttons)","flex-flow = flex-direction + flex-wrap shorthand","flex: 1 200px = flex-grow 1, flex-basis 200px — Article Three's flex: 2 200px makes it grow twice as fast","justify-content: space-around + align-items: center is a classic pattern for evenly spaced, centered items","display: inline on p made two block-level-by-default elements share one line"])}
 `;
+
 
 DEMOS.ex6a = `<html>
     <head>
