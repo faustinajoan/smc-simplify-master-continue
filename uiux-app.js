@@ -2,7 +2,9 @@
    SMC — Simplify • Master • Continue
    23CS/PE/XI15 · UI, UX and Design Thinking
    Unit 1: UI, UX & The Design Process
+   Unit 3: Wireframing, Prototyping, UI Design & Frontend Implementation
    Unit 4: Website Development — HTML5 & CSS3
+   Unit 5: JavaScript
    Practical Exercises 1–6
    ========================================================= */
 
@@ -18,7 +20,22 @@ const STATIONS = [
   { id:"uxanalysis",   icon:"📊", label:"UX Analysis & Interviews", kind:"topic", group:"unit1" },
   { id:"designphase",  icon:"🎨", label:"Design & Production", kind:"topic", group:"unit1" },
   { id:"personas",     icon:"🧑‍🤝‍🧑", label:"User Personas", kind:"topic", group:"unit1" },
+  { id:"gestalt",      icon:"🧠", label:"Gestalt Theory", kind:"topic", group:"unit1" },
+  { id:"psychology",   icon:"💡", label:"Psychology in UX", kind:"topic", group:"unit1" },
   { id:"quizUnit1",    icon:"🧠", label:"Unit 1 Quiz", kind:"quiz", group:"unit1", quizId:"quizUnit1" },
+
+  /* ---------- UNIT 3 ---------- */
+  { id:"wireframebasics", icon:"📐", label:"What is Wireframing?", kind:"topic", group:"unit3" },
+  { id:"wireframetypes",  icon:"🎚️", label:"Types of Wireframes", kind:"topic", group:"unit3" },
+  { id:"prototypebasics", icon:"🧪", label:"What is Prototyping?", kind:"topic", group:"unit3" },
+  { id:"prototypeprocess",icon:"🛠️", label:"The Prototyping Process", kind:"topic", group:"unit3" },
+  { id:"uidesignbasics",  icon:"🖌️", label:"UI Design Basics", kind:"topic", group:"unit3" },
+  { id:"designsystem",    icon:"🧩", label:"Building a Design System", kind:"topic", group:"unit3" },
+  { id:"handover",        icon:"🤝", label:"UI Design Handover", kind:"topic", group:"unit3" },
+  { id:"frontendbasics",  icon:"💻", label:"Frontend Development Basics", kind:"topic", group:"unit3" },
+  { id:"cssatscale",      icon:"⚙️", label:"CSS at Scale", kind:"topic", group:"unit3" },
+  { id:"postlaunch",      icon:"📈", label:"Post-Launch UX Activities", kind:"topic", group:"unit3" },
+  { id:"quizUnit3",       icon:"🧠", label:"Unit 3 Quiz", kind:"quiz", group:"unit3", quizId:"quizUnit3" },
 
   /* ---------- UNIT 4a: WEBSITE & HTML5 ---------- */
   { id:"websitebasics", icon:"🌍", label:"What is a Website?", kind:"topic", group:"unit4html" },
@@ -50,6 +67,16 @@ const STATIONS = [
   { id:"cssflexbox",    icon:"🧩", label:"Flexbox", kind:"topic", group:"unit4css" },
   { id:"quizCss",       icon:"🧠", label:"CSS Quiz", kind:"quiz", group:"unit4css", quizId:"quizCss" },
 
+  /* ---------- UNIT 5: JAVASCRIPT ---------- */
+  { id:"whyjs",         icon:"❓", label:"Why JavaScript?", kind:"topic", group:"unit5" },
+  { id:"firstscript",   icon:"📜", label:"Writing Your First Script", kind:"topic", group:"unit5" },
+  { id:"bom",           icon:"🪟", label:"The Browser Object Model (BOM)", kind:"topic", group:"unit5" },
+  { id:"htmldom",       icon:"🌳", label:"The HTML DOM", kind:"topic", group:"unit5" },
+  { id:"accessingelements", icon:"🎯", label:"Accessing Elements", kind:"topic", group:"unit5" },
+  { id:"displayoutput", icon:"📤", label:"Displaying Output", kind:"topic", group:"unit5" },
+  { id:"creatingelements", icon:"🧱", label:"Creating & Modifying Elements", kind:"topic", group:"unit5" },
+  { id:"quizJs",        icon:"🧠", label:"JavaScript Quiz", kind:"quiz", group:"unit5", quizId:"quizJs" },
+
   /* ---------- PRACTICAL EXERCISES ---------- */
   { id:"ex1walk", icon:"1️⃣", label:"Exercise 1 — Personal Profile", kind:"topic", group:"practical" },
   { id:"ex2walk", icon:"2️⃣", label:"Exercise 2 — Travel Blog", kind:"topic", group:"practical" },
@@ -57,6 +84,7 @@ const STATIONS = [
   { id:"ex4walk", icon:"4️⃣", label:"Exercise 4 — Professional Layout", kind:"topic", group:"practical" },
   { id:"ex5walk", icon:"5️⃣", label:"Exercise 5 — Flexbox Page", kind:"topic", group:"practical" },
   { id:"ex6walk", icon:"6️⃣", label:"Exercise 6 — Animations & Transforms", kind:"topic", group:"practical" },
+  { id:"ex7walk", icon:"7️⃣", label:"Exercise 7 — Wireframing our College Website", kind:"topic", group:"practical" },
   { id:"quizPractical", icon:"🧠", label:"Practical Recap Quiz", kind:"quiz", group:"practical", quizId:"quizPractical" },
 
   { id:"summary", icon:"📄", label:"Summary & Download", kind:"summary" },
@@ -64,8 +92,10 @@ const STATIONS = [
 
 const GROUP_META = {
   unit1:     { title:"Unit 1 · UI, UX & The Design Process", eyebrow:"UNIT 1" },
+  unit3:     { title:"Unit 3 · Wireframing, Prototyping & Frontend", eyebrow:"UNIT 3" },
   unit4html: { title:"Unit 4 · Website & HTML5", eyebrow:"UNIT 4 · HTML5" },
   unit4css:  { title:"Unit 4 · CSS3 Styling", eyebrow:"UNIT 4 · CSS3" },
+  unit5:     { title:"Unit 5 · JavaScript", eyebrow:"UNIT 5" },
   practical: { title:"Practical Exercises", eyebrow:"PRACTICAL" },
 };
 
@@ -91,10 +121,12 @@ CONTENT.home = `
     <div class="hero-deco">🎨</div>
     <span class="eyebrow" style="background:rgba(255,255,255,.22);">SMC PORTAL</span>
     <h1>Simplify • Master • Continue</h1>
-    <p>Welcome! This portal covers <strong>UI/UX &amp; the Design Process (Unit 1)</strong> and <strong>Website Development with HTML5 &amp; CSS3 (Unit 4)</strong> — one small idea at a time, with pictures, real code, live outputs, and quick checks along the way.</p>
+    <p>Welcome! This portal covers UI/UX &amp; the Design Process (Unit 1), Wireframing/Prototyping/Frontend Implementation (Unit 3), Website Development with HTML5 &amp; CSS3 (Unit 4), and JavaScript (Unit 5) — one small idea at a time, with pictures, real code, live outputs, and quick checks along the way.</p>
     <div class="stat-row">
       <div class="stat-pill">🧭 Unit 1 · UX Design Process</div>
+      <div class="stat-pill">📐 Unit 3 · Wireframing &amp; Frontend</div>
       <div class="stat-pill">🌐 Unit 4 · HTML5 &amp; CSS3</div>
+      <div class="stat-pill">📜 Unit 5 · JavaScript</div>
       <div class="stat-pill">🧪 Practical Exercises 1–6</div>
     </div>
   </div>
@@ -104,6 +136,11 @@ CONTENT.home = `
   <h3 style="margin-top:26px;">Unit 1 · UI, UX &amp; The Design Process</h3>
   <div class="route-preview">
     ${STATIONS.filter(s=>s.group==="unit1" && s.kind==="topic").map(s=>`<div class="route-item"><span class="emoji">${s.icon}</span>${s.label}</div>`).join("")}
+  </div>
+
+  <h3 style="margin-top:26px;">Unit 3 · Wireframing, Prototyping &amp; Frontend</h3>
+  <div class="route-preview">
+    ${STATIONS.filter(s=>s.group==="unit3" && s.kind==="topic").map(s=>`<div class="route-item"><span class="emoji">${s.icon}</span>${s.label}</div>`).join("")}
   </div>
 
   <h3 style="margin-top:26px;">Unit 4 · Website &amp; HTML5</h3>
@@ -116,12 +153,17 @@ CONTENT.home = `
     ${STATIONS.filter(s=>s.group==="unit4css" && s.kind==="topic").map(s=>`<div class="route-item"><span class="emoji">${s.icon}</span>${s.label}</div>`).join("")}
   </div>
 
+  <h3 style="margin-top:26px;">Unit 5 · JavaScript</h3>
+  <div class="route-preview">
+    ${STATIONS.filter(s=>s.group==="unit5" && s.kind==="topic").map(s=>`<div class="route-item"><span class="emoji">${s.icon}</span>${s.label}</div>`).join("")}
+  </div>
+
   <h3 style="margin-top:26px;">Practical Exercises</h3>
   <div class="route-preview">
     ${STATIONS.filter(s=>s.group==="practical" && s.kind==="topic").map(s=>`<div class="route-item"><span class="emoji">${s.icon}</span>${s.label}</div>`).join("")}
   </div>
 
-  ${more("🎒 Tips for using this page","<p>Use the ⬅️➡️ buttons at the bottom of each page, or tap any station on the left. Tap boxes, diagrams and the 'View Code' tabs — they're all clickable! Turn on <strong>Dark mode</strong> or <strong>Easy-read spacing</strong> from the side menu if that helps you read more comfortably.</p>")}
+  ${more("🎒 Tips for using this page","<p>Use the ⬅️➡️ buttons at the bottom of each page, or tap any station on the left. Tap boxes, diagrams and the 'View Code' tabs — they're all clickable! Turn on <strong>Dark mode</strong>, <strong>High Contrast</strong>, adjust <strong>Text size</strong>, or turn on <strong>Easy-read spacing</strong> from the side menu if that helps you read more comfortably.</p>")}
 `;
 
 CONTENT.uiuxintro = `
@@ -305,6 +347,8 @@ CONTENT.uxresearch = `
     </div>
   </div>
 
+  ${analogy(`<p>Think of designing a new school canteen menu. <strong>Empathize</strong> = talking to students about what they actually want to eat. <strong>Define</strong> = realizing the real problem is "lunch lines are too slow," not just "food is boring." <strong>Ideate</strong> = brainstorming ideas like pre-ordering apps, express counters, or grab-and-go meals. <strong>Prototype</strong> = setting up a trial express counter for one week. <strong>Test</strong> = asking students if the wait time actually improved — and adjusting based on what they say.</p>`)}
+
   ${remember(["UX Research = understanding the product, the user, and their motivations","Quantitative research = numbers · Qualitative research = the 'why' behind them","4 stages: Discover → Explore → Test → Listen"])}
 `;
 
@@ -410,6 +454,528 @@ CONTENT.personas = `
   <p>Stakeholders can evaluate new feature ideas against a persona; architects can design informed wireframes and labelling; designers can shape the overall look and feel; engineers can decide technical approaches based on user behaviour; and copywriters can write content for the right audience.</p>
 
   ${remember(["A persona = a fictional character representing a real type of user","Built from real research, not guesswork","4 types: Goal-directed, Role-based, Engaging, Fictional","Personas help every team member — design, engineering, and content — stay aligned on who they're building for"])}
+`;
+
+CONTENT.gestalt = `
+  ${explain(`
+    <p>Good UX design leans on real psychology — specifically on understanding how the human brain naturally perceives things. Human beings pay attention to things that are different or unique, and one theory explains this pattern-seeking behaviour especially well.</p>
+    <p><strong>Gestalt Theory</strong> is a theory from the early 20th century (developed by Max Wertheimer, Kurt Koffka, and Wolfgang Köhler) about how people perceive the world around them. Its core idea: humans perceive an <strong>organized whole that is more than just the sum of its individual parts</strong>.</p>
+  `)}
+
+  <h3>The 5 Gestalt Laws</h3>
+  <p>Tap each law below to see what it means for design.</p>
+  <div class="diagram">
+    <div class="node clickable" data-pop="Things that are close together appear more related than things spaced farther apart. Group related buttons or fields close together, and put unrelated ones further apart.">
+      <span class="emoji">📍</span>Proximity
+      <div class="node-pop"></div>
+    </div>
+    <div class="node clickable" data-pop="When things look similar to each other (same color, shape, or size), we automatically group them together in our minds — even without any lines separating them.">
+      <span class="emoji">🎨</span>Similarity
+      <div class="node-pop"></div>
+    </div>
+    <div class="node clickable" data-pop="When we see a complex arrangement of shapes, we instinctively look for one single, recognizable pattern — our brain 'closes the gaps' to complete a familiar shape.">
+      <span class="emoji">🧩</span>Closure
+      <div class="node-pop"></div>
+    </div>
+    <div class="node clickable" data-pop="People instinctively perceive objects as being either in the foreground (the subject) or the background (everything else) — never both at once.">
+      <span class="emoji">🖼️</span>Figure-Ground
+      <div class="node-pop"></div>
+    </div>
+    <div class="node clickable" data-pop="When objects sit inside the same enclosed border or region (like a card or box), we perceive them as belonging together — even if they're not actually close or similar.">
+      <span class="emoji">🔲</span>Common Region
+      <div class="node-pop"></div>
+    </div>
+  </div>
+
+  ${analogy(`<p>Think of a school timetable printed in a grid. Subjects listed close together under "Monday" feel related (Proximity). All the Science classes highlighted in green feel like one group (Similarity). A half-erased school logo is still instantly recognizable (Closure). A teacher's name printed boldly in front of a faded background photo reads clearly as the "subject" (Figure-Ground). And every class inside one boxed timetable cell feels grouped together, regardless of subject (Common Region).</p>`)}
+
+  ${remember(["Gestalt Theory: we perceive organized WHOLES, not just individual parts","Proximity = closeness implies relation","Similarity = alike things get grouped","Closure = our brain completes incomplete shapes","Figure-Ground = we separate subject from background","Common Region = a shared boundary implies grouping"])}
+`;
+
+CONTENT.psychology = `
+  ${explain(`
+    <p>Beyond visual perception, UX designers also draw on psychology to understand <strong>why</strong> people take (or don't take) an action inside a product. Three factors decide this every single time: <strong>Motivation, Ability,</strong> and <strong>Triggers</strong> — a framework closely related to the well-known Fogg Behavior Model.</p>
+  `)}
+
+  <h3>Why we fail to take action</h3>
+  <p>We fail to complete a desired action whenever ANY of these happen: our motivation is too low, the behaviour is too hard to do (low ability), or we're simply never triggered/prompted to act at all.</p>
+
+  <div class="flow-grid">
+    <div class="flow-card">
+      <h4>🔥 Motivation</h4>
+      <p style="font-size:14px;">Comes in two forms: <strong>Extrinsic</strong> motivation (external rewards, like discounts or badges) and <strong>Intrinsic</strong> motivation (internal satisfaction, like genuine enjoyment or curiosity).</p>
+    </div>
+    <div class="flow-card">
+      <h4>💪 Ability</h4>
+      <p style="font-size:14px;">Ask: where will the product be used? What's the main task? Are there frustrations along the way? Is it straightforward and user-friendly? The easier a task is, the less motivation is needed to complete it.</p>
+    </div>
+    <div class="flow-card">
+      <h4>🔔 Triggers</h4>
+      <p style="font-size:14px;">The prompt or cue that reminds a user to act right now — a notification, an email, a button that catches the eye at just the right moment.</p>
+    </div>
+  </div>
+
+  ${analogy(`<p>Think about why you might skip your daily reading habit. You may WANT to read (motivation), you may find it easy to read a few pages (ability) — but if nothing ever reminds you to pick up the book (no trigger), it simply won't happen. Change any one of the three, and behaviour changes.</p>`)}
+
+  ${mistake(`<p>Don't assume users fail to act because they "just don't want to." Often the real cause is that the task feels too hard (low ability), or there was simply no trigger reminding them at the right moment — both are things a designer can actually fix.</p>`)}
+
+  ${remember(["Action happens only when Motivation + Ability + Trigger all align","Motivation: Extrinsic (external reward) vs Intrinsic (internal satisfaction)","Ability: how easy or hard the task feels to complete","Triggers: the prompt or cue that reminds someone to act right now"])}
+`;
+/* ================= UNIT 3: WIREFRAMING, PROTOTYPING & FRONTEND ================= */
+
+CONTENT.wireframebasics = `
+  ${explain(`
+    <p>A <strong>wireframe</strong> is a visual representation of an interface — used to communicate a screen's <strong>structure, content, information hierarchy, functionality,</strong> and <strong>behaviour</strong> before any real design work begins.</p>
+  `)}
+
+  <h3>The 5 things a wireframe communicates</h3>
+  <div class="flow-grid">
+    <div class="flow-card"><h4>🧱 Structure</h4><p style="font-size:14px;">Think and sketch the pieces of the interface — how they're put together and where they'll be placed.</p></div>
+    <div class="flow-card"><h4>📄 Content</h4><p style="font-size:14px;">A list of the components, elements, or text that need to be included.</p></div>
+    <div class="flow-card"><h4>🗂️ Information Hierarchy</h4><p style="font-size:14px;">Organizing content and deciding how to display it in the best way.</p></div>
+    <div class="flow-card"><h4>⚙️ Functionality</h4><p style="font-size:14px;">How elements connect to each other, and how a user follows the flow to complete a task.</p></div>
+    <div class="flow-card"><h4>🎭 Behaviour</h4><p style="font-size:14px;">How user interaction happens — how the UI behaves with the user, and how the user behaves with the UI.</p></div>
+  </div>
+
+  <h3 style="margin-top:20px;">Why wireframe at all? The benefits</h3>
+  <div class="chiprow">
+    <span class="chip">Creates structure for each screen with the components it needs</span>
+    <span class="chip">Helps create or specify different functions</span>
+    <span class="chip">Communicates the idea clearly to different departments</span>
+    <span class="chip">Lets you explore different ideas before committing to advanced design software</span>
+    <span class="chip">Enables early-stage testing and acts as the basis for prototyping</span>
+  </div>
+
+  <h3 style="margin-top:20px;">3 things to keep in mind</h3>
+  <p>A "real" wireframe deliberately avoids:</p>
+  <div class="chiprow">
+    <span class="chip">🎨 No colors</span>
+    <span class="chip">🖼️ No images</span>
+    <span class="chip">🔤 No special fonts</span>
+  </div>
+  <p style="margin-top:10px;">The point is to keep everyone focused purely on layout and flow — not visual polish, which comes much later.</p>
+
+  <h3 style="margin-top:20px;">Other good practices</h3>
+  <div class="chiprow">
+    <span class="chip">Each page should have a reference number</span>
+    <span class="chip">Each page should have a specific name or page title</span>
+    <span class="chip">Notes/explanations should sit alongside the wireframe sketch, not inside it</span>
+    <span class="chip">Give each component a unique reference number</span>
+  </div>
+
+  ${analogy(`<p>A wireframe is like an architect's blueprint for a house — it shows exactly where each room, door, and window goes, but has no paint, furniture, or decoration yet. That comes later, once everyone agrees the layout actually works.</p>`)}
+
+  ${remember(["A wireframe communicates: Structure, Content, Information Hierarchy, Functionality, Behaviour","Never include colors, images, or special fonts in a true wireframe","Give every page a reference number, title, and keep notes alongside (not inside) the sketch"])}
+`;
+
+CONTENT.wireframetypes = `
+  ${explain(`<p>Wireframes come in three levels of detail, called <strong>fidelity</strong> — how close the sketch is to looking like the real, finished product.</p>`)}
+
+  <div class="imgcard">
+    <svg viewBox="0 0 400 100">
+      <rect x="10" y="20" width="110" height="50" fill="none" stroke="var(--ink-soft)" stroke-width="2"/>
+      <line x1="20" y1="35" x2="100" y2="35" stroke="var(--ink-soft)" stroke-width="2"/>
+      <line x1="20" y1="45" x2="90" y2="45" stroke="var(--ink-soft)" stroke-width="2"/>
+      <rect x="20" y="52" width="30" height="12" fill="none" stroke="var(--ink-soft)" stroke-width="1.5"/>
+      <text x="65" y="90" text-anchor="middle" font-size="10" fill="var(--ink-soft)" font-weight="700">Low-fidelity</text>
+
+      <rect x="145" y="20" width="110" height="50" fill="none" stroke="var(--rail)" stroke-width="2"/>
+      <line x1="155" y1="35" x2="235" y2="35" stroke="var(--rail)" stroke-width="2"/>
+      <line x1="155" y1="45" x2="225" y2="45" stroke="var(--rail)" stroke-width="2"/>
+      <rect x="155" y="52" width="30" height="12" fill="var(--rail)" opacity="0.3"/>
+      <text x="200" y="90" text-anchor="middle" font-size="10" fill="var(--rail)" font-weight="700">Medium-fidelity</text>
+
+      <rect x="280" y="20" width="110" height="50" fill="none" stroke="var(--spark)" stroke-width="2"/>
+      <line x1="290" y1="35" x2="370" y2="35" stroke="var(--spark)" stroke-width="3"/>
+      <line x1="290" y1="45" x2="360" y2="45" stroke="var(--spark)" stroke-width="2"/>
+      <rect x="290" y="52" width="30" height="12" fill="var(--spark)"/>
+      <text x="335" y="90" text-anchor="middle" font-size="10" fill="var(--spark)" font-weight="700">High-fidelity</text>
+    </svg>
+    <p class="imgcaption">As fidelity increases, so does realism — but also the time and cost needed to produce it.</p>
+  </div>
+
+  <h3>✏️ Low-fidelity</h3>
+  <p>Often a <strong>paper wireframe</strong> — paper as the white background, pencil as the black foreground.</p>
+  <div class="flow-grid">
+    <div class="flow-card"><h4>✔ Pros</h4><p style="font-size:14px;">Easy and fast to create · Easy to change · Easy to get feedback · Stakeholders get used to the design process · Easy for every department to follow where the product is heading.</p></div>
+    <div class="flow-card"><h4>✘ Cons</h4><p style="font-size:14px;">Very simple design · Sketches can look "ugly."</p></div>
+  </div>
+
+  <h3 style="margin-top:20px;">🖥️ Medium-fidelity</h3>
+  <p>Created using design tools, typically with a <strong>monochrome palette</strong> — can be done with ready-made tools or manually.</p>
+  <div class="flow-grid">
+    <div class="flow-card"><h4>✔ Pros</h4><p style="font-size:14px;">Shows more detail of UI components · Much easier to understand · Better UI/design layout · Easier to control alignment and hierarchy.</p></div>
+    <div class="flow-card"><h4>✘ Cons</h4><p style="font-size:14px;">Takes more time than low-fidelity · You typically need a low-fidelity version first, before building medium-fidelity.</p></div>
+  </div>
+
+  <h3 style="margin-top:20px;">🎯 High-fidelity</h3>
+  <p>A far more realistic representation, with real typefaces, real images, and proper text — usually built at an advanced stage of the design process. Considered the "most balanced" wireframe type, and represents a <strong>static</strong> version of the product.</p>
+  <div class="flow-grid">
+    <div class="flow-card"><h4>✔ Pros</h4><p style="font-size:14px;">Good-looking UI compared to other types · Can impress clients · Much easier to create with modern tools.</p></div>
+    <div class="flow-card"><h4>✘ Cons</h4><p style="font-size:14px;">Requires a lot of time · Costly to produce · Clients may confuse it with the final design · May need to start over if the client is unhappy.</p></div>
+  </div>
+
+  ${mistake(`<p>UI Design, Prototype, and High-fidelity Wireframe are NOT the same thing! A high-fidelity wireframe is still <em>static</em> (not clickable/interactive) — that's what separates it from a true prototype.</p>`)}
+
+  <h3 style="margin-top:20px;">Wireframing tools</h3>
+  <div class="chiprow">
+    <span class="chip">Balsamiq Mockups (premium)</span>
+    <span class="chip">Wireframe.cc (online only)</span>
+    <span class="chip">Moqups</span>
+    <span class="chip">InVision</span>
+    <span class="chip">UXPin</span>
+    <span class="chip">Axure</span>
+    <span class="chip">Fluid UI</span>
+    <span class="chip">Pidoco</span>
+    <span class="chip">Penultimate (Evernote)</span>
+  </div>
+
+  ${remember(["Low-fidelity = quick, rough, paper sketches — great for fast feedback","Medium-fidelity = digital, monochrome, more structured","High-fidelity = realistic, detailed, but time-consuming — still STATIC, unlike a prototype"])}
+`;
+
+CONTENT.prototypebasics = `
+  ${explain(`
+    <p><strong>Prototyping</strong> explains and gives an idea of how our final product will actually work, and how it will behave when someone interacts with it. Don't confuse a prototype with the final product — it's a stand-in that FEELS real without actually being fully built.</p>
+  `)}
+
+  <h3>Why are prototypes so important?</h3>
+  <div class="chiprow">
+    <span class="chip">Easy to communicate and collaborate with other teams</span>
+    <span class="chip">Reduces cost of money and time</span>
+    <span class="chip">Makes presenting to clients easier, and increases the chance of "selling" the idea</span>
+    <span class="chip">Makes it easier to set design priorities</span>
+  </div>
+
+  <h3 style="margin-top:20px;">Three types of prototypes</h3>
+
+  <div class="flow-grid">
+    <div class="flow-card">
+      <h4>📝 Low-fidelity (Paper)</h4>
+      <p style="font-size:14px;">Created using paper, stencils, and cut-outs.</p>
+    </div>
+    <div class="flow-card">
+      <h4>💻 Medium-fidelity (Digital)</h4>
+      <p style="font-size:14px;">Built using digital design tools.</p>
+    </div>
+    <div class="flow-card">
+      <h4>👨‍💻 High-fidelity (Coding)</h4>
+      <p style="font-size:14px;">Built with real code — an advanced approach recommended for designers who also have coding skills.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:20px;">Paper Prototyping</h3>
+  <div class="flow-grid">
+    <div class="flow-card"><h4>✔ Pros</h4><p style="font-size:14px;">Easy and fast to create · Costs almost nothing · Fun, and lets different groups interact with it together.</p></div>
+    <div class="flow-card"><h4>✘ Cons</h4><p style="font-size:14px;">Unrealistic · Can produce false feedback since people may not fully understand it · Almost zero real interactivity.</p></div>
+  </div>
+
+  <h3 style="margin-top:20px;">Digital Prototyping</h3>
+  <div class="flow-grid">
+    <div class="flow-card"><h4>✔ Pros</h4><p style="font-size:14px;">Realistic design and interactions · Flexible · Fast to iterate.</p></div>
+    <div class="flow-card"><h4>✘ Cons</h4><p style="font-size:14px;">Takes time to learn the tools · Still needs a transition to real code eventually.</p></div>
+  </div>
+
+  <h3 style="margin-top:20px;">Coding Prototypes</h3>
+  <p>These give an almost realistic product with direct interaction — but come with real technical cost.</p>
+  <div class="flow-grid">
+    <div class="flow-card"><h4>✔ Pros</h4><p style="font-size:14px;">Feels like the final product is already built · Huge development time saver later · Low software cost · Can be tested across different devices.</p></div>
+    <div class="flow-card"><h4>✘ Cons</h4><p style="font-size:14px;">One person often has to do two jobs — designing AND coding · Quality depends heavily on the designer's own coding skill.</p></div>
+  </div>
+
+  ${remember(["A prototype shows how the product will WORK and BEHAVE — never confuse it with the final product","3 types: Paper (fast, cheap, low realism), Digital (flexible, realistic), Coding (most realistic, needs coding skill)","Prototypes reduce cost, speed up communication, and make client buy-in easier"])}
+`;
+
+CONTENT.prototypeprocess = `
+  ${explain(`<p>Building a prototype isn't a single step — it follows a clear 5-stage process.</p>`)}
+
+  <div class="imgcard">
+    <svg viewBox="0 0 420 100">
+      <g font-size="9" fill="#fff" font-weight="700" text-anchor="middle">
+        <rect x="10" y="30" width="70" height="30" rx="6" fill="var(--rail)"/><text x="45" y="49">Planning</text>
+        <rect x="90" y="30" width="70" height="30" rx="6" fill="var(--spark)"/><text x="125" y="44">Drawing &amp;</text><text x="125" y="55">Sketching</text>
+        <rect x="170" y="30" width="70" height="30" rx="6" fill="var(--volt)"/><text x="205" y="44" fill="var(--ink)">Mockup &amp;</text><text x="205" y="55" fill="var(--ink)">Design</text>
+        <rect x="250" y="30" width="80" height="30" rx="6" fill="var(--rail)"/><text x="290" y="44">Animation &amp;</text><text x="290" y="55">Interaction</text>
+        <rect x="340" y="30" width="70" height="30" rx="6" fill="var(--spark)"/><text x="375" y="44">Exporting</text><text x="375" y="55">&amp; Testing</text>
+      </g>
+      <g stroke="var(--ink-soft)" stroke-width="1.5" marker-end="url(#pparrow)">
+        <line x1="80" y1="45" x2="88" y2="45"/>
+        <line x1="160" y1="45" x2="168" y2="45"/>
+        <line x1="240" y1="45" x2="248" y2="45"/>
+        <line x1="330" y1="45" x2="338" y2="45"/>
+      </g>
+      <defs><marker id="pparrow" markerWidth="7" markerHeight="7" refX="5" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 z" fill="var(--ink-soft)"/></marker></defs>
+    </svg>
+    <p class="imgcaption">Each stage builds on the last — you can't skip straight to animation without first planning and sketching what you're animating.</p>
+  </div>
+
+  <div class="chiprow">
+    <span class="chip">1️⃣ Planning — decide what you're building and why</span>
+    <span class="chip">2️⃣ Drawing &amp; Sketching — rough out the screens and flow</span>
+    <span class="chip">3️⃣ Mockup &amp; Design — build the visual layout</span>
+    <span class="chip">4️⃣ Animation &amp; Interaction — add the clickable, moving parts</span>
+    <span class="chip">5️⃣ Exporting &amp; Testing — share it and get real feedback</span>
+  </div>
+
+  <h3 style="margin-top:20px;">Prototyping Tools</h3>
+  <div class="chiprow">
+    <span class="chip">MarvelApp</span>
+    <span class="chip">Origami Studio</span>
+    <span class="chip">Justinmind</span>
+    <span class="chip">Flinto</span>
+    <span class="chip">Principle</span>
+  </div>
+
+  ${remember(["5-stage process: Planning → Drawing/Sketching → Mockup/Design → Animation/Interaction → Exporting/Testing","Each stage depends on the one before it — you can't skip ahead"])}
+`;
+
+CONTENT.uidesignbasics = `
+  ${explain(`<p><strong>User Interface Design</strong> is focused on creating a better look for the product, and presenting it more clearly and beautifully to users.</p>`)}
+
+  <p style="text-align:center; font-style:italic; font-size:18px; color:var(--ink-soft); margin:26px 10px; border-left:4px solid var(--spark); padding-left:16px; text-align:left;">"UI design is like telling a joke. If you need to explain the joke, then it is not a good one."</p>
+
+  <h3>Things to keep in mind</h3>
+  <div class="flow-grid">
+    <div class="flow-card">
+      <h4>🎨 Visual Design Elements</h4>
+      <p style="font-size:14px;">Lines, Shapes, Colors, Typography, Textures</p>
+    </div>
+    <div class="flow-card">
+      <h4>📐 Visual Design Principles</h4>
+      <p style="font-size:14px;">Alignment, Hierarchy, Balance, Repetition</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:20px;">Before jumping into UI</h3>
+  <p>Good UI design never starts from a blank canvas — it builds on everything that came before it:</p>
+  <div class="chiprow">
+    <span class="chip">Research</span>
+    <span class="chip">Sketches</span>
+    <span class="chip">Wireframes</span>
+    <span class="chip">Requirements</span>
+    <span class="chip">Screen Flows</span>
+    <span class="chip">Prototypes</span>
+  </div>
+
+  <h3 style="margin-top:20px;">UI Design Tools</h3>
+  <p>Many tools exist — Illustrator, Fireworks, InVision Studio, Framer, Figma — with Photoshop and Sketch being long-time leaders. But here's the important part:</p>
+  ${mistake(`<p>Don't focus on mastering the TOOL — focus on mastering the SKILL of designing user interfaces. The tool is just how you express the skill; it isn't the skill itself.</p>`)}
+
+  ${remember(["UI Design = making the product look better and communicate more clearly","Visual elements: Lines, Shapes, Colors, Typography, Textures","Visual principles: Alignment, Hierarchy, Balance, Repetition","UI work builds on research, sketches, wireframes, requirements, screen flows, and prototypes — never starts from nothing"])}
+`;
+
+CONTENT.designsystem = `
+  ${explain(`
+    <p>A <strong>Design System</strong> contains the UI components, rules, constraints, and principles that guide a product's interface. It's more than just a visual style guide — it's a whole shared language for how the product looks and behaves.</p>
+  `)}
+
+  <div class="imgcard">
+    <svg viewBox="0 0 420 130">
+      <g font-size="9" fill="#fff" font-weight="700" text-anchor="middle">
+        <rect x="10" y="15" width="120" height="26" rx="6" fill="var(--rail)"/><text x="70" y="32">Files &amp; Folders</text>
+        <rect x="145" y="15" width="120" height="26" rx="6" fill="var(--rail)"/><text x="205" y="32">Naming Rules</text>
+        <rect x="280" y="15" width="130" height="26" rx="6" fill="var(--rail)"/><text x="345" y="32">Colors &amp; Palettes</text>
+
+        <rect x="10" y="55" width="120" height="26" rx="6" fill="var(--spark)"/><text x="70" y="72">Fonts/Typefaces</text>
+        <rect x="145" y="55" width="120" height="26" rx="6" fill="var(--spark)"/><text x="205" y="72">Grid System</text>
+        <rect x="280" y="55" width="130" height="26" rx="6" fill="var(--spark)"/><text x="345" y="72">UI Components</text>
+
+        <rect x="145" y="95" width="130" height="26" rx="6" fill="var(--volt)"/><text x="210" y="112" fill="var(--ink)">Templates (full UI)</text>
+      </g>
+    </svg>
+    <p class="imgcaption">Seven building blocks come together to form a complete Design System — from the smallest naming convention up to full page templates.</p>
+  </div>
+
+  <h3>The 7 building blocks</h3>
+  <div class="flow-grid">
+    <div class="flow-card"><h4>📁 File &amp; Folder Structure</h4><p style="font-size:14px;">Organizes files and assets, and helps everyone find specific components or templates quickly.</p></div>
+    <div class="flow-card"><h4>🏷️ Naming Rules</h4><p style="font-size:14px;">A naming convention the whole team picks together — and sticks to consistently.</p></div>
+    <div class="flow-card"><h4>🎨 Colors &amp; Palettes</h4><p style="font-size:14px;">A base palette including Primary (brand) colors, Secondary colors, Success/Warning/Danger colors, and shades of gray.</p></div>
+    <div class="flow-card"><h4>🔤 Fonts/Typefaces</h4><p style="font-size:14px;">Readability and scalability matter most. Good resources: Google Fonts, FontPair, DaFont.</p></div>
+    <div class="flow-card"><h4>📏 Grid System</h4><p style="font-size:14px;">Keeps alignment consistent across the whole UI — using either fixed-width or full-width grids.</p></div>
+    <div class="flow-card"><h4>🧩 UI Components</h4><p style="font-size:14px;">Buttons, alerts, tabs, labels, forms — including their behaviours: hover, focus, disabled states, and different sizes.</p></div>
+  </div>
+
+  ${remember(["A Design System = UI components + rules + constraints + principles, not just a style guide","7 blocks: file/folder structure, naming rules, colors/palettes, fonts, grid, UI components, templates","Color palettes should include Primary, Secondary, Success, Warning, Danger, and gray shades"])}
+`;
+
+CONTENT.handover = `
+  ${explain(`
+    <p>Developers need to understand exactly how the designer imagines the UI working — and that requires a proper <strong>handover process</strong>, not just dropping a finished image on their desk.</p>
+  `)}
+
+  <h3>3 Stages of Product Development</h3>
+  <div class="diagram">
+    <div class="node clickable" data-pop="Where wireframes, prototypes, and the visual UI are created and refined.">
+      <span class="emoji">🎨</span>Design Stage
+      <div class="node-pop"></div>
+    </div>
+    <div class="node clickable" data-pop="Where HTML, CSS, and JavaScript turn the design into an actual interface running in a browser.">
+      <span class="emoji">💻</span>Frontend Stage
+      <div class="node-pop"></div>
+    </div>
+    <div class="node clickable" data-pop="Where servers, databases, and business logic power what the frontend displays.">
+      <span class="emoji">🗄️</span>Backend Stage
+      <div class="node-pop"></div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:20px;">For a smooth handover</h3>
+  <div class="chiprow">
+    <span class="chip">Start communicating with the frontend team from the EARLY stage of a design</span>
+    <span class="chip">Explain to the developer how you expect the design to work</span>
+    <span class="chip">Share the mock-up/UI you designed</span>
+    <span class="chip">Share the prototype</span>
+    <span class="chip">Share the design specification, assets, and the design system</span>
+    <span class="chip">Keep a status checklist</span>
+  </div>
+
+  <h3 style="margin-top:20px;">Handover tools</h3>
+  <p>Tools like <strong>Zeplin</strong> and <strong>Sympli</strong> mean developers don't have to guess at assets, fonts, or CSS colors — everything they need is accessible directly inside the tool.</p>
+
+  ${remember(["3 stages: Design → Frontend → Backend","Good handover = early communication + sharing mock-ups, prototypes, specs, and the design system","Handover tools like Zeplin/Sympli remove guesswork for developers"])}
+`;
+
+CONTENT.frontendbasics = `
+  ${explain(`
+    <p><strong>Frontend development</strong> is the process of turning a design into real code, and connecting that UI to backend services. It rests on three main skills.</p>
+  `)}
+
+  <p style="text-align:center; font-weight:800; font-size:19px; color:var(--rail); margin:24px 0;">HTML + CSS + JS = Structure + Presentation + Behaviour</p>
+
+  <div class="flow-grid">
+    <div class="flow-card"><h4>🏗️ HTML</h4><p style="font-size:14px;">The Structure — what content exists, and how it's organized.</p></div>
+    <div class="flow-card"><h4>🎨 CSS</h4><p style="font-size:14px;">The Presentation — how everything looks.</p></div>
+    <div class="flow-card"><h4>⚡ JS</h4><p style="font-size:14px;">The Behaviour — how the page responds and interacts.</p></div>
+  </div>
+
+  ${demoCard("frontendbasics", "Try it: a simple login/signup layout using just HTML", 420)}
+
+  <p style="margin-top:14px;">On its own, HTML gives you plain black-on-white content. Add CSS, and suddenly there's real visual design — colors, spacing, typography, positioning. This progression (IN goes code, OUT comes a website) is exactly what a frontend developer does every day.</p>
+
+  ${remember(["Frontend development = HTML (structure) + CSS (presentation) + JS (behaviour)","HTML alone gives you plain content — CSS is what makes it look like a real website","A frontend developer's job: turn design into code, then connect that UI to backend services"])}
+`;
+
+DEMOS.frontendbasics = `<html>
+<body>
+<img src="https://via.placeholder.com/120x40?text=Logo" alt="Logo">
+<form>
+  Email or Phone: &nbsp;&nbsp;&nbsp;&nbsp; Password: <br>
+  <input type="text" name="email">
+  <input type="password" name="passname">
+  <input type="submit" value="Login">
+</form>
+<p>Connect and share with the people in your life.</p>
+<h3>Create an account</h3>
+<p>Sign Up. It's free and always will be.</p>
+<form>
+  <input type="text" name="firstname" value="First name">
+  <input type="text" name="surname" value="Surname"><br><br>
+  <input type="text" name="emailno" value="Mobile number or email address"><br><br>
+  <input type="password" name="passnew"><br><br>
+  Birthday<br><input type="date" name="bday"><br><br>
+  <input type="radio" name="gender" value="male" checked> Male
+  <input type="radio" name="gender" value="female"> Female<br><br>
+  <input type="submit" value="Create an account">
+</form>
+</body>
+</html>`;
+
+CONTENT.cssatscale = `
+  ${explain(`<p>Writing CSS for one small page is easy — but on large, rapidly-changing projects, plain CSS gets hard to manage fast. Every style defined globally applies to EVERY page that includes the file, which can spiral out of control. This is why several tools and approaches exist to bring order to CSS at scale.</p>`)}
+
+  <h3>CSS Preprocessors</h3>
+  <p>A preprocessor lets you write CSS using extra, more powerful syntax, then compiles it down into plain, valid CSS. Popular ones: <strong>Sass, Less, Stylus.</strong></p>
+  <div class="imgcard">
+    <svg viewBox="0 0 400 110">
+      <text x="10" y="15" font-size="10" font-weight="700" fill="var(--rail)">Sass/SCSS (what you write)</text>
+      <rect x="10" y="20" width="180" height="80" fill="var(--bg)" stroke="var(--line)" stroke-width="1"/>
+      <text x="18" y="35" font-family="monospace" font-size="8" fill="var(--ink)">$primary: #3498db;</text>
+      <text x="18" y="48" font-family="monospace" font-size="8" fill="var(--ink)">body {</text>
+      <text x="18" y="60" font-family="monospace" font-size="8" fill="var(--ink)">  background: $primary;</text>
+      <text x="18" y="72" font-family="monospace" font-size="8" fill="var(--ink)">  h1 { color: white; }</text>
+      <text x="18" y="84" font-family="monospace" font-size="8" fill="var(--ink)">}</text>
+
+      <text x="210" y="55" font-size="16" fill="var(--ink-soft)">➜</text>
+
+      <text x="230" y="15" font-size="10" font-weight="700" fill="var(--spark)">Compiled CSS (what browsers get)</text>
+      <rect x="230" y="20" width="165" height="80" fill="var(--bg)" stroke="var(--line)" stroke-width="1"/>
+      <text x="238" y="35" font-family="monospace" font-size="8" fill="var(--ink)">body {</text>
+      <text x="238" y="48" font-family="monospace" font-size="8" fill="var(--ink)"> background: #3498db;</text>
+      <text x="238" y="60" font-family="monospace" font-size="8" fill="var(--ink)">}</text>
+      <text x="238" y="72" font-family="monospace" font-size="8" fill="var(--ink)">body h1 {</text>
+      <text x="238" y="84" font-family="monospace" font-size="8" fill="var(--ink)"> color: white; }</text>
+    </svg>
+    <p class="imgcaption">A preprocessor lets you use variables (like $primary) and nesting (h1 inside body) that plain CSS can't do on its own — then compiles it into ordinary CSS every browser understands.</p>
+  </div>
+
+  <h3 style="margin-top:20px;">CSS Postprocessors</h3>
+  <p>A postprocessor takes ALREADY-valid CSS and improves it further — automatically adding vendor prefixes (<code>-webkit-</code>, <code>-moz-</code>), converting units, and providing fallbacks for older browsers.</p>
+
+  <h3 style="margin-top:20px;">CSS Methodologies</h3>
+  <p>These are naming/organization conventions that keep large CSS codebases sane:</p>
+  <div class="tabbar" id="cssmethodTabs">
+    <button class="tabbtn active" data-tab="oocss">OOCSS</button>
+    <button class="tabbtn" data-tab="smacss">SMACSS</button>
+    <button class="tabbtn" data-tab="bem">BEM</button>
+    <button class="tabbtn" data-tab="acss">Atomic CSS</button>
+  </div>
+  <div class="tabpanel active" data-tab="oocss">
+    <div class="card">
+      <p><strong>Object-Oriented CSS</strong> separates structure from skin. E.g. <code>.button</code> gives the basic structure, <code>.grey-btn</code> applies the color/visual style — combined as <code>&lt;button class="button grey-btn"&gt;</code>.</p>
+    </div>
+  </div>
+  <div class="tabpanel" data-tab="smacss">
+    <div class="card">
+      <p><strong>Scalable and Modular Architecture for CSS</strong> splits every rule into 5 categories: <strong>Base</strong> (default element styles, e.g. <code>h1 { font-size: 32px; }</code>), <strong>Layout</strong> (structural containers, prefixed <code>layout-</code> or <code>l-</code>), <strong>Modules</strong> (reusable components), <strong>State</strong> (e.g. <code>.is-hidden</code>), and <strong>Skin</strong> (visual theme variations).</p>
+    </div>
+  </div>
+  <div class="tabpanel" data-tab="bem">
+    <div class="card">
+      <p><strong>Block, Element, Modifier</strong> — a Block is an independent UI component, an Element is a piece of that block, and a Modifier changes its default look. Naming syntax: <code>.block</code>, <code>.block__element</code>, <code>.block--modifier</code>.</p>
+      <p style="margin-top:8px;">Example: <code>&lt;form class="loginform loginform--errors"&gt;</code> with <code>&lt;button class="loginform__btn loginform__btn--inactive"&gt;</code>.</p>
+    </div>
+  </div>
+  <div class="tabpanel" data-tab="acss">
+    <div class="card">
+      <p><strong>Atomic CSS</strong> (also called Functional CSS) favors tiny, single-purpose classes named after what they visually do. E.g. <code>&lt;div class="Bgc(#0280ae) C(#fff) P(20px)"&gt;</code> where each class sets exactly one property.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:20px;">CSS Frameworks</h3>
+  <p>Frameworks bundle pre-built components (tables, buttons, forms, grids, colors, type) so you don't reinvent responsiveness and browser support from scratch: <strong>Bootstrap, Foundation, Bulma, UIkit, Semantic UI, Materialize, Skeleton.</strong></p>
+
+  ${remember(["Preprocessors (Sass/Less/Stylus) add variables/nesting, then compile to real CSS","Postprocessors improve already-valid CSS (vendor prefixes, unit conversion, fallbacks)","Methodologies keep large CSS sane: OOCSS (structure vs skin), SMACSS (5 categories), BEM (block__element--modifier), Atomic CSS (one class = one property)","Frameworks (Bootstrap etc.) bundle ready-made components to save time"])}
+`;
+
+CONTENT.postlaunch = `
+  ${explain(`<p>Launching the product isn't the finish line — real UX work continues afterward, using actual usage data to keep improving the experience.</p>`)}
+
+  <div class="flow-grid">
+    <div class="flow-card">
+      <h4>✉️ Collecting User Feedback</h4>
+      <p style="font-size:14px;">Through emails and contact forms (valued for Security, Reachability, Clarification, and Engagement) and through social media.</p>
+    </div>
+    <div class="flow-card">
+      <h4>🧪 UI Testing</h4>
+      <p style="font-size:14px;">Discovering how users actually interact with the UI, and where they struggle — using tools like Google Analytics and heatmap tools.</p>
+    </div>
+    <div class="flow-card">
+      <h4>⚖️ A/B Testing</h4>
+      <p style="font-size:14px;">Comparing two versions to identify the <strong>Conversion Rate</strong> and find the more preferred UI design.</p>
+    </div>
+    <div class="flow-card">
+      <h4>📹 Session Tracking</h4>
+      <p style="font-size:14px;">Recording user UI sessions to compare shorter vs. longer sessions and spot meaningful differences.</p>
+    </div>
+    <div class="flow-card">
+      <h4>🔻 Conversion Funnels</h4>
+      <p style="font-size:14px;">Analyzing conversion for specific tasks/goals — why users aren't engaging with certain screens, why some screens convert better, and what stops a user from finishing an action they started.</p>
+    </div>
+  </div>
+
+  ${analogy(`<p>Think of a shop owner who keeps watching customers even after opening day — noticing which shelves people linger at, which displays get ignored, and where customers turn back before buying. Post-launch UX activities are exactly that kind of ongoing, real-world observation.</p>`)}
+
+  ${remember(["UX work continues after launch — it doesn't stop at release","5 key activities: User Feedback, UI Testing, A/B Testing, Session Tracking, Conversion Funnel Analysis","Conversion funnels help pinpoint exactly where and why users drop off"])}
 `;
 
 /* ================= UNIT 4a: WEBSITE & HTML5 ================= */
@@ -1357,6 +1923,233 @@ DEMOS.flexgrow = `<div style="display: flex; border: 2px dashed gray;">
 </div>
 <p style="font-size: 13px; color: gray;">The middle item grows twice as much as the other two, filling extra space proportionally.</p>`;
 
+/* ================= UNIT 5: JAVASCRIPT ================= */
+
+CONTENT.whyjs = `
+  ${explain(`
+    <p>A frontend webpage is built from three technologies working together: <strong>HTML + CSS + JS = Structure + Presentation + Behaviour</strong>. We've covered Structure (HTML) and Presentation (CSS) — now it's time for Behaviour: <strong>JavaScript</strong>.</p>
+  `)}
+
+  <h3>What is JavaScript?</h3>
+  <div class="chiprow">
+    <span class="chip">A powerful client-side scripting language</span>
+    <span class="chip">Used for enhancing user interaction on a webpage</span>
+    <span class="chip">Commonly found embedded directly inside HTML code</span>
+    <span class="chip">An interpreted language — it doesn't need to be compiled before running</span>
+  </div>
+
+  <h3 style="margin-top:20px;">What can JavaScript actually do?</h3>
+  <p>It can perform actions on HTML document objects — forms, buttons, links, and more. It can improve a page's design on the fly, validate forms before submission, detect which browser is being used, create cookies, and much more.</p>
+
+  ${mistake(`<p>Despite the name, <strong>Java and JavaScript are NOT related</strong> — "What does Java do in JS? Nothing!" They share a name for historical marketing reasons from the 1990s, but are completely different languages with different creators, syntax, and purposes.</p>`)}
+
+  ${remember(["Frontend = HTML (Structure) + CSS (Presentation) + JS (Behaviour)","JavaScript is client-side, interpreted (no compiling needed), and lives inside or alongside HTML","JavaScript and Java are unrelated languages, despite the similar name"])}
+`;
+
+CONTENT.firstscript = `
+  ${explain(`<p>Let's write and place our very first JavaScript on a page.</p>`)}
+
+  ${demoCard("firstjs", "Try it: your first JavaScript, inside script tags", 100)}
+
+  <h3>Where can &lt;script&gt; tags go?</h3>
+  <p>A <code>&lt;script&gt;</code> tag can be placed inside either <code>&lt;body&gt;</code> or <code>&lt;head&gt;</code>. Notice that unlike some languages, a semicolon at the end of each single-line statement is not strictly mandatory in JavaScript — though it's still considered good practice.</p>
+
+  <h3 style="margin-top:20px;">The &lt;noscript&gt; element</h3>
+  <p>Not every visitor has JavaScript enabled. <code>&lt;noscript&gt;</code> offers alternative HTML content that only displays if a browser doesn't support or has disabled JavaScript.</p>
+  ${demoCard("noscriptdemo", "Code reference: noscript fallback", 80)}
+
+  <h3 style="margin-top:20px;">External JavaScript</h3>
+  <p>Just like CSS, JavaScript can live in its own separate <code>.js</code> file, linked in with a <code>src</code> attribute instead of writing code directly between the tags:</p>
+  <div class="card" style="background:var(--bg);">
+    <code>&lt;script type="text/javascript" src="script.js"&gt;&lt;/script&gt;</code>
+  </div>
+
+  <h3 style="margin-top:20px;">Comments</h3>
+  <div class="chiprow">
+    <span class="chip">// double slash — single-line comments</span>
+    <span class="chip">/* ... */ — multi-line comments</span>
+  </div>
+
+  ${remember(["&lt;script&gt; tags can go in &lt;head&gt; or &lt;body&gt;","Semicolons are recommended but not mandatory for single-line statements","&lt;noscript&gt; shows fallback content when JS is unavailable","External JS files are linked with &lt;script src='file.js'&gt;&lt;/script&gt;","// for single-line comments, /* ... */ for multi-line"])}
+`;
+
+DEMOS.firstjs = `<!DOCTYPE html>
+<html>
+<body>
+  <script type="text/javascript">
+    document.write("Hello World");
+  </script>
+</body>
+</html>`;
+
+DEMOS.noscriptdemo = `<body>
+  <script type="text/javascript">
+    document.write("Hello World, from JavaScript!");
+  </script>
+  <noscript>
+    Your browser doesn't support or has disabled JavaScript.
+  </noscript>
+</body>`;
+
+CONTENT.bom = `
+  ${explain(`
+    <p>The <strong>Browser Object Model (BOM)</strong> refers to all the facilities provided by the browser itself, starting with the <code>window</code> object. It's how JavaScript can interact with the browser window, not just the page content.</p>
+  `)}
+
+  <div class="imgcard">
+    <svg viewBox="0 0 340 160">
+      <circle cx="170" cy="80" r="32" fill="var(--rail)"/>
+      <text x="170" y="85" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">WINDOW</text>
+      <g font-size="10" fill="var(--ink)">
+        <circle cx="80" cy="30" r="26" fill="var(--spark)"/><text x="80" y="34" text-anchor="middle" fill="#fff">Document</text>
+        <circle cx="260" cy="30" r="26" fill="var(--spark)"/><text x="260" y="34" text-anchor="middle" fill="#fff">Screen</text>
+        <circle cx="60" cy="130" r="26" fill="var(--spark)"/><text x="60" y="134" text-anchor="middle" fill="#fff">Location</text>
+        <circle cx="280" cy="130" r="26" fill="var(--spark)"/><text x="280" y="134" text-anchor="middle" fill="#fff">History</text>
+        <circle cx="170" cy="150" r="26" fill="var(--spark)"/><text x="170" y="154" text-anchor="middle" fill="#fff">Navigator</text>
+      </g>
+    </svg>
+    <p class="imgcaption">The window object sits at the center, with related objects (Document, Screen, Location, History, Navigator) all hanging off it.</p>
+  </div>
+
+  <h3>The Console</h3>
+  <p>The browser console is usually part of the developer tools — a handy resource that lets you inspect property values and run ad-hoc JavaScript commands directly. The <code>window</code> object provides a <strong>console object</strong> you use to interact with it programmatically, accessed with <code>window.console</code> or simply <code>console</code>. It also includes a log where you can write your own debugging information from inside your code.</p>
+
+  <h3 style="margin-top:20px;">Opening Developer Tools to debug</h3>
+  <div class="chiprow">
+    <span class="chip">Firefox — Menu ➤ Web Developer ➤ Toggle Tools</span>
+    <span class="chip">Chrome — More tools ➤ Developer tools</span>
+  </div>
+
+  ${remember(["BOM = the browser's own objects, starting with window","window.console (or just console) lets you interact with the developer console programmatically","Open dev tools via the browser menu to inspect values and debug errors"])}
+`;
+
+CONTENT.htmldom = `
+  ${explain(`
+    <p>The <strong>Document Object Model (DOM)</strong> defines the logical structure of a document, and the way that document can be accessed and manipulated by code. When a webpage loads, the browser builds a tree-shaped model of the page — the <strong>HTML DOM</strong>.</p>
+  `)}
+
+  <div class="imgcard">
+    <svg viewBox="0 0 380 150">
+      <circle cx="190" cy="20" r="18" fill="var(--rail)"/><text x="190" y="24" text-anchor="middle" font-size="9" fill="#fff">html</text>
+      <line x1="190" y1="38" x2="120" y2="65" stroke="var(--ink-soft)" stroke-width="1.5"/>
+      <line x1="190" y1="38" x2="260" y2="65" stroke="var(--ink-soft)" stroke-width="1.5"/>
+      <circle cx="120" cy="75" r="16" fill="var(--spark)"/><text x="120" y="79" text-anchor="middle" font-size="8" fill="#fff">head</text>
+      <circle cx="260" cy="75" r="16" fill="var(--spark)"/><text x="260" y="79" text-anchor="middle" font-size="8" fill="#fff">body</text>
+      <line x1="260" y1="90" x2="260" y2="115" stroke="var(--ink-soft)" stroke-width="1.5"/>
+      <circle cx="260" cy="125" r="16" fill="var(--volt)"/><text x="260" y="129" text-anchor="middle" font-size="8" fill="var(--ink)">p</text>
+      <text x="260" y="148" text-anchor="middle" font-size="8" fill="var(--ink-soft)">"Hello World" (text node)</text>
+    </svg>
+    <p class="imgcaption">Every tag becomes a node in a tree — html at the root, branching down through head/body, all the way to the actual text inside a tag.</p>
+  </div>
+
+  <p>Every element becomes an accessible object: a <code>&lt;form&gt;</code> containing an <code>&lt;input&gt;</code> becomes a form object holding an input object, complete with its own type, id, and value properties — all reachable and changeable through JavaScript.</p>
+
+  ${remember(["DOM = the logical, tree-shaped structure of a loaded document","The browser builds the HTML DOM automatically when a page loads","Every tag, attribute, and piece of text becomes an accessible object in this tree"])}
+`;
+
+CONTENT.accessingelements = `
+  ${explain(`<p>To change something on a page with JavaScript, you first need to GRAB the right element from the DOM. Three methods do this.</p>`)}
+
+  <div class="tabbar" id="accessTabs">
+    <button class="tabbtn active" data-tab="byid">🆔 getElementById()</button>
+    <button class="tabbtn" data-tab="byclass">🏷️ getElementsByClassName()</button>
+    <button class="tabbtn" data-tab="bytag">🔖 getElementsByTagName()</button>
+  </div>
+
+  <div class="tabpanel active" data-tab="byid">
+    <div class="card">
+      <p>Returns the ONE element with a matching <code>id</code> attribute — returns <code>null</code> if nothing matches. An id should be unique on a page; if more than one element shares it (which shouldn't happen), only the first is returned.</p>
+      ${demoCard("byid", "Try it: getElementById + innerHTML", 100)}
+    </div>
+  </div>
+
+  <div class="tabpanel" data-tab="byclass">
+    <div class="card">
+      <p>Returns a collection of ALL elements sharing a given class name, as a <strong>NodeList</strong>. Access individual items by index, starting at 0.</p>
+      ${demoCard("byclass", "Try it: getElementsByClassName with two matches", 100)}
+    </div>
+  </div>
+
+  <div class="tabpanel" data-tab="bytag">
+    <div class="card">
+      <p>Returns a collection of ALL elements with a matching tag name (like every &lt;p&gt; on the page), also as a NodeList.</p>
+      ${demoCard("bytag", "Try it: getElementsByTagName for two different tags", 100)}
+    </div>
+  </div>
+
+  ${remember(["getElementById() → ONE element (unique id)","getElementsByClassName() → a NodeList of elements sharing a class, access by index [0], [1]...","getElementsByTagName() → a NodeList of all matching tags"])}
+`;
+
+DEMOS.byid = `<body>
+  <p id="p1"></p>
+  <script type="text/javascript">
+    document.getElementById("p1").innerHTML = "Hello!";
+  </script>
+</body>`;
+
+DEMOS.byclass = `<body>
+  <p class="c1"></p>
+  <p class="c1"></p>
+  <script type="text/javascript">
+    document.getElementsByClassName("c1")[0].innerHTML = "Hello";
+    document.getElementsByClassName("c1")[1].innerHTML = "Hi";
+  </script>
+</body>`;
+
+DEMOS.bytag = `<body>
+  <p></p>
+  <h1></h1>
+  <script type="text/javascript">
+    document.getElementsByTagName("p")[0].innerHTML = "Hello";
+    document.getElementsByTagName("h1")[0].innerHTML = "Hi";
+  </script>
+</body>`;
+
+CONTENT.displayoutput = `
+  ${explain(`<p>JavaScript can send output to the page (or browser) in four different ways.</p>`)}
+
+  <div class="chiprow">
+    <span class="chip">document.write() — writes directly into the HTML output as the page loads</span>
+    <span class="chip">innerHTML — writes into (or reads) one specific HTML element's content</span>
+    <span class="chip">window.alert() — writes into a pop-up alert box</span>
+    <span class="chip">console.log() — writes into the browser's developer console (for debugging, not visible to users)</span>
+  </div>
+
+  ${demoCard("alertdemo", "Try it: an alert box", 90)}
+
+  ${mistake(`<p><code>document.write()</code> is handy for quick demos, but using it AFTER a page has fully loaded actually erases the entire existing page content! In real applications, <code>innerHTML</code> or DOM methods are used instead.</p>`)}
+
+  ${remember(["4 display methods: document.write(), innerHTML, window.alert(), console.log()","console.log() is for developers only — users never see it","document.write() after page load will wipe the existing page!"])}
+`;
+
+DEMOS.alertdemo = `<body>
+  <p>Display an alert box</p>
+  <script>
+    alert("Hello! I am an alert box!");
+  </script>
+</body>`;
+
+CONTENT.creatingelements = `
+  ${explain(`<p>Beyond just changing existing elements, JavaScript can also build entirely NEW elements and insert them into the page on the fly.</p>`)}
+
+  <h3>Creating a new element</h3>
+  <div class="card" style="background:var(--bg);">
+    <p style="margin:0;"><code>var p = document.createElement("p");</code></p>
+    <p style="margin:4px 0 0;"><code>var text = document.createTextNode("This is a test");</code></p>
+    <p style="margin:4px 0 0;"><code>p.appendChild(text);</code></p>
+  </div>
+  <p style="margin-top:10px;">This creates a brand new &lt;p&gt; element, creates a text node to go inside it, and attaches the text to the paragraph — though note this new element still needs to be appended somewhere in the visible document to actually show up!</p>
+
+  <h3 style="margin-top:20px;">Three ways to modify an existing element</h3>
+  <div class="chiprow">
+    <span class="chip">Create a text node and append it to the element</span>
+    <span class="chip">Set the textContent property directly</span>
+    <span class="chip">Set the innerHTML property directly (can include new tags, not just plain text)</span>
+  </div>
+
+  ${remember(["document.createElement() makes a new element · document.createTextNode() makes new text","appendChild() attaches one to the other, and attaches it into the page","Modify existing content via: appending a text node, textContent, or innerHTML"])}
+`;
+
 /* ================= PRACTICAL EXERCISES ================= */
 
 DEMOS.ex1 = `<!DOCTYPE html>
@@ -1747,9 +2540,7 @@ DEMOS.ex5 = `<!DOCTYPE html>
         padding: 5px;
         margin: 5px;
         background: aqua;
-        /*flex: 200px;*/
         flex: 1 200px; 
-        /*flex-wrap: nowrap;*/
       }
       article:nth-of-type(3) 
       {
@@ -1774,8 +2565,6 @@ DEMOS.ex5 = `<!DOCTYPE html>
       section
       {
         display: flex;
-        /*flex-direction: row;
-        flex-wrap: wrap;*/
         flex-flow: row wrap;
       }
     </style>
@@ -1836,7 +2625,7 @@ CONTENT.ex5walk = `
   <ul>
     <li><code>section { display: flex; flex-flow: row wrap; }</code> turns the section into a flex container. <code>flex-flow</code> is shorthand for <code>flex-direction: row</code> plus <code>flex-wrap: wrap</code> — the three articles sit side-by-side, and will wrap onto a new line if the window gets too narrow to fit them.</li>
     <li>Each <code>article</code> gets <code>flex: 1 200px;</code> — shorthand for <code>flex-grow: 1</code> with a <code>flex-basis</code> of 200px, meaning every article starts at 200px wide and then grows equally to fill any leftover space.</li>
-    <li><code>article:nth-of-type(3) { flex: 2 200px; }</code> singles out Article Three and doubles its <code>flex-grow</code> to 2 — so it claims twice as much of the extra space as Article One or Two. This is the same <code>:nth-child</code>-style selector you saw in the CSS Table/Form styling station, here picking out one flex item to treat differently.</li>
+    <li><code>article:nth-of-type(3) { flex: 2 200px; }</code> singles out Article Three and doubles its <code>flex-grow</code> to 2 — so it claims twice as much of the extra space as Article One or Two.</li>
     <li>Inside Article Two, <code>div { display: flex; align-items: center; justify-content: space-around; }</code> makes a SECOND, independent flex container just for the five buttons — <code>justify-content: space-around</code> spreads them evenly with space on both ends, and <code>align-items: center</code> keeps them vertically centered.</li>
     <li>The purple <code>header</code> and <code>footer</code> still center their heading text vertically using <code>line-height</code> equal to their own height.</li>
     <li>Inside Article Three, <code>p { display: inline; }</code> still makes the two separate &lt;p&gt; tags sit on the same line instead of stacking — a live example of the Block vs Inline Elements station in action.</li>
@@ -1846,7 +2635,6 @@ CONTENT.ex5walk = `
 
   ${remember(["This exercise = two separate flex containers on one page: the section (articles) and the div (buttons)","flex-flow = flex-direction + flex-wrap shorthand","flex: 1 200px = flex-grow 1, flex-basis 200px — Article Three's flex: 2 200px makes it grow twice as fast","justify-content: space-around + align-items: center is a classic pattern for evenly spaced, centered items","display: inline on p made two block-level-by-default elements share one line"])}
 `;
-
 
 DEMOS.ex6a = `<html>
     <head>
@@ -1886,14 +2674,6 @@ DEMOS.ex6b = `<html>
     <head>
         <title>Transitions and Transforms</title>
         <style>
-            .transition {
-                margin: 25px; height: 50px; width: 100px;
-                border: 1px solid black; background-color: lightgreen;
-            }
-            .transition:hover { width: 420px; height: 150px; }
-            .transition {
-	           transition-duration: 3s; transition-delay: 0s; transition-timing-function: ease-out;
-            }
             .transform {
                 margin: 25px; height: 50px; width: 100px;
                 border: 1px solid black; background-color: lightblue;
@@ -1905,7 +2685,6 @@ DEMOS.ex6b = `<html>
         </style>
     </head>
     <body>
-        <div class="transition">Hover Me</div>
         <div class="transform">Original</div>
         <div class="transform translate">Translate</div>
         <div class="transform rotate">Rotate</div>
@@ -1916,7 +2695,7 @@ DEMOS.ex6b = `<html>
 
 CONTENT.ex6walk = `
   ${explain(`
-    <p><strong>Exercise 6 — Webpage with Animations and Transforms.</strong> The brief: create a webpage demonstrating animations and transforms. This exercise actually has two demo files worth studying side-by-side — one focused on <strong>@keyframes animation</strong>, the other on <strong>transitions and transforms</strong>.</p>
+    <p><strong>Exercise 6 — Webpage with Animations and Transforms.</strong> The brief: create a webpage demonstrating animations and transforms. This exercise actually has two demo files worth studying side-by-side — one focused on <strong>@keyframes animation</strong>, the other on <strong>CSS transforms</strong>.</p>
   `)}
 
   <h3>Part A — Animation</h3>
@@ -1926,15 +2705,48 @@ CONTENT.ex6walk = `
     <li>The blue bar bounces from the left edge to 500px away exactly once, at a steady <code>linear</code> pace, using a simple <code>from</code>/<code>to</code> @keyframes shorthand instead of 0%/100%.</li>
   </ul>
 
-  <h3 style="margin-top:22px;">Part B — Transitions &amp; Transforms</h3>
-  ${demoCard("ex6b", "Live Output — Transitions & Transforms demo", 520)}
+  <h3 style="margin-top:22px;">Part B — Transforms</h3>
+  ${demoCard("ex6b", "Live Output — Transforms demo", 260)}
   <ul>
-    <li>Hovering the green box triggers a smooth 3-second <code>ease-out</code> transition, growing it from 100×50px to 420×150px.</li>
-    <li>Four blue boxes each apply one transform: <code>translate</code> shifts position, <code>rotate</code> spins around its bottom-left corner, <code>scale</code> stretches width more than height, and <code>skew</code> slants the box along both axes.</li>
+    <li>Five identical light-blue boxes, each 100×50px — "Original" gets no transform at all, so you can compare the other four against it.</li>
+    <li><code>translate</code> shifts the box sideways and up, without changing its size or rotation.</li>
+    <li><code>rotate</code> spins the box 15 degrees, pivoting around its bottom-left corner (set by <code>transform-origin</code>).</li>
+    <li><code>scale</code> stretches the box to 1.5× its width but only 0.9× its height, also pivoting from the bottom-left.</li>
+    <li><code>skew</code> slants the box along both the X and Y axes at once, pivoting from the top-left this time.</li>
   </ul>
 
-  ${remember(["Animation = automatic, ongoing change defined by @keyframes","Transition = smooth change triggered by something (like :hover)","Transform = translate/rotate/scale/skew — instant unless paired with a transition"])}
+  ${remember(["Animation = automatic, ongoing change defined by @keyframes","Transform = translate/rotate/scale/skew — an instant change to an element's position, rotation, size, or slant","transform-origin sets the pivot point a rotation/scale/skew happens around"])}
 `;
+
+CONTENT.ex7walk = `
+  ${explain(`
+    <p><strong>Exercise 7 — Wireframing our College Website.</strong> The brief: create a Pencil document with a wireframe of the Stella Maris College website. This is the first practical exercise that isn't about writing code at all — it's about planning a page's structure BEFORE any HTML or CSS gets written, using the free <a href="https://pencil.evolus.vn/" target="_blank">Pencil</a> wireframing tool.</p>
+  `)}
+
+  <div class="imgcard">
+    <img src="wireframe_home.png" alt="Wireframe of the Stella Maris College website home page, showing a header with logo and Home/Autonomy nav links, a hero banner with Stella Maris College heading and an Enter Here button, a Latest News and Announcements section with a text block and three hyperlinks, and four labelled thumbnail cards below.">
+    <p class="imgcaption">Page 1 — Home: header (logo + nav), hero banner with a call-to-action button, a news/announcements section, and four card-style content blocks below.</p>
+  </div>
+
+  <div class="imgcard">
+    <img src="wireframe_autonomy.png" alt="Wireframe of the Autonomy page, showing the same header, a wide banner placeholder, an Autonomy heading with three lines of placeholder body text, and a Programmes hyperlink in the bottom right.">
+    <p class="imgcaption">Page 2 — Autonomy: the same header repeated for consistency, a wide banner, a body text area, and a link through to a Programmes page.</p>
+  </div>
+
+  <h3 style="margin-top:20px;">Reading the wireframe like a designer would</h3>
+  <ul>
+    <li>The <strong>66 × 55</strong> crossed-out box is a placeholder for the college logo — its exact pixel size is already decided, even though the real image isn't in place yet.</li>
+    <li><strong>Home</strong> and <strong>Autonomy</strong> in the header are real navigation links — notice they repeat identically on both pages, so a visitor always has the same way to get around.</li>
+    <li>The <strong>100 × 100</strong> and <strong>164 × 100</strong> crossed-out boxes are all image placeholders — wireframes deliberately use blank boxes instead of real photos, so reviewers focus on layout and hierarchy, not visual polish.</li>
+    <li>Each of the four bottom cards pairs an image placeholder with a short label and a hyperlink — a repeating pattern, so once one card's structure is approved, the rest just repeat it.</li>
+    <li>On the Autonomy page, the wide <strong>964 × 145</strong> box marks a banner — reserving its exact size lets a developer know how much space to leave, long before the final banner image is designed.</li>
+  </ul>
+
+  ${analogy(`<p>A wireframe is like a floor plan for a house — it shows where the kitchen, bedrooms, and doors will go, using plain rectangles and labels, long before anyone picks paint colors or furniture. You'd never start painting walls before agreeing on the floor plan — the same logic applies to skipping straight to colorful HTML/CSS without a wireframe first.</p>`)}
+
+  ${remember(["Wireframes intentionally use gray boxes, placeholder text, and no real images — the focus is structure, not visuals","Repeating elements (header, nav, card pattern) should be planned once and reused consistently across every page","Exact pixel dimensions on placeholders (66×55, 164×100...) tell developers precisely how much space to reserve later","This exercise = practice with the Pencil tool from the Wireframing station earlier in Unit 3"])}
+`;
+
 
 /* ================= QUIZ DATA ================= */
 const QUIZZES = {
@@ -1943,33 +2755,40 @@ const QUIZZES = {
     {q:"Which should generally come first: understanding user needs, or designing the visual interface?", opts:["Visual interface first","Understanding user needs first","They must happen at exactly the same time","Neither matters"], a:1},
     {q:"Which of these is NOT one of the 6 phases of the UX Design Process?", opts:["Discovery","Strategy","Compilation","Analysis"], a:2},
     {q:"What is the main goal of the Discovery phase?", opts:["Write code","Have a clear idea about the product","Launch the beta","Pick a color palette"], a:1},
-    {q:"A Project Proposal typically includes all of these EXCEPT:", opts:["Scope of work","Deliverables","Payment schedule","Final exam questions"], a:3},
-    {q:"UX Strategy is built on understanding:", opts:["Only the client's business","Only competitors","The client's business, competitors, AND customers","Only customers"], a:2},
     {q:"Which research type focuses on measurable numbers and data?", opts:["Qualitative research","Quantitative research","Persona research","Visual research"], a:1},
-    {q:"Which stage of UX Research involves 'finding the missing pieces' before starting?", opts:["Explore","Test","Discover","Listen"], a:2},
-    {q:"Which stage of UX Research checks that the design works well during development?", opts:["Discover","Explore","Test","Listen"], a:2},
     {q:"A/B Testing and Heat Mapping are methods used in:", opts:["UX Strategy","UX Analysis","Discovery","Documentation"], a:1},
-    {q:"In the Design phase, who is mainly responsible for the colors, type, and images (UI Design)?", opts:["The UX researcher","The UI designer","The project manager","The client"], a:1},
-    {q:"What comes right after the Beta Release in Production?", opts:["Discovery","Live Product","UX Strategy","Wireframing"], a:1},
     {q:"A User Persona is best described as:", opts:["A real customer's exact profile","A fictional character representing a type of user","A wireframe sketch","A CSS style guide"], a:1},
-    {q:"Which of these is NOT one of the four persona types mentioned?", opts:["Goal-directed","Role-based","Engaging","Server-based"], a:3},
+    {q:"Gestalt Theory's core idea is that we perceive:", opts:["Only individual parts, never the whole","An organized whole that is more than the sum of its parts","Random shapes with no pattern","Only color, never shape"], a:1},
+    {q:"Which Gestalt law explains why items placed close together feel related?", opts:["Similarity","Closure","Proximity","Figure-Ground"], a:2},
+    {q:"Which Gestalt law explains why our brain 'completes' an incomplete shape into a familiar pattern?", opts:["Closure","Common Region","Proximity","Similarity"], a:0},
+    {q:"According to the Motivation/Ability/Triggers framework, we fail to act when:", opts:["We have too much motivation","Any one of motivation, ability, or a trigger is missing","We only lack a trigger, nothing else matters","Ability is always irrelevant"], a:1},
+    {q:"Extrinsic motivation refers to:", opts:["Internal satisfaction and enjoyment","External rewards like discounts or badges","A user's ability to complete a task","A visual design principle"], a:1},
+  ],
+  quizUnit3: [
+    {q:"A wireframe is best described as:", opts:["The final polished design","A visual representation of an interface's structure and content","A JavaScript function","A type of font"], a:1},
+    {q:"Which of these should you AVOID in a true wireframe?", opts:["Reference numbers","Colors, images, and special fonts","Page titles","Notes alongside the sketch"], a:1},
+    {q:"Which wireframe fidelity type is fastest to create but looks the roughest?", opts:["High-fidelity","Medium-fidelity","Low-fidelity","None of these"], a:2},
+    {q:"A prototype differs from a wireframe mainly because a prototype is usually:", opts:["Black and white only","Clickable/interactive","Never shown to clients","Written in CSS"], a:1},
+    {q:"Which prototyping type is fastest and costs almost nothing, but has almost zero interactivity?", opts:["Coding prototypes","Digital prototypes","Paper prototypes","None of these"], a:2},
+    {q:"A Design System is best described as:", opts:["Just a single style guide document","UI components, rules, constraints, and principles that guide a product's design","A JavaScript framework","A wireframing tool only"], a:1},
+    {q:"In the UI design handover process, which tools help developers access design specs directly?", opts:["Figma only","Zeplin and Sympli","Photoshop only","Google Fonts"], a:1},
+    {q:"The 3 main skills of a frontend developer are:", opts:["HTML, CSS, JavaScript","Photoshop, Sketch, Figma","Python, Java, C++","Wireframing, Prototyping, Testing"], a:0},
+    {q:"A CSS Preprocessor like Sass lets you:", opts:["Skip writing CSS entirely","Generate CSS using its own extended syntax (variables, nesting, etc.)","Only write JavaScript","Replace HTML"], a:1},
+    {q:"In BEM naming, which symbol separates a Block from its Element?", opts:["A single dash -","A double underscore __","A single underscore _","A colon :"], a:1},
+    {q:"CSS Frameworks like Bootstrap mainly help with:", opts:["Writing JavaScript","Browser support and responsive design out of the box","Replacing HTML tags","Creating wireframes"], a:1},
+    {q:"A/B Testing after launch is mainly used to:", opts:["Fix server crashes","Identify the most preferred UI design by comparing versions","Write new HTML","Create wireframes"], a:1},
   ],
   quizHtml: [
     {q:"Website vs Internet:", opts:["They are the same thing","A website is made of webpages; the Internet is the global network the Web runs on","A website is bigger than the Internet","None of these"], a:1},
-    {q:"In the client-server model, your browser is the:", opts:["Server","Client","Network","Router"], a:1},
     {q:"Which tag holds everything visible on a webpage?", opts:["head","body","title","html"], a:1},
     {q:"Which heading tag is the biggest/most important?", opts:["h6","h1","h3","p"], a:1},
-    {q:"Which tag creates a line break without starting a new paragraph?", opts:["hr","br","p","div"], a:1},
     {q:"Which old-style tag sets font face, color, and size directly?", opts:["style","font","css","format"], a:1},
-    {q:"In HTML code, which type of quotes should you always use?", opts:["Curly “quotes”","Straight \"quotes\"","Either is fine","No quotes at all"], a:1},
     {q:"Which list type pairs a term with its description?", opts:["ul","ol","dl","li"], a:2},
     {q:"What is the div tag mainly used for?", opts:["Making text bold","Grouping/organizing content into a container","Creating links","Playing audio"], a:1},
     {q:"Which attribute makes a link open in a new browser tab?", opts:["href='_blank'","target='_blank'","new='tab'","open='blank'"], a:1},
     {q:"Which pair of tags joins an image together with its caption?", opts:["img + caption","picture + title","figure + figcaption","image + label"], a:2},
     {q:"Which HTML5 tag is meant for the primary content of a page (only one per page)?", opts:["section","article","main","div"], a:2},
     {q:"Which display type starts on a new line and takes the full available width?", opts:["inline","block-level","none","static"], a:1},
-    {q:"Which table tag groups the header row(s) separately from the body?", opts:["tbody","thead","tfoot","colgroup"], a:1},
-    {q:"Which feature lets a text input show a dropdown of suggestions while still allowing free typing?", opts:["placeholder","a list attribute paired with datalist","type","name"], a:1},
     {q:"Which tag would you use to embed a separate webpage inside the current one?", opts:["video","embed","iframe","object"], a:2},
   ],
   quizCss: [
@@ -1978,30 +2797,37 @@ const QUIZZES = {
     {q:"In the CSS Box Model, what sits directly outside the border?", opts:["Padding","Content","Margin","Nothing"], a:2},
     {q:"With box-sizing: border-box, the width you set includes:", opts:["Only the content","Content, padding, and border together","Only the margin","Nothing — it's ignored"], a:1},
     {q:"Which position value keeps an element fixed in place even while scrolling?", opts:["static","relative","fixed","inherit"], a:2},
-    {q:"Which CSS property controls stacking order when elements overlap?", opts:["z-index","overflow","float","display"], a:0},
     {q:"Which CSS building block defines WHAT changes happen during an animation?", opts:["animation","@keyframes","transition","transform"], a:1},
-    {q:"Which property controls HOW an animation plays (duration, repeat count, direction)?", opts:["@keyframes","animation","transform","position"], a:1},
     {q:"A transition is best triggered by:", opts:["A page reload","A state change like :hover","Nothing — it plays automatically forever","A keyframe"], a:1},
     {q:"Which transform rotates an element?", opts:["translate","scale","rotate","skew"], a:2},
     {q:"What does display: flex do to a container's direct children?", opts:["Hides them","Makes them wrap into a table","Turns them into flex items arranged on a line","Deletes their styles"], a:2},
-    {q:"Which flexbox property aligns items along the main axis?", opts:["align-items","justify-content","flex-wrap","flex-basis"], a:1},
     {q:"Which flex item property controls how much an item grows to fill extra space?", opts:["flex-shrink","flex-basis","flex-grow","flex-direction"], a:2},
-    {q:"border-collapse: collapse is most useful for styling:", opts:["Buttons","Tables","Videos","Animations"], a:1},
+  ],
+  quizJs: [
+    {q:"JavaScript is best described as:", opts:["A compiled server-side language","An interpreted client-side scripting language","A styling language","A database language"], a:1},
+    {q:"Java and JavaScript are:", opts:["The exact same language","Completely unrelated languages, despite the similar name","Both compiled languages","Only used for mobile apps"], a:1},
+    {q:"The &lt;noscript&gt; tag is used to:", opts:["Speed up JavaScript","Show fallback content when JS is unavailable","Write comments","Import external files"], a:1},
+    {q:"Which symbol starts a single-line JavaScript comment?", opts:["#","//","&lt;!--","**"], a:1},
+    {q:"The Browser Object Model (BOM) starts with which object?", opts:["document","window","screen","console"], a:1},
+    {q:"The HTML DOM represents a webpage as a:", opts:["Flat list","Tree structure of nodes","Single string","Spreadsheet"], a:1},
+    {q:"Which method returns the ONE element with a matching id?", opts:["getElementsByClassName()","getElementsByTagName()","getElementById()","getElementsById()"], a:2},
+    {q:"getElementsByClassName() returns elements as a:", opts:["Single element","NodeList (collection), indexed from 0","String","Boolean"], a:1},
+    {q:"Which display method writes to the developer console only (not visible to users)?", opts:["document.write()","innerHTML","window.alert()","console.log()"], a:3},
+    {q:"document.createElement() is used to:", opts:["Delete an element","Create a brand new element","Style an element","Hide an element"], a:1},
   ],
   quizPractical: [
     {q:"In Exercise 1, which tag was used to cross out the age '36'?", opts:["del","strike","u","mark"], a:1},
     {q:"In Exercise 1, the Dreams list used which list type to get A, B, C numbering?", opts:["ul","ol type='A'","ol type='1'","dl"], a:1},
     {q:"In Exercise 2, which technique tiled the heart-pattern image across the whole page?", opts:["An img tag","The background attribute on body","A figure tag","An inline font tag"], a:1},
     {q:"In Exercise 2, which tag highlighted the blog's publish date?", opts:["mark","strong","em","small"], a:0},
-    {q:"In Exercise 2, which tag keeps the 'About Me' content visually separated as extra/related info?", opts:["section","aside","article","footer"], a:1},
     {q:"In Exercise 3, what ensures only ONE gender radio button can be selected at a time?", opts:["Different id values","The same name attribute","The same value attribute","The same class"], a:1},
-    {q:"In Exercise 3, which input type allows MORE than one option to be selected at once?", opts:["radio","checkbox","select","text"], a:1},
-    {q:"In Exercise 3, fieldset and legend were used to:", opts:["Validate form data","Visually group related fields under a title","Submit the form","Style the background"], a:1},
     {q:"In Exercise 4, which CSS trick centers #fullpage both horizontally and vertically?", opts:["float: center","position: absolute with all sides at 0, plus margin: auto","text-align: center","display: block"], a:1},
     {q:"In Exercise 4, which display value lets the Vision text and laptop image sit side-by-side?", opts:["display: block","display: inline-block","display: none","position: fixed"], a:1},
     {q:"In Exercise 5, what does p { display: inline; } do to Article Three's two paragraphs?", opts:["Hides them","Makes them share the same line instead of stacking","Deletes them","Colors them red"], a:1},
     {q:"In Exercise 6's Animation demo, what makes the red circle loop forever?", opts:["animation-delay","animation-iteration-count: infinite","transition-duration","transform"], a:1},
     {q:"In Exercise 6's Transform demo, which transform slants a box along both axes?", opts:["translate","rotate","scale","skew"], a:3},
+    {q:"In Exercise 7, why do wireframes use plain crossed-out boxes instead of real photos?", opts:["Pencil can't import images","To keep the focus on structure and layout, not visual polish","It's faster to export as PDF","Real images aren't allowed by the college"], a:1},
+    {q:"In Exercise 7's wireframe, what does labelling a box '164 × 100' communicate to a developer?", opts:["The exact pixel size to reserve for that element","The font size to use","The number of images needed","The page's total width"], a:0},
   ],
 };
 
@@ -2012,49 +2838,44 @@ function buildSummaryHTML(){
     <div class="card">
       <h3 style="margin-bottom:8px;">Unit 1 · UI, UX &amp; The Design Process</h3>
       <ul>
-        <li><strong>UI vs UX:</strong> UI = look and feel; UX = the whole experience; UX Design = Content + Usability + UI Design + User Interaction Design.</li>
-        <li><strong>Why UX matters:</strong> increases productivity, sales, and satisfaction; reduces support/dev/maintenance cost.</li>
+        <li><strong>UI vs UX:</strong> UI = look and feel; UX = the whole experience.</li>
         <li><strong>The 6-phase process:</strong> Discovery → Planning → Strategy → UX Research → Analysis → Design.</li>
-        <li><strong>UX Research's 4 stages:</strong> Discover → Explore → Test → Listen.</li>
-        <li><strong>Design's sub-phases:</strong> Concept/Sketching → Wireframes/Prototyping → Visual Design &amp; Interaction → Documentation → Development → Production.</li>
-        <li><strong>User Personas:</strong> fictional characters built from real research, in 4 types — Goal-directed, Role-based, Engaging, Fictional.</li>
+        <li><strong>User Personas:</strong> fictional characters built from real research.</li>
+        <li><strong>Gestalt Theory:</strong> Proximity, Similarity, Closure, Figure-Ground, Common Region.</li>
+        <li><strong>Psychology in UX:</strong> Motivation + Ability + Triggers drive user action.</li>
       </ul>
     </div>
     <div class="card">
-      <h3 style="margin-bottom:8px;">Unit 4 · Website &amp; HTML5</h3>
+      <h3 style="margin-bottom:8px;">Unit 3 · Wireframing, Prototyping &amp; Frontend Implementation</h3>
       <ul>
-        <li><strong>Basics:</strong> Website = webpages · WWW runs on top of the Internet · Client-Server model.</li>
-        <li><strong>Structure:</strong> DOCTYPE → html → head (title) → body · Element = Content + Tag.</li>
-        <li><strong>Text &amp; legacy styling:</strong> headings, formatting tags, font/bgcolor/align (deprecated, prefer CSS).</li>
-        <li><strong>Lists &amp; div:</strong> ul/ol/dl, and div as a generic container.</li>
-        <li><strong>Links, images, tables, forms:</strong> a/href, img/figure, table with colspan/rowspan/thead/tbody/tfoot, forms with fieldset/label/datalist.</li>
-        <li><strong>HTML5 semantics:</strong> header/nav/main/section/article/aside/footer, plus details/summary/dialog/mark.</li>
-        <li><strong>Multimedia:</strong> video, audio, embed, object, iframe.</li>
-        <li><strong>Block vs Inline:</strong> block starts a new line and takes full width; inline stays within the line.</li>
+        <li><strong>Wireframing:</strong> structure/content/hierarchy/functionality/behaviour; low/medium/high fidelity.</li>
+        <li><strong>Prototyping:</strong> paper/digital/coding types; 5-step process (Plan → Sketch → Mockup → Animate → Test).</li>
+        <li><strong>Design Systems:</strong> file structure, naming rules, color palettes, fonts, grids, UI components.</li>
+        <li><strong>Frontend Implementation:</strong> handover process, HTML+CSS+JS skills, CSS preprocessors (Sass), methodologies (OOCSS/SMACSS/BEM/Atomic), frameworks.</li>
+        <li><strong>Post-Launch UX:</strong> user feedback, UI testing, A/B testing, session tracking, conversion funnels.</li>
       </ul>
     </div>
     <div class="card">
-      <h3 style="margin-bottom:8px;">Unit 4 · CSS3 Styling</h3>
+      <h3 style="margin-bottom:8px;">Unit 4 · HTML5 &amp; CSS3</h3>
       <ul>
-        <li><strong>Writing CSS:</strong> inline, internal, external · Selectors: element, #id, .class, [attribute], *.</li>
-        <li><strong>Colors:</strong> named, RGB, Hex, HSL, RGBA/HSLA.</li>
-        <li><strong>Box Model:</strong> Content → Padding → Border → Margin · content-box vs border-box.</li>
-        <li><strong>Layout:</strong> display (block/inline/inline-block/none) · position (static/relative/absolute/fixed/sticky) · z-index.</li>
-        <li><strong>Text styling, table/form styling:</strong> alignment, decoration, transform, shadow · striped/hoverable tables · :focus inputs.</li>
-        <li><strong>Animations:</strong> @keyframes (what) + animation (how).</li>
-        <li><strong>Transitions &amp; Transforms:</strong> smooth state changes · translate/rotate/scale/skew.</li>
-        <li><strong>Flexbox:</strong> display: flex · flex-direction/wrap · justify-content/align-items · flex-grow/shrink/basis.</li>
+        <li><strong>HTML:</strong> structure, text formatting, lists, links, images, semantic tags, tables, forms, multimedia.</li>
+        <li><strong>CSS3:</strong> selectors, colors, box model, layout/positioning, text styling, animations, transitions/transforms, flexbox.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-bottom:8px;">Unit 5 · JavaScript</h3>
+      <ul>
+        <li><strong>Basics:</strong> client-side, interpreted; script tags, noscript, external JS, comments.</li>
+        <li><strong>BOM &amp; DOM:</strong> window object and its console; the HTML DOM tree structure.</li>
+        <li><strong>Accessing Elements:</strong> getElementById, getElementsByClassName, getElementsByTagName.</li>
+        <li><strong>Output &amp; Creation:</strong> document.write, innerHTML, alert, console.log; createElement/createTextNode.</li>
       </ul>
     </div>
     <div class="card">
       <h3 style="margin-bottom:8px;">Practical Exercises</h3>
       <ul>
-        <li><strong>Exercise 1:</strong> Personal Profile — classic formatting tags.</li>
-        <li><strong>Exercise 2:</strong> Travel Blog — full semantic HTML5 layout.</li>
-        <li><strong>Exercise 3:</strong> Input Form — fieldset-grouped form.</li>
-        <li><strong>Exercise 4:</strong> Professional Layout — CSS box model &amp; positioning.</li>
-        <li><strong>Exercise 5:</strong> Flexbox Page — card-based layout.</li>
-        <li><strong>Exercise 6:</strong> Animations &amp; Transforms — @keyframes, transitions, transforms.</li>
+        <li><strong>Ex1-3:</strong> Personal Profile, Travel Blog, Input Form.</li>
+        <li><strong>Ex4-6:</strong> Professional Layout, Flexbox Page, Animations &amp; Transforms.</li>
       </ul>
     </div>
     ${remember(["Revisit any station any time from the side menu","Try each quiz again until you score full marks!"])}
@@ -2150,6 +2971,7 @@ function showStation(i){
   current = i;
   document.querySelectorAll(".station").forEach(sec=>sec.classList.remove("active"));
   document.getElementById(`station-${i}`).classList.add("active");
+  loadDemosInStation(i);
 
   document.querySelectorAll(".navbtn").forEach((btn,idx)=>{
     btn.classList.toggle("active", idx===i);
@@ -2167,7 +2989,7 @@ function showStation(i){
 
 function goTo(i){ if(i>=0 && i<STATIONS.length) showStation(i); }
 
-/* Build the tab UI + iframe + code view for every .democard placeholder */
+/* Build the tab UI for every .democard placeholder — but don't load iframes yet */
 function renderDemoCards(){
   document.querySelectorAll(".democard").forEach(el=>{
     const id = el.dataset.demoId;
@@ -2181,11 +3003,10 @@ function renderDemoCards(){
         <button class="demotab active" data-view="output" type="button">▶️ Live Output</button>
         <button class="demotab" data-view="code" type="button">🔤 View Code</button>
       </div>
-      <div class="demo-pane active" data-view="output"><iframe class="demo-frame" style="height:${height}px;"></iframe></div>
+      <div class="demo-pane active" data-view="output"><iframe class="demo-frame" style="height:${height}px;" data-loaded="0"></iframe></div>
       <div class="demo-pane" data-view="code"><pre class="code-block"><code></code></pre></div>
     `;
-    const iframe = el.querySelector("iframe");
-    iframe.srcdoc = code;
+    // Code view is safe to fill immediately (plain text, no execution)
     el.querySelector("code").textContent = code;
 
     el.querySelectorAll(".demotab").forEach(btn=>{
@@ -2195,6 +3016,21 @@ function renderDemoCards(){
         el.querySelectorAll(".demo-pane").forEach(p=>p.classList.toggle("active", p.dataset.view===view));
       });
     });
+  });
+}
+
+/* Only load an iframe's live demo (including any alert()/confirm() it contains)
+   once the station holding it is actually the one being viewed — otherwise every
+   demo on every station would fire at once the moment the page loads. */
+function loadDemosInStation(i){
+  const station = document.getElementById(`station-${i}`);
+  if(!station) return;
+  station.querySelectorAll(".democard iframe.demo-frame").forEach(iframe=>{
+    if(iframe.dataset.loaded === "1") return;
+    const el = iframe.closest(".democard");
+    const id = el.dataset.demoId;
+    iframe.srcdoc = DEMOS[id];
+    iframe.dataset.loaded = "1";
   });
 }
 
@@ -2267,6 +3103,10 @@ function attachStationEvents(){
       updateScore();
     });
   });
+
+  contentEl.querySelectorAll(".topo-card").forEach(card=>{
+    card.addEventListener("click",()=>card.classList.toggle("open"));
+  });
 }
 
 /* ================= NAV / THEME / MOBILE ================= */
@@ -2289,32 +3129,39 @@ const themeButtons = {
 function setTheme(name){
   document.documentElement.setAttribute("data-theme", name);
   Object.entries(themeButtons).forEach(([key,btn])=>{
-    btn.classList.toggle("active", key===name);
+    if(btn) btn.classList.toggle("active", key===name);
   });
 }
-themeButtons.light.addEventListener("click",()=>setTheme("light"));
-themeButtons.dark.addEventListener("click",()=>setTheme("dark"));
-themeButtons.highcontrast.addEventListener("click",()=>setTheme("highcontrast"));
+if(themeButtons.light){
+  themeButtons.light.addEventListener("click",()=>setTheme("light"));
+  themeButtons.dark.addEventListener("click",()=>setTheme("dark"));
+  themeButtons.highcontrast.addEventListener("click",()=>setTheme("highcontrast"));
+}
 
 /* ---- Text size: Small / Medium / Large / Extra Large ---- */
 const FONT_SIZES = ["sm","md","lg","xl"];
 const FONT_LABELS = {sm:"Small", md:"Medium", lg:"Large", xl:"Extra Large"};
-let fontSizeIdx = 1; // start at Medium
+let fontSizeIdx = 1;
 function applyFontSize(){
   document.documentElement.setAttribute("data-fontsize", FONT_SIZES[fontSizeIdx]);
-  document.getElementById("fontLabel").textContent = FONT_LABELS[FONT_SIZES[fontSizeIdx]];
-  document.getElementById("fontSmaller").disabled = fontSizeIdx===0;
-  document.getElementById("fontBigger").disabled = fontSizeIdx===FONT_SIZES.length-1;
+  const lbl = document.getElementById("fontLabel");
+  if(lbl) lbl.textContent = FONT_LABELS[FONT_SIZES[fontSizeIdx]];
+  const smBtn = document.getElementById("fontSmaller");
+  const bgBtn = document.getElementById("fontBigger");
+  if(smBtn) smBtn.disabled = fontSizeIdx===0;
+  if(bgBtn) bgBtn.disabled = fontSizeIdx===FONT_SIZES.length-1;
 }
-document.getElementById("fontSmaller").addEventListener("click",()=>{
-  if(fontSizeIdx>0){ fontSizeIdx--; applyFontSize(); }
-});
-document.getElementById("fontBigger").addEventListener("click",()=>{
-  if(fontSizeIdx<FONT_SIZES.length-1){ fontSizeIdx++; applyFontSize(); }
-});
-applyFontSize();
+if(document.getElementById("fontSmaller")){
+  document.getElementById("fontSmaller").addEventListener("click",()=>{
+    if(fontSizeIdx>0){ fontSizeIdx--; applyFontSize(); }
+  });
+  document.getElementById("fontBigger").addEventListener("click",()=>{
+    if(fontSizeIdx<FONT_SIZES.length-1){ fontSizeIdx++; applyFontSize(); }
+  });
+  applyFontSize();
+}
 
-document.getElementById("spacingToggle").addEventListener("click",()=>{
+document.getElementById("spacingToggle")?.addEventListener("click",()=>{
   const root = document.documentElement;
   const isWide = root.getAttribute("data-spacing")==="wide";
   root.setAttribute("data-spacing", isWide ? "" : "wide");
