@@ -359,6 +359,15 @@ details.more .more-inner{padding:16px 20px;}
 [data-theme="dark"] .code-block{background:#081118;}
 .code-block code{white-space:pre;}
 
+/* reference tables (used in Unit 5 stations) */
+.tablewrap{overflow-x:auto; margin:14px 0;}
+.reftable{width:100%; border-collapse:collapse; font-size:14.5px; background:var(--bg-panel);}
+.reftable th, .reftable td{border:2px solid var(--line); padding:9px 12px; text-align:left; vertical-align:top;}
+.reftable th{background:var(--bg); color:var(--ink); font-weight:800;}
+.reftable code{font-family:var(--font-mono); font-size:13px; background:var(--bg); padding:1px 5px; border-radius:5px;}
+[data-theme="highcontrast"] .reftable th, [data-theme="highcontrast"] .reftable td{border-color:#000;}
+[data-theme="highcontrast"] .reftable{background:#fff;}
+
 /* MCQ */
 .quiz-card{background:var(--bg-panel); border:2px solid var(--line); border-radius:var(--radius); padding:22px 24px; margin-bottom:18px;}
 .quiz-q{font-weight:700; margin-bottom:12px; font-size:17.5px;}

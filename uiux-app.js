@@ -4,8 +4,8 @@
    Unit 1: UI, UX & The Design Process
    Unit 3: Wireframing, Prototyping, UI Design & Frontend Implementation
    Unit 4: Website Development — HTML5 & CSS3
-   Unit 5: JavaScript
-   Practical Exercises 1–6
+   Unit 5: JavaScript, Form Validation, Browser APIs & Bootstrap
+   Practical Exercises 1–10
    ========================================================= */
 
 const STATIONS = [
@@ -75,7 +75,40 @@ const STATIONS = [
   { id:"accessingelements", icon:"🎯", label:"Accessing Elements", kind:"topic", group:"unit5" },
   { id:"displayoutput", icon:"📤", label:"Displaying Output", kind:"topic", group:"unit5" },
   { id:"creatingelements", icon:"🧱", label:"Creating & Modifying Elements", kind:"topic", group:"unit5" },
-  { id:"quizJs",        icon:"🧠", label:"JavaScript Quiz", kind:"quiz", group:"unit5", quizId:"quizJs" },
+  { id:"quizJs",        icon:"🧠", label:"JavaScript Basics Quiz", kind:"quiz", group:"unit5", quizId:"quizJs" },
+
+  /* ---------- UNIT 5b: FUNCTIONS & EVENTS ---------- */
+  { id:"jsfunctions",  icon:"⚙️", label:"Functions", kind:"topic", group:"unit5ev" },
+  { id:"jsevents",     icon:"🖱️", label:"Events & Event Handlers", kind:"topic", group:"unit5ev" },
+  { id:"eventreg",     icon:"🔌", label:"Registering Events: HTML vs JavaScript", kind:"topic", group:"unit5ev" },
+  { id:"dynstyle",     icon:"🎨", label:"Changing CSS with JavaScript", kind:"topic", group:"unit5ev" },
+  { id:"addlistener",  icon:"👂", label:"addEventListener & Event Propagation", kind:"topic", group:"unit5ev" },
+
+  /* ---------- UNIT 5c: FORM VALIDATION ---------- */
+  { id:"jsvalidation",   icon:"✅", label:"Why Validate User Input?", kind:"topic", group:"unit5val" },
+  { id:"constraintattrs",icon:"🧾", label:"Constraint Validation: HTML Attributes", kind:"topic", group:"unit5val" },
+  { id:"regexpattern",   icon:"🔣", label:"Regular Expressions & pattern", kind:"topic", group:"unit5val" },
+  { id:"constraintcss",  icon:"🌈", label:"Constraint Validation: CSS Pseudo-classes", kind:"topic", group:"unit5val" },
+  { id:"constraintdom",  icon:"🧪", label:"Constraint Validation: DOM Properties & Methods", kind:"topic", group:"unit5val" },
+  { id:"quizJsEvents",   icon:"🧠", label:"Events & Validation Quiz", kind:"quiz", group:"unit5val", quizId:"quizJsEvents" },
+
+  /* ---------- UNIT 5d: BROWSER, WEB APIs & LIBRARIES ---------- */
+  { id:"bomextra",   icon:"🧭", label:"More BOM: Screen, Location, History, Navigator", kind:"topic", group:"unit5web" },
+  { id:"webapis",    icon:"💾", label:"Web APIs: Cookies, Storage & Timers", kind:"topic", group:"unit5web" },
+  { id:"jquery",     icon:"💲", label:"jQuery", kind:"topic", group:"unit5web" },
+  { id:"typescript", icon:"🔷", label:"TypeScript", kind:"topic", group:"unit5web" },
+  { id:"quizJsWeb",  icon:"🧠", label:"Browser & Libraries Quiz", kind:"quiz", group:"unit5web", quizId:"quizJsWeb" },
+
+  /* ---------- UNIT 5e: BOOTSTRAP ---------- */
+  { id:"rwd",          icon:"📱", label:"Responsive Web Design & the Viewport", kind:"topic", group:"unit5bs" },
+  { id:"rwdgrid",      icon:"🧮", label:"The 12-Column Grid Idea", kind:"topic", group:"unit5bs" },
+  { id:"bsintro",      icon:"🅱️", label:"What is Bootstrap? Getting Started", kind:"topic", group:"unit5bs" },
+  { id:"bsgrid",       icon:"🔲", label:"Bootstrap Containers, Grid & Breakpoints", kind:"topic", group:"unit5bs" },
+  { id:"bsgrid2",      icon:"🧱", label:"Nested Columns, Offsets & Line Breaks", kind:"topic", group:"unit5bs" },
+  { id:"bscomponents", icon:"🃏", label:"Page Headers, Cards & Image + Text", kind:"topic", group:"unit5bs" },
+  { id:"bslists",      icon:"📃", label:"List Groups & Navs", kind:"topic", group:"unit5bs" },
+  { id:"bstry",        icon:"🧪", label:"Navbar, Forms & Testing Responsiveness", kind:"topic", group:"unit5bs" },
+  { id:"quizBootstrap",icon:"🧠", label:"Bootstrap Quiz", kind:"quiz", group:"unit5bs", quizId:"quizBootstrap" },
 
   /* ---------- PRACTICAL EXERCISES ---------- */
   { id:"ex1walk", icon:"1️⃣", label:"Exercise 1 — Personal Profile", kind:"topic", group:"practical" },
@@ -85,6 +118,9 @@ const STATIONS = [
   { id:"ex5walk", icon:"5️⃣", label:"Exercise 5 — Flexbox Page", kind:"topic", group:"practical" },
   { id:"ex6walk", icon:"6️⃣", label:"Exercise 6 — Animations & Transforms", kind:"topic", group:"practical" },
   { id:"ex7walk", icon:"7️⃣", label:"Exercise 7 — Wireframing our College Website", kind:"topic", group:"practical" },
+  { id:"ex8walk", icon:"8️⃣", label:"Exercise 8 — Wireframing an App", kind:"topic", group:"practical" },
+  { id:"ex9walk", icon:"9️⃣", label:"Exercise 9 — Events & Basic Validation", kind:"topic", group:"practical" },
+  { id:"ex10walk", icon:"🔟", label:"Exercise 10 — Form Validation with the Constraint API", kind:"topic", group:"practical" },
   { id:"quizPractical", icon:"🧠", label:"Practical Recap Quiz", kind:"quiz", group:"practical", quizId:"quizPractical" },
 
   { id:"summary", icon:"📄", label:"Summary & Download", kind:"summary" },
@@ -95,7 +131,11 @@ const GROUP_META = {
   unit3:     { title:"Unit 3 · Wireframing, Prototyping & Frontend", eyebrow:"UNIT 3" },
   unit4html: { title:"Unit 4 · Website & HTML5", eyebrow:"UNIT 4 · HTML5" },
   unit4css:  { title:"Unit 4 · CSS3 Styling", eyebrow:"UNIT 4 · CSS3" },
-  unit5:     { title:"Unit 5 · JavaScript", eyebrow:"UNIT 5" },
+  unit5:     { title:"Unit 5 · JavaScript Basics", eyebrow:"UNIT 5 · BASICS" },
+  unit5ev:   { title:"Unit 5 · JavaScript: Functions & Events", eyebrow:"UNIT 5 · EVENTS" },
+  unit5val:  { title:"Unit 5 · JavaScript: Form Validation", eyebrow:"UNIT 5 · VALIDATION" },
+  unit5web:  { title:"Unit 5 · JavaScript: Browser & Libraries", eyebrow:"UNIT 5 · LIBRARIES" },
+  unit5bs:   { title:"Unit 5 · Bootstrap Framework", eyebrow:"UNIT 5 · BOOTSTRAP" },
   practical: { title:"Practical Exercises", eyebrow:"PRACTICAL" },
 };
 
@@ -121,13 +161,13 @@ CONTENT.home = `
     <div class="hero-deco">🎨</div>
     <span class="eyebrow" style="background:rgba(255,255,255,.22);">SMC PORTAL</span>
     <h1>Simplify • Master • Continue</h1>
-    <p>Welcome! This portal covers UI/UX &amp; the Design Process (Unit 1), Wireframing/Prototyping/Frontend Implementation (Unit 3), Website Development with HTML5 &amp; CSS3 (Unit 4), and JavaScript (Unit 5) — one small idea at a time, with pictures, real code, live outputs, and quick checks along the way.</p>
+    <p>Welcome! This portal covers UI/UX &amp; the Design Process (Unit 1), Wireframing/Prototyping/Frontend Implementation (Unit 3), Website Development with HTML5 &amp; CSS3 (Unit 4), and JavaScript, Form Validation &amp; Bootstrap (Unit 5) — one small idea at a time, with pictures, real code, live outputs, and quick checks along the way.</p>
     <div class="stat-row">
       <div class="stat-pill">🧭 Unit 1 · UX Design Process</div>
       <div class="stat-pill">📐 Unit 3 · Wireframing &amp; Frontend</div>
       <div class="stat-pill">🌐 Unit 4 · HTML5 &amp; CSS3</div>
-      <div class="stat-pill">📜 Unit 5 · JavaScript</div>
-      <div class="stat-pill">🧪 Practical Exercises 1–6</div>
+      <div class="stat-pill">📜 Unit 5 · JavaScript &amp; Bootstrap</div>
+      <div class="stat-pill">🧪 Practical Exercises 1–10</div>
     </div>
   </div>
 
@@ -153,9 +193,29 @@ CONTENT.home = `
     ${STATIONS.filter(s=>s.group==="unit4css" && s.kind==="topic").map(s=>`<div class="route-item"><span class="emoji">${s.icon}</span>${s.label}</div>`).join("")}
   </div>
 
-  <h3 style="margin-top:26px;">Unit 5 · JavaScript</h3>
+  <h3 style="margin-top:26px;">Unit 5 · JavaScript Basics</h3>
   <div class="route-preview">
     ${STATIONS.filter(s=>s.group==="unit5" && s.kind==="topic").map(s=>`<div class="route-item"><span class="emoji">${s.icon}</span>${s.label}</div>`).join("")}
+  </div>
+
+  <h3 style="margin-top:26px;">Unit 5 · JavaScript: Functions &amp; Events</h3>
+  <div class="route-preview">
+    ${STATIONS.filter(s=>s.group==="unit5ev" && s.kind==="topic").map(s=>`<div class="route-item"><span class="emoji">${s.icon}</span>${s.label}</div>`).join("")}
+  </div>
+
+  <h3 style="margin-top:26px;">Unit 5 · JavaScript: Form Validation</h3>
+  <div class="route-preview">
+    ${STATIONS.filter(s=>s.group==="unit5val" && s.kind==="topic").map(s=>`<div class="route-item"><span class="emoji">${s.icon}</span>${s.label}</div>`).join("")}
+  </div>
+
+  <h3 style="margin-top:26px;">Unit 5 · JavaScript: Browser &amp; Libraries</h3>
+  <div class="route-preview">
+    ${STATIONS.filter(s=>s.group==="unit5web" && s.kind==="topic").map(s=>`<div class="route-item"><span class="emoji">${s.icon}</span>${s.label}</div>`).join("")}
+  </div>
+
+  <h3 style="margin-top:26px;">Unit 5 · Bootstrap Framework</h3>
+  <div class="route-preview">
+    ${STATIONS.filter(s=>s.group==="unit5bs" && s.kind==="topic").map(s=>`<div class="route-item"><span class="emoji">${s.icon}</span>${s.label}</div>`).join("")}
   </div>
 
   <h3 style="margin-top:26px;">Practical Exercises</h3>
@@ -2150,6 +2210,1410 @@ CONTENT.creatingelements = `
   ${remember(["document.createElement() makes a new element · document.createTextNode() makes new text","appendChild() attaches one to the other, and attaches it into the page","Modify existing content via: appending a text node, textContent, or innerHTML"])}
 `;
 
+
+/* ================= UNIT 5 (continued): FUNCTIONS, EVENTS & FORM VALIDATION ================= */
+
+/* Helpers used by the new Unit 5 stations */
+function codeBlock(text){
+  return `<pre class="code-block"><code>${text.replace(/&/g,"&amp;").replace(/</g,"&lt;")}</code></pre>`;
+}
+function refTable(headers, rows){
+  return `<div class="tablewrap"><table class="reftable"><thead><tr>${headers.map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+}
+const BS_CSS = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css";
+const JQ_SRC = "https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js";
+
+/* ---------- Functions ---------- */
+CONTENT.jsfunctions = `
+  ${explain(`<p>A <strong>function</strong> is a block of code with a name, designed to do one particular job. It sits quietly until something <em>calls</em> it — then it runs.</p>`)}
+
+  ${analogy(`<p>A function is like a recipe card for "make tea". The card (the function) just sits in the drawer. Only when you say "make tea now" (call it) does anyone follow the steps — and you can use the same card again and again, with different ingredients (parameters) each time.</p>`)}
+
+  <h3>The syntax</h3>
+  ${codeBlock(`function name(parameter1, parameter2, ...)
+{
+    // code to be executed
+}`)}
+  <div class="chiprow">
+    <span class="chip"><strong>function</strong> — the keyword</span>
+    <span class="chip"><strong>name</strong> — what you call it by</span>
+    <span class="chip"><strong>parameters</strong> — the inputs (a list inside brackets)</span>
+    <span class="chip"><strong>body</strong> — the code inside { }</span>
+  </div>
+
+  <h3 style="margin-top:20px;">Three ways a function gets invoked (called)</h3>
+  <div class="chiprow">
+    <span class="chip">When an <strong>event</strong> occurs (e.g. the user clicks a button)</span>
+    <span class="chip">When it is called from <strong>other JavaScript code</strong></span>
+    <span class="chip">Automatically (<strong>self-invoked</strong>)</span>
+  </div>
+
+  <h3 style="margin-top:20px;">Passing values in, and getting a value back</h3>
+  <p>A function can simply do something (like <code>document.write(a * b)</code>), or it can <strong>return</strong> an answer to whoever called it. The returned value "lands" in a variable: <code>var x = myFunction(4, 3);</code> puts 12 into <code>x</code>.</p>
+  ${demoCard("funcdemo", "Try it: a function that returns a value", 150)}
+
+  ${remember(["A function = a named block of code that runs only when something calls it","function name(parameters) { body }","Invoked by an event, by other code, or automatically","return sends an answer back to the caller — var x = myFunction(4, 3);"])}
+`;
+
+DEMOS.funcdemo = `<body>
+  <p>Multiply two numbers using a function:</p>
+  <button onclick="show()">Click to multiply 4 and 3</button>
+  <p id="result"></p>
+
+  <script>
+    function multiply(a, b){
+      return a * b;               // sends the answer back
+    }
+
+    function show(){
+      var x = multiply(4, 3);     // function call - the answer lands in x
+      document.getElementById("result").innerHTML = "4 x 3 = " + x;
+    }
+  </script>
+</body>`;
+
+/* ---------- Events ---------- */
+CONTENT.jsevents = `
+  ${explain(`<p>An <strong>event</strong> is something that happens on a page — either something the <em>browser</em> does (like finishing loading) or something the <em>user</em> does (like clicking). JavaScript can "react" to these events by running code.</p>`)}
+
+  <div class="flow-grid">
+    <div class="flow-card">
+      <h4>🧭 Navigation Events</h4>
+      <p style="font-size:14.5px;">Document-level events: selecting a link, moving forward or back in history, opening a new URL, quitting the browser.</p>
+    </div>
+    <div class="flow-card">
+      <h4>👆 Interaction Events</h4>
+      <p style="font-size:14.5px;">The user interacts with an element of an HTML form — clicking, typing, choosing, moving the mouse.</p>
+    </div>
+  </div>
+
+  <h3>How does JavaScript notice an event? Event handlers!</h3>
+  <p>When an event occurs, JavaScript uses an <strong>event handler</strong> to run your code. Every event handler's name starts with the word <strong>on</strong>, and each one deals with one type of event.</p>
+
+  ${refTable(["Event handler","When it fires"],[
+    ["<code>onchange</code>","An HTML element has been changed"],
+    ["<code>onclick</code>","The user clicks an HTML element"],
+    ["<code>onmouseover</code>","The user moves the mouse over an element"],
+    ["<code>onmouseout</code>","The user moves the mouse away from an element"],
+    ["<code>onkeydown</code>","The user pushes a keyboard key"],
+    ["<code>onload</code>","The browser has finished loading the page"],
+    ["<code>onfocus</code> / <code>onblur</code>","A field gets the cursor / loses the cursor"],
+    ["<code>onsubmit</code>","A form is being submitted"]
+  ])}
+
+  ${analogy(`<p>Think of a doorbell. The <em>event</em> is someone pressing the button. The <em>event handler</em> is the wiring that connects the button to the bell. The <em>JavaScript code</em> is the ding-dong that finally plays. No press, no ding-dong.</p>`)}
+
+  <h3 style="margin-top:20px;">Which handlers go with which elements?</h3>
+  ${refTable(["Element","Handlers it commonly uses"],[
+    ["button, submit, link, radio, checkbox","<code>onclick</code> (links also <code>onmouseover</code>)"],
+    ["text box, textarea","<code>onchange</code>, <code>onfocus</code>, <code>onblur</code>, <code>onselect</code> (text box also <code>onkeydown</code>)"],
+    ["selection (dropdown)","<code>onchange</code>, <code>onfocus</code>, <code>onblur</code>"],
+    ["document / body","<code>onload</code>, <code>onunload</code>"],
+    ["form","<code>onsubmit</code>"]
+  ])}
+
+  ${remember(["Event = something the browser or user does","Event handler names start with on — onclick, onchange, onmouseover...","Each handler listens for one type of event and then runs your JavaScript","Exercise 9 uses onchange, onfocus, onblur, onclick and onmouseover"])}
+`;
+
+CONTENT.eventreg = `
+  ${explain(`<p>There are two classic ways to connect an event to your code. Both do the same job; they just live in different places.</p>`)}
+
+  <div class="tabbar" id="regTabs">
+    <button class="tabbtn active" data-tab="reghtml">📄 In the HTML (inline)</button>
+    <button class="tabbtn" data-tab="regjs">📜 In the JavaScript</button>
+  </div>
+
+  <div class="tabpanel active" data-tab="reghtml">
+    <div class="card">
+      <p>Write the handler as an <strong>attribute</strong> on the HTML element itself:</p>
+      ${codeBlock(`<element eventHandler="functionCall()">
+      (or)
+<element eventHandler="myScript">`)}
+      ${demoCard("eventinline", "Try it: onclick calling a function", 140)}
+    </div>
+  </div>
+
+  <div class="tabpanel" data-tab="regjs">
+    <div class="card">
+      <p>Keep the HTML clean and attach the handler from your script, using the element's <code>id</code>:</p>
+      ${codeBlock(`object.eventHandler = function() { myScript };
+          (or)
+object.eventHandler = function() { functionCall() };`)}
+      ${demoCard("eventjs", "Try it: the same button, wired up from JavaScript", 140)}
+    </div>
+  </div>
+
+  <h3 style="margin-top:22px;">A classic example: the light bulb</h3>
+  <p>Two buttons change which picture an <code>&lt;img&gt;</code> shows, by changing its <code>src</code> property. Notice how a handler can hold one short line of JavaScript directly.</p>
+  ${demoCard("bulbdemo", "Try it: Turn on / Turn off", 220)}
+
+  ${mistake(`<p>Inline handlers mix behaviour into your HTML, which gets messy in big pages. Writing handlers in your JavaScript keeps <strong>structure (HTML)</strong> and <strong>behaviour (JS)</strong> separate — the same idea as keeping CSS in its own file.</p>`)}
+
+  ${remember(["Inline: <button onclick=\"myFunc()\"> — handler written as an HTML attribute","In JS: document.getElementById(\"button1\").onclick = function(){ ... }","For the JS way, the element needs an id so you can grab it first","A handler can call a function or hold a short script directly"])}
+`;
+
+DEMOS.eventinline = `<body>
+  <p>Display an alert box.</p>
+  <button onclick="myFunc()">Try it</button>
+
+  <script>
+    function myFunc(){
+      alert("Hello! I am an alert box!");
+    }
+  </script>
+</body>`;
+
+DEMOS.eventjs = `<body>
+  <p>Display an alert box.</p>
+  <button id="button1">Try it</button>
+
+  <script>
+    document.getElementById("button1").onclick = function(){
+      alert("Hello! I am an alert box!");
+    };
+  </script>
+</body>`;
+
+DEMOS.bulbdemo = `<body>
+  <button onclick="document.getElementById('Im1').src='bulbon.svg'">Turn on</button>
+
+  <img id="Im1" src="bulboff.svg" width="60" alt="A light bulb">
+
+  <button onclick="document.getElementById('Im1').src='bulboff.svg'">Turn off</button>
+</body>`;
+
+/* ---------- Dynamic styling ---------- */
+CONTENT.dynstyle = `
+  ${explain(`<p>JavaScript can also change how an element <em>looks</em>, by reaching into its CSS. This is called <strong>dynamic styling</strong>.</p>`)}
+
+  <h3>The syntax</h3>
+  ${codeBlock(`object.style.cssProperty = "value";`)}
+
+  <p>There's one small twist: CSS property names with a hyphen become <strong>camelCase</strong> in JavaScript — <code>background-color</code> turns into <code>backgroundColor</code>, and <code>border-bottom</code> turns into <code>borderBottom</code>.</p>
+
+  ${codeBlock(`document.getElementById("id1").style.backgroundColor = "red";
+
+document.getElementById("div1").style.borderBottom = "2px solid red";`)}
+
+  ${demoCard("dynstyle", "Try it: change the style of two elements", 200)}
+
+  ${analogy(`<p>CSS is the outfit an element wears. <code>.style</code> lets JavaScript act like a stylist who can swap one piece of the outfit — just the shirt colour, just the hat — while the person (the element) stays the same.</p>`)}
+
+  ${remember(["object.style.cssProperty = \"value\";","Hyphenated CSS names become camelCase: background-color → backgroundColor","Exercises 9 and 10 use this to colour fields on focus, blur and error"])}
+`;
+
+DEMOS.dynstyle = `<body>
+  <p id="id1">I can change my background colour.</p>
+  <div id="div1" style="padding:6px;">I can get a border underneath.</div>
+  <br>
+  <button onclick="document.getElementById('id1').style.backgroundColor = 'gold'">Colour it</button>
+  <button onclick="document.getElementById('div1').style.borderBottom = '3px solid red'">Add border</button>
+  <button onclick="resetAll()">Reset</button>
+
+  <script>
+    function resetAll(){
+      document.getElementById('id1').style.backgroundColor = '';
+      document.getElementById('div1').style.borderBottom = '';
+    }
+  </script>
+</body>`;
+
+/* ---------- addEventListener & propagation ---------- */
+CONTENT.addlistener = `
+  ${explain(`<p><code>addEventListener()</code> is a more modern way to attach a handler. Instead of <em>assigning</em> one function to <code>onclick</code>, you <em>add</em> a listener — and you can add as many as you like to the same element.</p>`)}
+
+  <h3>Three registration styles side by side</h3>
+  ${refTable(["Style","Looks like","Limit"],[
+    ["Inline registration","<code>&lt;button onclick=\"go()\"&gt;</code>","Mixes JS into the HTML"],
+    ["Traditional method","<code>btn.onclick = function(){...}</code>","Only ONE function per event — a second assignment replaces the first"],
+    ["addEventListener","<code>btn.addEventListener(\"click\", function(){...})</code>","None — add as many as you want"]
+  ])}
+
+  ${demoCard("listenerdemo", "Try it: two listeners on one button", 130)}
+
+  <h3 style="margin-top:22px;">Event propagation</h3>
+  <p>What happens when you click a button that sits inside a <code>div</code>, which sits inside another <code>div</code>? You clicked all three at once! The event travels through the nested elements — this is <strong>event propagation</strong>. By default it <strong>bubbles</strong> from the innermost element outwards.</p>
+  ${demoCard("propagation", "Try it: click the button and watch the order", 200)}
+
+  ${analogy(`<p>Drop a pebble in a pond: the ripple starts where the pebble lands (the button) and spreads outwards (to the inner div, then the outer div). Bubbling is that outward ripple.</p>`)}
+
+  ${more("🔬 Going deeper: the capture phase","<p>Events actually travel in two directions: first <strong>down</strong> from the outermost element to the target (the <em>capture</em> phase), then back <strong>up</strong> (the <em>bubble</em> phase). <code>addEventListener</code> takes an optional third value, <code>true</code>, to listen during capture instead of bubbling. Most everyday code simply uses the default bubbling.</p>")}
+
+  ${remember(["addEventListener(\"event\", function) lets you attach many handlers to one element","The traditional onclick = ... can hold only one function","Propagation = the event travelling through nested elements","By default events bubble up: target first, then parent, then grandparent"])}
+`;
+
+DEMOS.listenerdemo = `<body>
+  <button id="btn">Click me</button>
+  <p id="out"></p>
+
+  <script>
+    var btn = document.getElementById("btn");
+    var out = document.getElementById("out");
+
+    btn.addEventListener("click", function(){
+      out.innerHTML += "Handler 1 ran. ";
+    });
+    btn.addEventListener("click", function(){
+      out.innerHTML += "Handler 2 ran too! ";
+    });
+  </script>
+</body>`;
+
+DEMOS.propagation = `<style>
+  #outer{ padding:18px; background:#cfe8ff; }
+  #inner{ padding:18px; background:#ffe9b3; margin-top:8px; }
+</style>
+<body>
+  <div id="outer">Outer div
+    <div id="inner">Inner div
+      <button id="b">Button</button>
+    </div>
+  </div>
+  <p id="log">Order of events: </p>
+
+  <script>
+    function log(msg){ document.getElementById("log").innerHTML += msg + " &rarr; "; }
+
+    document.getElementById("b").addEventListener("click", function(){ log("button"); });
+    document.getElementById("inner").addEventListener("click", function(){ log("inner div"); });
+    document.getElementById("outer").addEventListener("click", function(){ log("outer div"); });
+  </script>
+</body>`;
+
+/* ---------- Validation: why ---------- */
+CONTENT.jsvalidation = `
+  ${explain(`<p><strong>Form validation</strong> means making sure the values a person types into a form are correct <em>before</em> the form is used. It protects your data — and saves users from silly mistakes.</p>`)}
+
+  <h3>What can we check?</h3>
+  <div class="chiprow">
+    <span class="chip">Preventing <strong>blank</strong> values</span>
+    <span class="chip">The <strong>type</strong> of value — integer, currency, phone number, address, email, date, credit card number</span>
+    <span class="chip">The <strong>format and range</strong> — e.g. a pincode must be a 6-digit integer</span>
+    <span class="chip">That values <strong>fit together</strong> — e.g. two password boxes must match</span>
+  </div>
+
+  <h3 style="margin-top:20px;">Where does the checking happen?</h3>
+  <div class="flow-grid">
+    <div class="flow-card">
+      <h4>🖥️ Client-side</h4>
+      <p style="font-size:14.5px;">Done by the <strong>web browser</strong>, <em>before</em> the input is sent to the server. Instant feedback — this is what JavaScript and HTML5 give us.</p>
+    </div>
+    <div class="flow-card">
+      <h4>🗄️ Server-side</h4>
+      <p style="font-size:14.5px;">Done by the <strong>web server</strong>, <em>after</em> the input has been sent. Always needed for security, because browser checks can be bypassed.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:20px;">Two jobs of form validation</h3>
+  <div class="flow-grid">
+    <div class="flow-card">
+      <h4>1️⃣ Basic validation</h4>
+      <p style="font-size:14.5px;">Check that all the <strong>mandatory fields</strong> are filled in.</p>
+    </div>
+    <div class="flow-card">
+      <h4>2️⃣ Data format validation</h4>
+      <p style="font-size:14.5px;">Check that what was entered has the <strong>correct form and value</strong>. Your code must include logic to test correctness.</p>
+    </div>
+  </div>
+
+  ${analogy(`<p>Validation is the security desk at a building entrance. Client-side validation is the friendly receptionist who says "you forgot to sign the form" before you walk in. Server-side validation is the locked door that checks again — because someone might have sneaked past the receptionist.</p>`)}
+
+  ${remember(["Validation = making sure form input is correct","Check for blanks, types, formats/ranges, and values that fit together","Client-side (browser, before sending) vs server-side (server, after sending)","Two jobs: basic validation (mandatory fields) and data format validation"])}
+`;
+
+/* ---------- Constraint validation: HTML attributes ---------- */
+CONTENT.constraintattrs = `
+  ${explain(`<p>HTML5 gives us an easy way to validate: <strong>constraint validation</strong>. When a form is submitted, the browser runs an algorithm that checks every field's rules. You set the rules with simple attributes — no JavaScript needed to get started.</p>`)}
+
+  <p>Constraint validation has three parts: <strong>HTML input attributes</strong> (this station), <strong>CSS pseudo-selectors</strong>, and <strong>DOM properties and methods</strong> (the next stations).</p>
+
+  ${refTable(["Attribute","What it does","Example"],[
+    ["<code>required</code>","Field must not be empty","<code>&lt;input type=\"text\" required&gt;</code>"],
+    ["<code>pattern</code>","Value must match a regular expression","<code>pattern=\"[A-Za-z]{3,}\"</code>"],
+    ["<code>minlength</code> / <code>maxlength</code>","Limits the number of characters","<code>minlength=\"5\" maxlength=\"10\"</code>"],
+    ["<code>min</code> / <code>max</code>","Limits a number's range","<code>min=\"18\" max=\"60\"</code>"],
+    ["<code>step</code>","Allowed increments","<code>min=\"0\" max=\"100\" step=\"10\"</code>"],
+    ["<code>type</code>","Forces a format (email, url, number, date...)","<code>&lt;input type=\"email\"&gt;</code>"],
+    ["<code>readonly</code>","User can't edit it, but it IS submitted","<code>&lt;input type=\"text\" readonly&gt;</code>"],
+    ["<code>disabled</code>","User can't use it, and it is NOT submitted","<code>&lt;input type=\"text\" disabled&gt;</code>"]
+  ])}
+
+  <h3>Try 1 — required</h3>
+  <p>Press Submit with the box empty. The browser's own message appears, and you can read it from JavaScript with the <code>validationMessage</code> property (more on that soon).</p>
+  ${demoCard("valrequired", "Try it: a required field", 130)}
+
+  <h3 style="margin-top:20px;">Try 2 — min, max, step</h3>
+  <p>Type 17, 61, or 19 and submit. With <code>min="18" max="60" step="2"</code> only 18, 20, 22 ... 60 are accepted.</p>
+  ${demoCard("valrange", "Try it: a number with a range and a step", 150)}
+
+  ${mistake(`<p><code>disabled</code> and <code>readonly</code> look similar but behave differently: a <strong>disabled</strong> field is skipped entirely (not validated, not submitted), while a <strong>readonly</strong> field is still sent with the form.</p>`)}
+
+  ${remember(["Constraint validation = the browser checks your rules when a form is submitted","Key attributes: required, pattern, minlength/maxlength, min/max, step, type","readonly is submitted; disabled is not","Three parts: HTML attributes, CSS pseudo-selectors, DOM properties/methods"])}
+`;
+
+DEMOS.valrequired = `<form>
+  Name: <input type="text" name="fname" required>
+  <input type="submit" value="Submit">
+</form>`;
+
+DEMOS.valrange = `<form>
+  <label for="age">Age (18-60):</label>
+  <input type="number" id="age" name="age" min="18" max="60" step="2" required>
+  <br><br>
+  <button type="submit">Submit</button>
+</form>`;
+
+/* ---------- Regex & pattern ---------- */
+CONTENT.regexpattern = `
+  ${explain(`<p>The <code>pattern</code> attribute lets you describe the exact <em>shape</em> a value must have, using a <strong>regular expression</strong> — a short code for a search pattern.</p>`)}
+
+  <p>A regular expression can be a single character or a clever combination. You can use one to describe what you are looking for in some text — or what a valid input must look like.</p>
+
+  <h3>Syntax</h3>
+  ${codeBlock(`/pattern/modifiers;
+
+Example:  /stella/i      (modifiers are optional)`)}
+
+  ${refTable(["Modifier","Meaning"],[
+    ["<code>g</code>","Global match — find all matches, not just the first"],
+    ["<code>m</code>","Multiline matching"],
+    ["<code>i</code>","Case-insensitive — stella, Stella, STELLA and sTeLLa all match"]
+  ])}
+
+  <h3 style="margin-top:20px;">The building blocks</h3>
+  ${refTable(["Symbol","Meaning"],[
+    ["<code>^</code>","Matches the beginning of the input"],
+    ["<code>$</code>","Matches the end of the input"],
+    ["<code>*</code>","The preceding item, 0 or more times"],
+    ["<code>+</code>","The preceding item, 1 or more times"],
+    ["<code>?</code>","The preceding item, 0 or 1 time"],
+    ["<code>.</code>","Any single character except a new line"],
+    ["<code>[xyz]</code>","Character set — any ONE of x, y or z"],
+    ["<code>[^xyz]</code>","Negated set — anything EXCEPT x, y or z"],
+    ["<code>{3}</code>","Exactly 3 of the preceding item"]
+  ])}
+
+  <h3 style="margin-top:20px;">Two patterns you'll use again and again</h3>
+  <div class="flow-grid">
+    <div class="flow-card">
+      <h4>🔤 Letters only</h4>
+      <p style="font-size:14.5px;"><code>^[A-Za-z]+$</code><br>[A-Za-z] = any uppercase or lowercase letter, + = one or more of them, so a whole value of letters and nothing else.</p>
+    </div>
+    <div class="flow-card">
+      <h4>🔢 Numbers only</h4>
+      <p style="font-size:14.5px;"><code>^[0-9]+$</code><br>[0-9] = any digit. Change it to <code>^[0-9]{3}$</code> to allow exactly three digits.</p>
+    </div>
+  </div>
+
+  ${demoCard("regexletters", "Try it: letters only (try 'Stella' and then 'Stella2')", 140)}
+  ${demoCard("regexnum", "Try it: exactly three digits", 140)}
+
+  ${more("💡 Good to know","<p>In the HTML <code>pattern</code> attribute the browser automatically requires the pattern to match the <strong>whole</strong> value, so writing <code>^</code> and <code>$</code> is optional there. They matter more when you use regular expressions in JavaScript code. Also add a <code>title</code> attribute — its text is shown as a hint inside the browser's error message.</p>")}
+
+  ${remember(["pattern=\"...\" = value must match this regular expression","/pattern/modifiers — g (global), i (ignore case), m (multiline)","^ start, $ end, + one or more, * zero or more, [ ] a set of characters","Letters only: ^[A-Za-z]+$ · Digits only: ^[0-9]+$ · Exactly 10 digits: ^[0-9]{10}$"])}
+`;
+
+DEMOS.regexletters = `<form>
+  <label for="name">Enter your name (letters only):</label>
+  <input type="text" id="name" name="name" pattern="^[A-Za-z]+$" title="Letters only, no spaces or digits" required>
+  <button type="submit">Submit</button>
+</form>`;
+
+DEMOS.regexnum = `<form>
+  <label for="number">Enter a three-digit number:</label>
+  <input type="text" id="number" name="number" pattern="^[0-9]{3}$" title="Exactly three digits" required>
+  <input type="submit">
+</form>`;
+
+/* ---------- CSS pseudo-selectors ---------- */
+CONTENT.constraintcss = `
+  ${explain(`<p>CSS can colour a form field <em>according to whether its value is valid</em> — no JavaScript at all. This gives instant visual feedback, which is great UX.</p>`)}
+
+  ${refTable(["Pseudo-class","Selects input elements that..."],[
+    ["<code>:required</code>","have the <code>required</code> attribute"],
+    ["<code>:optional</code>","do NOT have the <code>required</code> attribute"],
+    ["<code>:valid</code>","currently hold valid values (per required, pattern, min, max, type...)"],
+    ["<code>:invalid</code>","currently hold invalid values"],
+    ["<code>:disabled</code>","have the <code>disabled</code> attribute"],
+    ["<code>:focus</code>","currently have the cursor in them"]
+  ])}
+
+  <h3>Syntax and combining</h3>
+  ${codeBlock(`selector:pseudo-class {
+    property: value;
+}
+
+/* combine them for precise control */
+input:required:invalid { border: 2px solid red;   }
+input:required:valid   { border: 2px solid green; }`)}
+
+  <p>Try it: the email box is required, so it starts red; the moment you type a proper email address it turns green. The optional box has a dashed grey border, and whichever box you click into turns yellow.</p>
+  ${demoCard("pseudodemo", "Try it: valid / invalid / optional / focus", 190)}
+
+  ${mistake(`<p>A required empty box is <code>:invalid</code> from the very moment the page loads, so it shows red before the user has done anything wrong. That can feel harsh — many designers only show the red after the user has tried to type or submit.</p>`)}
+
+  ${remember(["Pseudo-classes style fields by their state: :valid, :invalid, :required, :optional, :disabled, :focus","Combine them: input:required:invalid","Pure CSS — no JavaScript needed for visual feedback"])}
+`;
+
+DEMOS.pseudodemo = `<style>
+  input:required:invalid { border: 2px solid red; }
+  input:required:valid   { border: 2px solid green; }
+  input:optional         { border: 1px dashed gray; }
+  input:focus            { background-color: yellow; }
+</style>
+
+<p>Email (required):
+  <input type="email" placeholder="Enter your email" required></p>
+<p>Nickname (optional):
+  <input type="text"></p>`;
+
+/* ---------- DOM properties and methods ---------- */
+CONTENT.constraintdom = `
+  ${explain(`<p>The third part of constraint validation lets <strong>JavaScript</strong> ask a field "are you valid, and if not, why?" — and even change the message it shows. This is the <strong>DOM Constraint Validation API</strong>, the heart of Exercise 10.</p>`)}
+
+  <h3>Properties (things you can read)</h3>
+  ${refTable(["Property","What it tells you"],[
+    ["<code>validity</code>","An object holding many true/false flags about the field (see below)"],
+    ["<code>validationMessage</code>","The message the browser will display when the field is invalid"],
+    ["<code>willValidate</code>","Whether the field can be validated at all — false only when it is disabled"]
+  ])}
+
+  <h3 style="margin-top:20px;">Inside validity: the flags</h3>
+  <p>Use <code>field.validity.valid</code> to ask the big yes/no question, or check one specific flag to find out exactly <em>what</em> went wrong.</p>
+  ${refTable(["validity flag","True when..."],[
+    ["<code>valueMissing</code>","a required field is empty"],
+    ["<code>typeMismatch</code>","the value doesn't fit its type (e.g. not an email)"],
+    ["<code>patternMismatch</code>","the value doesn't match its pattern"],
+    ["<code>rangeUnderflow</code>","the value is less than min"],
+    ["<code>rangeOverflow</code>","the value is greater than max"],
+    ["<code>stepMismatch</code>","the value doesn't fit the step"],
+    ["<code>tooLong</code>","the value is longer than maxlength"],
+    ["<code>customError</code>","a custom message has been set with setCustomValidity()"],
+    ["<code>valid</code>","everything is fine"]
+  ])}
+  ${demoCard("validitydemo", "Try it: patternMismatch (type 4 digits, then 3 digits)", 110)}
+
+  <h3 style="margin-top:20px;">Methods (things you can do)</h3>
+  ${refTable(["Method","What it does"],[
+    ["<code>checkValidity()</code>","Returns true if the field holds valid data, false if not"],
+    ["<code>setCustomValidity(msg)</code>","Sets your own message (the validationMessage). An empty string \"\" means 'no custom error'"]
+  ])}
+
+  <h3 style="margin-top:20px;">checkValidity() + validationMessage</h3>
+  ${demoCard("validmsg", "Try it: dept number between 201 and 250", 120)}
+
+  <h3 style="margin-top:20px;">Writing your own message with setCustomValidity()</h3>
+  <p>The browser's default messages are generic. With <code>setCustomValidity()</code> you can say exactly what you mean — in friendlier words, in your own style.</p>
+  ${demoCard("customvalid", "Try it: a friendlier custom message", 120)}
+
+  ${mistake(`<p>Once you call <code>setCustomValidity("some message")</code>, the field stays <strong>invalid forever</strong> — even after the user fixes the value — until you clear it by calling <code>setCustomValidity("")</code>. That's why the demo above clears the old message at the start of every check.</p>`)}
+
+  ${remember(["validity → flags like valueMissing, patternMismatch, rangeOverflow, valid","validationMessage → the text the browser would show","willValidate → false only if the field is disabled","checkValidity() → true/false; setCustomValidity(\"msg\") → your own message; setCustomValidity(\"\") → clear it","Exercise 10 combines all of these"])}
+`;
+
+DEMOS.validitydemo = `<input id="num" pattern="[0-9]{4}">
+<button onclick="checkPattern()">Check</button>
+
+<script>
+  function checkPattern(){
+    var input = document.getElementById("num");
+    if(input.validity.patternMismatch){
+      alert("Pattern mismatch! Please enter 4 digits.");
+    } else {
+      alert("Pattern matched!");
+    }
+  }
+</script>`;
+
+DEMOS.validmsg = `<label>Enter your dept number (201-250):</label>
+<input id="id1" type="number" min="201" max="250" required>
+<button onclick="validDeptNo()">OK</button>
+
+<script>
+  function validDeptNo(){
+    var inputnum = document.getElementById("id1");
+    if(!inputnum.checkValidity()){
+      alert(inputnum.validationMessage);   // show the browser's message in an alert box
+    } else {
+      alert("Valid department number!");
+    }
+  }
+</script>`;
+
+DEMOS.customvalid = `<label>Enter your dept number (201-250):</label>
+<input id="id1" type="number" min="201" max="250" required>
+<button onclick="validDeptNo()">OK</button>
+
+<script>
+  function validDeptNo(){
+    var inputnum = document.getElementById("id1");
+    inputnum.setCustomValidity("");          // clear any old custom message first
+    if(!inputnum.checkValidity()){
+      inputnum.setCustomValidity("Dept number must be between 201 and 250");
+      alert(inputnum.validationMessage);
+    } else {
+      alert("Looks good!");
+    }
+  }
+</script>`;
+
+/* ================= UNIT 5 (continued): BROWSER, WEB APIs & LIBRARIES ================= */
+
+CONTENT.bomextra = `
+  ${explain(`<p>Earlier we met the <code>window</code> object at the centre of the BOM. Four more objects hang off it, each giving you a different kind of information about the browser.</p>`)}
+
+  <div class="tabbar" id="bomTabs">
+    <button class="tabbtn active" data-tab="bscreen">🖥️ Screen</button>
+    <button class="tabbtn" data-tab="blocation">📍 Location</button>
+    <button class="tabbtn" data-tab="bhistory">🕘 History</button>
+    <button class="tabbtn" data-tab="bnavigator">🧭 Navigator</button>
+  </div>
+
+  <div class="tabpanel active" data-tab="bscreen">
+    <div class="card">
+      <p><strong>screen</strong> provides details about the <em>device</em> the browser is running on — its width, height and colour depth. In the browser console, type <code>window.screen</code>.</p>
+    </div>
+  </div>
+
+  <div class="tabpanel" data-tab="blocation">
+    <div class="card">
+      <p><strong>location</strong> holds the web address of the document loaded in the window. You can reach it through <code>window.location</code>, <code>document.location</code> or simply <code>location</code>.</p>
+      ${codeBlock(`window.location;
+alert(location);
+location.assign("https://www.gmail.com");   // go to a page (back button works)
+location = "https://www.gmail.com";         // same idea
+location.replace("https://www.google.com"); // go there, and forget this page in history`)}
+    </div>
+  </div>
+
+  <div class="tabpanel" data-tab="bhistory">
+    <div class="card">
+      <p><strong>history</strong> tracks the pages loaded in one window. It is what powers the browser's Back button.</p>
+      ${codeBlock(`window.history;
+history.back();      // one page back
+history.forward();   // one page forward
+history.go(-1);      // go back 1 (use 2 to go forward 2)`)}
+      <p>There are also <code>pushState()</code> and <code>replaceState()</code> methods that let a page change the address and history without reloading.</p>
+    </div>
+  </div>
+
+  <div class="tabpanel" data-tab="bnavigator">
+    <div class="card">
+      <p><strong>navigator</strong> provides information about the browser and device itself — its name, language and so on. In the console, type <code>window.navigator</code>.</p>
+    </div>
+  </div>
+
+  ${demoCard("bomdemo", "Try it: reading screen, navigator and history values", 190)}
+
+  ${mistake(`<p>The difference between <code>location.assign()</code> and <code>location.replace()</code>: after <code>assign</code> the user can press Back to return; after <code>replace</code> the old page is gone from history, so Back skips it.</p>`)}
+
+  ${remember(["screen → device details · location → the page's address · history → visited pages (Back button) · navigator → browser/device info","All four hang off the window object","location.assign() keeps history; location.replace() replaces the current entry","history.back(), history.forward(), history.go(n)"])}
+`;
+
+DEMOS.bomdemo = `<body>
+  <div id="out"></div>
+  <script>
+    var t = "";
+    t += "<b>screen</b> size: " + screen.width + " x " + screen.height + " pixels<br>";
+    t += "<b>screen</b> colour depth: " + screen.colorDepth + " bits<br>";
+    t += "<b>window</b> inner width: " + window.innerWidth + " px<br>";
+    t += "<b>navigator</b> language: " + navigator.language + "<br>";
+    t += "<b>navigator</b> online: " + navigator.onLine + "<br>";
+    t += "<b>history</b> length: " + history.length + " page(s) in this tab";
+    document.getElementById("out").innerHTML = t;
+  </script>
+</body>`;
+
+CONTENT.webapis = `
+  ${explain(`<p>Browsers give JavaScript some extra powers through the <code>window</code> object — remembering things on the visitor's computer, and running code after a delay. These come in three groups: <strong>cookies, storage and timers</strong>.</p>`)}
+
+  <h3>1. Cookies — tiny notes stored on the client</h3>
+  <p>Storing data on the client helps performance and user experience. For a long time this was done only with <strong>cookies</strong>: small pieces of data kept in the browser. All cookies for a page arrive as <em>one string</em> in <code>document.cookie</code>, separated by semicolons, each shaped like <code>name=value</code>.</p>
+  ${codeBlock(`document.cookie = "Test1=Test value";           // setting a cookie
+
+// reading gives all cookies in one string:
+// Test1=Test cookie #1; Test2=Test cookie #2; Test3=Test cookie #3;
+
+document.cookie = "Test=Test cookie; expires=Sun, 30 Oct 2030 12:00:00 UTC";`)}
+  ${refTable(["Cookie setting","Meaning"],[
+    ["<code>domain=</code>","Which domain may access this cookie"],
+    ["<code>expires=</code>","When the cookie should expire (a UTC date string)"],
+    ["<code>max-age=</code>","Expire after this many seconds"],
+    ["<code>path=</code>","Where on the site the cookie applies"],
+    ["<code>secure</code>","Only send the cookie over https"]
+  ])}
+
+  <h3 style="margin-top:22px;">2. Web Storage — a bigger, simpler notebook</h3>
+  <p>HTML5 added two storage mechanisms, <code>localStorage</code> and <code>sessionStorage</code>. Both are properties of <code>window</code> and return a <strong>Storage</strong> object holding key/value pairs — both must be <strong>strings</strong>.</p>
+  <div class="flow-grid">
+    <div class="flow-card"><h4>🗓️ localStorage</h4><p style="font-size:14.5px;">Kept <strong>indefinitely</strong>, even after the browser is closed.</p></div>
+    <div class="flow-card"><h4>⏳ sessionStorage</h4><p style="font-size:14.5px;">Cleared when the browser (tab) is <strong>closed</strong>.</p></div>
+  </div>
+  ${codeBlock(`localStorage.setItem("student", "Harini");
+var who = localStorage.getItem("student");
+localStorage.removeItem("student");`)}
+  ${demoCard("storagedemo", "Try it: save, load and remove a name (works when the portal is hosted online)", 170)}
+
+  <h3 style="margin-top:22px;">3. Timers — do it later, or keep doing it</h3>
+  ${refTable(["Function","What it does"],[
+    ["<code>setTimeout(fn, ms)</code>","Calls the function ONCE, after the given number of milliseconds"],
+    ["<code>setInterval(fn, ms)</code>","Calls the function AGAIN and AGAIN, every ms milliseconds"],
+    ["<code>clearTimeout()</code> / <code>clearInterval()</code>","Cancels a timer before it fires / stops a repeating one"]
+  ])}
+  ${demoCard("timerdemo", "Try it: a counting timer and a delayed message", 210)}
+
+  ${more("🔎 Other browser interface elements","<p>The <code>window</code> object also exposes the browser's own interface bars as objects: <code>locationbar</code>, <code>menubar</code>, <code>personalbar</code>, <code>scrollbar</code>, <code>statusbar</code> and <code>toolbar</code>.</p>")}
+
+  ${mistake(`<p><code>localStorage</code> only stores <strong>strings</strong>. Saving the number 5 comes back as the text "5", so convert it with <code>Number()</code> or <code>parseInt()</code> before doing maths with it.</p>`)}
+
+  ${remember(["Cookies: small name=value strings in document.cookie; set expiry with expires= or max-age=","localStorage is kept indefinitely; sessionStorage is cleared when the browser closes","Storage methods: setItem(), getItem(), removeItem() — keys and values are strings","setTimeout runs once after a delay; setInterval repeats; clear... stops them"])}
+`;
+
+DEMOS.storagedemo = `<body>
+  <input id="nm" placeholder="Type your name">
+  <button onclick="save()">Save</button>
+  <button onclick="load()">Load</button>
+  <button onclick="removeIt()">Remove</button>
+  <p id="msg"></p>
+
+  <script>
+    function show(t){ document.getElementById("msg").innerHTML = t; }
+
+    function save(){
+      try {
+        localStorage.setItem("student", document.getElementById("nm").value);
+        show("Saved!");
+      } catch(e){ show("Storage is blocked in this view: " + e.name); }
+    }
+    function load(){
+      try { show("Stored name: " + localStorage.getItem("student")); }
+      catch(e){ show("Storage is blocked in this view: " + e.name); }
+    }
+    function removeIt(){
+      try { localStorage.removeItem("student"); show("Removed."); }
+      catch(e){ show("Storage is blocked in this view: " + e.name); }
+    }
+  </script>
+</body>`;
+
+DEMOS.timerdemo = `<body>
+  <p>Seconds counted: <b id="sec">0</b></p>
+  <button onclick="startIt()">Start</button>
+  <button onclick="stopIt()">Stop</button>
+  <button onclick="delayed()">Say hi in 2 seconds</button>
+  <p id="msg"></p>
+
+  <script>
+    var n = 0;
+    var timer = null;
+
+    function startIt(){
+      if(timer) return;                       // don't start two timers
+      timer = setInterval(function(){
+        n++;
+        document.getElementById("sec").innerHTML = n;
+      }, 1000);                               // every 1000 ms = 1 second
+    }
+    function stopIt(){
+      clearInterval(timer);
+      timer = null;
+    }
+    function delayed(){
+      document.getElementById("msg").innerHTML = "Waiting...";
+      setTimeout(function(){
+        document.getElementById("msg").innerHTML = "Hi! Two seconds have passed.";
+      }, 2000);
+    }
+  </script>
+</body>`;
+
+CONTENT.jquery = `
+  ${explain(`<p><strong>jQuery</strong> is a lightweight "write less, do more" JavaScript <em>library</em>. It makes the jobs we've done in this unit — finding elements, changing them, reacting to clicks — much shorter and easier.</p>`)}
+
+  <h3>What it can do</h3>
+  <div class="chiprow">
+    <span class="chip">HTML / DOM manipulation</span>
+    <span class="chip">CSS manipulation</span>
+    <span class="chip">HTML event methods</span>
+    <span class="chip">Effects and animations</span>
+    <span class="chip">AJAX</span>
+    <span class="chip">Utilities</span>
+  </div>
+
+  <h3 style="margin-top:20px;">Getting jQuery onto your page</h3>
+  <p>Either <strong>download</strong> the file and keep it in your website's folder, or load it from a <strong>CDN</strong> (Content Delivery Network) — a fast server that hosts it for everyone.</p>
+  ${codeBlock(`<!-- Downloaded file, in the same folder as your website -->
+<head><script src="jquery-4.0.0.min.js"></script></head>
+
+<!-- Google CDN -->
+<script src="${JQ_SRC}"></script>`)}
+  <p style="font-size:14.5px;">Microsoft also hosts it at <code>https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js</code>. Note: the CDNs only carry versions up to 3.7.1.</p>
+
+  <h3 style="margin-top:20px;">The syntax: $(selector).action()</h3>
+  <div class="flow-grid">
+    <div class="flow-card"><h4>$</h4><p style="font-size:14.5px;">The dollar sign defines / accesses jQuery</p></div>
+    <div class="flow-card"><h4>(selector)</h4><p style="font-size:14.5px;">"Query" (find) the HTML elements</p></div>
+    <div class="flow-card"><h4>.action()</h4><p style="font-size:14.5px;">What to do to the elements found</p></div>
+  </div>
+
+  ${refTable(["Example","What it hides"],[
+    ["<code>$(this).hide()</code>","the current element"],
+    ["<code>$(\"p\").hide()</code>","all &lt;p&gt; elements (element selector)"],
+    ["<code>$(\".test\").hide()</code>","all elements with class=\"test\" (class selector)"],
+    ["<code>$(\"#test\").hide()</code>","the element with id=\"test\" (id selector)"]
+  ])}
+
+  <h3 style="margin-top:20px;">Wait for the page: the ready event</h3>
+  ${codeBlock(`$(document).ready(function(){
+    // jQuery methods go here...
+});`)}
+  <p>This stops jQuery code from running before the document has finished loading.</p>
+
+  ${demoCard("jqdemo", "Try it: jQuery selectors and click events", 190)}
+
+  <h3 style="margin-top:20px;">Getters, setters and CSS classes</h3>
+  <div class="flow-grid">
+    <div class="flow-card"><h4>Get / set content</h4><p style="font-size:14.5px;"><code>text()</code>, <code>html()</code>, <code>val()</code></p></div>
+    <div class="flow-card"><h4>Work with classes</h4><p style="font-size:14.5px;"><code>addClass()</code>, <code>removeClass()</code>, <code>toggleClass()</code>, <code>css()</code></p></div>
+  </div>
+  ${demoCard("jqdemo2", "Try it: text(), val(), addClass(), toggleClass(), css()", 230)}
+
+  <p style="font-size:14.5px;">Want to practise more? The W3Schools jQuery tutorial is a friendly place to start: <a href="https://www.w3schools.com/jquery/default.asp" target="_blank" rel="noopener">w3schools.com/jquery</a>.</p>
+
+  ${remember(["jQuery = a lightweight JavaScript library: write less, do more","Add it by downloading the file or using a CDN link","Syntax: $(selector).action()","Wrap code in $(document).ready(function(){ ... });","Selectors: \"p\" (element), \".test\" (class), \"#test\" (id)","text(), html(), val() read/write content · addClass(), removeClass(), toggleClass(), css() handle styling"])}
+`;
+
+DEMOS.jqdemo = `<script src="${JQ_SRC}"></script>
+<body>
+  <p>I am a plain paragraph.</p>
+  <p class="test">I have class "test".</p>
+  <p id="demo">I have id "demo".</p>
+
+  <button id="b1">Hide all p</button>
+  <button id="b2">Hide .test</button>
+  <button id="b3">Hide #demo</button>
+  <button id="b4">Show all</button>
+
+  <script>
+    $(document).ready(function(){
+      $("#b1").click(function(){ $("p").hide(); });
+      $("#b2").click(function(){ $(".test").hide(); });
+      $("#b3").click(function(){ $("#demo").hide(); });
+      $("#b4").click(function(){ $("p").show(); });
+    });
+  </script>
+</body>`;
+
+DEMOS.jqdemo2 = `<script src="${JQ_SRC}"></script>
+<style>
+  .hl { background: yellow; font-weight: bold; }
+</style>
+<body>
+  <p id="p1">Original text</p>
+  <input id="inp" value="Hello">
+  <p id="out"></p>
+
+  <button id="a">text()</button>
+  <button id="b">val()</button>
+  <button id="c">addClass</button>
+  <button id="d">toggleClass</button>
+  <button id="e">css()</button>
+
+  <script>
+    $(document).ready(function(){
+      $("#a").click(function(){ $("#p1").text("Changed with text()!"); });
+      $("#b").click(function(){ $("#out").text("The input holds: " + $("#inp").val()); });
+      $("#c").click(function(){ $("#p1").addClass("hl"); });
+      $("#d").click(function(){ $("#p1").toggleClass("hl"); });
+      $("#e").click(function(){ $("#p1").css("color", "crimson"); });
+    });
+  </script>
+</body>`;
+
+CONTENT.typescript = `
+  ${explain(`<p><strong>TypeScript</strong> is "JavaScript that scales" — a <strong>typed superset</strong> of JavaScript. Superset means every valid JavaScript program is also valid TypeScript; TypeScript simply adds more on top.</p>`)}
+
+  <h3>Why people like it</h3>
+  <div class="chiprow">
+    <span class="chip">Because it understands JavaScript, it catches errors and offers fixes <strong>before you run the code</strong></span>
+    <span class="chip">Adds support for <strong>classes and interfaces</strong></span>
+    <span class="chip">Runs anywhere JavaScript runs — any browser, any OS</span>
+    <span class="chip">Entirely open source</span>
+  </div>
+
+  <h3 style="margin-top:20px;">How to install</h3>
+  <div class="chiprow">
+    <span class="chip">Using the Node.js package manager (npm)</span>
+    <span class="chip">Through TypeScript plugins for Visual Studio</span>
+  </div>
+
+  <h3 style="margin-top:20px;">Data types</h3>
+  <div class="chiprow">
+    <span class="chip">any</span><span class="chip">number</span><span class="chip">string</span><span class="chip">boolean</span>
+    <span class="chip">void</span><span class="chip">null</span><span class="chip">undefined</span><span class="chip">array</span><span class="chip">enum</span>
+  </div>
+  <p style="font-size:14.5px;">(Primitive types are number, string, boolean, void, null and undefined.)</p>
+
+  <h3 style="margin-top:20px;">A tiny taste</h3>
+  ${codeBlock(`let age: number = 20;
+let name: string = "Stella";
+
+function greet(person: string): string {
+    return "Hello, " + person;
+}
+
+greet(42);   // TypeScript flags this BEFORE running: 42 is not a string`)}
+
+  <p>You can try TypeScript in the browser at the official site, <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener">typescriptlang.org</a>. Browsers can't run TypeScript directly — it is first <em>compiled</em> into plain JavaScript.</p>
+
+  ${analogy(`<p>JavaScript lets you put anything in any box, and you only find out something is wrong when the box breaks. TypeScript puts labels on the boxes ("numbers only!") and checks them <em>while you're packing</em>, not after delivery.</p>`)}
+
+  ${remember(["TypeScript = typed superset of JavaScript, 'JavaScript that scales'","Catches errors before you run the code; supports classes and interfaces","Types: any, number, string, boolean, void, null, undefined, array, enum","It is compiled into ordinary JavaScript for browsers to run"])}
+`;
+
+
+/* ================= UNIT 5 (continued): BOOTSTRAP FRAMEWORK ================= */
+
+/* shared head used by every Bootstrap demo */
+const BS_HEAD = `<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="${BS_CSS}" rel="stylesheet">`;
+
+CONTENT.rwd = `
+  ${explain(`<p><strong>Responsive web design</strong> lets a page change its layout on the go. You build <strong>one website</strong> that works on every kind of device — mobiles, tablets, smart TVs and PCs. Such sites are usually "fluid": they stretch and rearrange themselves to fit.</p>`)}
+
+  <div class="imgcard">
+    <svg viewBox="0 0 420 170" role="img" aria-label="The same page shown as a phone, a tablet and a desktop screen">
+      <rect x="10" y="40" width="60" height="110" rx="8" fill="var(--bg)" stroke="var(--ink-soft)" stroke-width="2"/>
+      <rect x="18" y="52" width="44" height="14" fill="var(--rail)"/>
+      <rect x="18" y="72" width="44" height="26" fill="var(--spark)" opacity=".7"/>
+      <rect x="18" y="104" width="44" height="26" fill="var(--spark)" opacity=".7"/>
+      <text x="40" y="165" text-anchor="middle" font-size="11" fill="var(--ink)">Phone</text>
+
+      <rect x="100" y="25" width="110" height="125" rx="8" fill="var(--bg)" stroke="var(--ink-soft)" stroke-width="2"/>
+      <rect x="110" y="37" width="90" height="14" fill="var(--rail)"/>
+      <rect x="110" y="58" width="42" height="36" fill="var(--spark)" opacity=".7"/>
+      <rect x="158" y="58" width="42" height="36" fill="var(--spark)" opacity=".7"/>
+      <rect x="110" y="100" width="42" height="36" fill="var(--spark)" opacity=".7"/>
+      <rect x="158" y="100" width="42" height="36" fill="var(--spark)" opacity=".7"/>
+      <text x="155" y="165" text-anchor="middle" font-size="11" fill="var(--ink)">Tablet</text>
+
+      <rect x="240" y="10" width="170" height="130" rx="8" fill="var(--bg)" stroke="var(--ink-soft)" stroke-width="2"/>
+      <rect x="252" y="22" width="146" height="14" fill="var(--rail)"/>
+      <rect x="252" y="44" width="32" height="80" fill="var(--spark)" opacity=".7"/>
+      <rect x="290" y="44" width="32" height="80" fill="var(--spark)" opacity=".7"/>
+      <rect x="328" y="44" width="32" height="80" fill="var(--spark)" opacity=".7"/>
+      <rect x="366" y="44" width="32" height="80" fill="var(--spark)" opacity=".7"/>
+      <text x="325" y="160" text-anchor="middle" font-size="11" fill="var(--ink)">Desktop</text>
+    </svg>
+    <p class="imgcaption">The same four content blocks: stacked on a phone, 2 × 2 on a tablet, in one row on a desktop.</p>
+  </div>
+
+  <h3>The viewport</h3>
+  <p>The <strong>viewport</strong> is the user's visible area of the web page. In HTML5 the designer can take control of it with a <code>&lt;meta&gt;</code> tag:</p>
+  ${codeBlock(`<meta name="viewport" content="width=device-width, initial-scale=1.0">`)}
+  <div class="chiprow">
+    <span class="chip"><strong>width=device-width</strong> — follow the screen width of the device</span>
+    <span class="chip"><strong>initial-scale=1.0</strong> — the initial zoom level</span>
+  </div>
+
+  ${analogy(`<p>A responsive page is like water poured into different glasses: it takes the shape of whatever glass (screen) it's in. A non-responsive page is like ice — it keeps one fixed shape and simply won't fit.</p>`)}
+
+  ${mistake(`<p>Forgetting the viewport meta tag. Without it, a phone pretends its screen is about 980 pixels wide and shrinks your whole page into a tiny, unreadable version of the desktop layout.</p>`)}
+
+  ${remember(["Responsive design = ONE site that adapts to every device","Fluid layouts use percentages (or em) instead of fixed pixels","The viewport = the visible area; control it with <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"])}
+`;
+
+CONTENT.rwdgrid = `
+  ${explain(`<p>The <strong>grid view</strong> is one of the most important features of responsive design. The page is divided into <strong>12 equal columns</strong>, and every element takes up some number of them. It makes placing things on a page much easier.</p>`)}
+
+  <div class="imgcard">
+    <svg viewBox="0 0 480 120" role="img" aria-label="Twelve equal columns, with a 3 column block and a 9 column block">
+      ${[0,1,2,3,4,5,6,7,8,9,10,11].map(i=>`<rect x="${10+i*38.3}" y="10" width="34" height="42" fill="var(--line)"/><text x="${27+i*38.3}" y="36" text-anchor="middle" font-size="12" fill="var(--ink-soft)">${i+1}</text>`).join("")}
+      <rect x="10" y="66" width="145" height="40" fill="var(--rail)"/><text x="82" y="91" text-anchor="middle" font-size="13" fill="#fff" font-weight="700">3 columns</text>
+      <rect x="164" y="66" width="306" height="40" fill="var(--spark)"/><text x="317" y="91" text-anchor="middle" font-size="13" fill="#fff" font-weight="700">9 columns</text>
+    </svg>
+    <p class="imgcaption">Twelve columns in a row. Here a menu takes 3 of them and the main content takes the other 9.</p>
+  </div>
+
+  <p>You can have as many <strong>rows</strong> as your design needs. The meeting of rows and columns forms a rectangular grid that holds the website's content.</p>
+
+  <h3>How it works in plain CSS</h3>
+  <p>One column out of twelve is 100% ÷ 12 ≈ 8.33% wide. So each class simply sets a percentage width:</p>
+  ${refTable(["Class","Width","Class","Width"],[
+    ["<code>.col-1</code>","8.33%","<code>.col-7</code>","58.33%"],
+    ["<code>.col-2</code>","16.66%","<code>.col-8</code>","66.66%"],
+    ["<code>.col-3</code>","25%","<code>.col-9</code>","75%"],
+    ["<code>.col-4</code>","33.33%","<code>.col-10</code>","83.33%"],
+    ["<code>.col-5</code>","41.66%","<code>.col-11</code>","91.66%"],
+    ["<code>.col-6</code>","50%","<code>.col-12</code>","100%"]
+  ])}
+
+  ${codeBlock(`* { box-sizing: border-box; }        /* include padding and border in the width */
+
+[class*="col-"] { float: left; padding: 15px; border: 1px solid grey; }
+
+<div class="row">
+  <div class="col-3">...</div>
+  <div class="col-9">...</div>
+</div>`)}
+
+  <p style="font-size:14.5px;">Want to see it live? The W3Schools responsive grid example is a good one to experiment with: <a href="https://www.w3schools.com/css/tryresponsive_grid.htm" target="_blank" rel="noopener">w3schools.com/css/tryresponsive_grid.htm</a>.</p>
+
+  ${more("🔎 Why box-sizing: border-box?","<p>Normally padding and border are added <em>on top of</em> an element's width, so two 50%-wide columns with padding would overflow the row. <code>box-sizing: border-box</code> makes padding and border count <em>inside</em> the width, so the percentages add up to exactly 100%.</p>")}
+
+  ${remember(["The grid = 12 equal columns; you can stack as many rows as you like","col-1 … col-12 are percentage widths: col-6 = 50%, col-4 = 33.33%","A row's columns should add up to 12","box-sizing: border-box keeps padding and border inside the width"])}
+`;
+
+CONTENT.bsintro = `
+  ${explain(`<p><strong>Bootstrap</strong> is a front-end framework that helps developers jump-start web development. You concentrate on writing proper HTML, and Bootstrap takes care of the tricky CSS and JavaScript.</p>`)}
+
+  <h3>Why use a framework?</h3>
+  <div class="chiprow">
+    <span class="chip">⚡ Faster development</span>
+    <span class="chip">🧹 Organised and maintainable code</span>
+    <span class="chip">💡 Spend your time on innovation, not on reinventing the wheel</span>
+  </div>
+
+  ${analogy(`<p>Writing every bit of CSS yourself is like baking a cake from scratch — every time. Bootstrap is a ready-made cake mix: the hard parts are done, and you add your own flavour and decoration.</p>`)}
+
+  <h3 style="margin-top:22px;">Getting Bootstrap ready — two ways</h3>
+  <div class="tabbar" id="bsSetupTabs">
+    <button class="tabbtn active" data-tab="bsdownload">📥 Download the package</button>
+    <button class="tabbtn" data-tab="bscdn">🌐 Use the CDN</button>
+  </div>
+
+  <div class="tabpanel active" data-tab="bsdownload">
+    <div class="card">
+      <p>Download the Bootstrap package, keep its <code>css</code> and <code>js</code> folders next to your page, then link to them. Remember the <strong>viewport</strong> meta tag too:</p>
+      ${codeBlock(`<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+    ...
+    <script src="js/bootstrap.js"></script>   <!-- only if you use Bootstrap's JavaScript -->
+</body>`)}
+    </div>
+  </div>
+
+  <div class="tabpanel" data-tab="bscdn">
+    <div class="card">
+      <p>Or load it from a <strong>CDN</strong>, so there's nothing to download. This is exactly how this portal's live demos load it:</p>
+      ${codeBlock(`<!-- Bootstrap 5.3.8 CSS -->
+<link href="${BS_CSS}"
+      rel="stylesheet">`)}
+      <p style="font-size:14.5px;">Bootstrap's website gives you this snippet with an extra <code>integrity</code> and <code>crossorigin</code> attribute — a safety check that the file hasn't been tampered with. Copy the full snippet from getbootstrap.com when you build a real site.</p>
+    </div>
+  </div>
+
+  ${mistake(`<p>The Bootstrap demos on the next few stations load Bootstrap from a CDN, so they need an internet connection. If a demo looks like plain unstyled HTML, check your connection.</p>`)}
+
+  ${remember(["Bootstrap = a front-end framework: you write the HTML, it supplies the CSS and JavaScript","Benefits: faster development, organised code, no reinventing the wheel","Add it by downloading the package or by linking a CDN","Always include the viewport meta tag"])}
+`;
+
+CONTENT.bsgrid = `
+  ${explain(`<p>Bootstrap's grid is built from three layers: a <strong>container</strong> that holds everything, <strong>rows</strong> inside it, and <strong>columns</strong> inside each row. Column classes say how many of the 12 columns each box should use.</p>`)}
+
+  <h3>Containers</h3>
+  <div class="flow-grid">
+    <div class="flow-card"><h4><code>.container</code></h4><p style="font-size:14.5px;">A <strong>fixed-width</strong> container. It snaps to preset widths at each breakpoint and is centred on the page.</p></div>
+    <div class="flow-card"><h4><code>.container-fluid</code></h4><p style="font-size:14.5px;">A <strong>full-width</strong> container that always spans the entire screen.</p></div>
+  </div>
+
+  <h3 style="margin-top:20px;">The skeleton: container → row → columns</h3>
+  ${demoCard("bsgrid1", "Try it: columns that add up to 12", 230)}
+
+  <h3 style="margin-top:20px;">Display sizes — the breakpoints (Bootstrap 5)</h3>
+  <p>Add a size name to the column class and the layout can <strong>change with the screen size</strong>. A class applies from its size <em>upwards</em>.</p>
+  ${refTable(["Breakpoint","Class prefix","Screen width","Example"],[
+    ["Extra small","<code>col-</code>","under 576px","<code>&lt;div class=\"col-12\"&gt;</code>"],
+    ["Small (sm)","<code>col-sm-</code>","576px and up","<code>&lt;div class=\"col-sm-6\"&gt;</code>"],
+    ["Medium (md)","<code>col-md-</code>","768px and up","<code>&lt;div class=\"col-md-4\"&gt;</code>"],
+    ["Large (lg)","<code>col-lg-</code>","992px and up","<code>&lt;div class=\"col-lg-3\"&gt;</code>"],
+    ["Extra large (xl)","<code>col-xl-</code>","1200px and up","<code>&lt;div class=\"col-xl-2\"&gt;</code>"],
+    ["Extra extra large (xxl)","<code>col-xxl-</code>","1400px and up","<code>&lt;div class=\"col-xxl-1\"&gt;</code>"]
+  ])}
+
+  <h3 style="margin-top:20px;">Watch a layout respond</h3>
+  <p>Each box below is <code>col-12 col-md-6 col-lg-3</code>: full width on a phone, two per row on a tablet, four per row on a desktop. Tap a button to resize the pretend screen — the inside of the frame is a real page that responds to its own width.</p>
+  ${demoCard("bsresponsive", "Try it: Phone, Tablet and Desktop widths", 340)}
+
+  ${mistake(`<p>The 12 columns are a <em>limit per row</em>, not a rule. Add up more than 12 and Bootstrap wraps the extra column onto a new line; add up fewer than 12 and the row simply has empty space at the end.</p>`)}
+
+  ${remember(["container (fixed width) vs container-fluid (full width)","Structure: container → row → col-*","Breakpoints: (none) <576 · sm ≥576 · md ≥768 · lg ≥992 · xl ≥1200 · xxl ≥1400","col-md-6 means 'half width from tablet size upwards'; smaller screens stack","Stack classes to design for several screens: col-12 col-md-6 col-lg-3"])}
+`;
+
+DEMOS.bsgrid1 = `<head>
+  ${BS_HEAD}
+  <style>
+    .box { background:#cfe2ff; border:1px solid #9ec5fe; padding:10px; text-align:center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-3 box">col-3</div>
+      <div class="col-9 box">col-9</div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-4 box">col-4</div>
+      <div class="col-4 box">col-4</div>
+      <div class="col-4 box">col-4</div>
+    </div>
+    <div class="row mt-2">
+      <div class="col box">col</div>
+      <div class="col box">col</div>
+      <div class="col box">col</div>
+      <div class="col box">col</div>
+    </div>
+  </div>
+</body>`;
+
+DEMOS.bsresponsive = `<head>
+  <style>
+    body { font-family: sans-serif; margin: 8px; }
+    button { padding: 6px 12px; margin: 0 4px 8px 0; cursor: pointer; }
+    #wrap  { overflow: hidden; }
+    #frame { border: 3px solid #555; border-radius: 6px; height: 250px; display: block; background: #fff; }
+  </style>
+</head>
+<body>
+  <button onclick="setW(360)">Phone (360px)</button>
+  <button onclick="setW(700)">Tablet (700px)</button>
+  <button onclick="setW(1000)">Desktop (1000px)</button>
+  <span id="label"></span>
+  <div id="wrap"><iframe id="frame"></iframe></div>
+
+  <script>
+    var page = '<meta name="viewport" content="width=device-width, initial-scale=1.0">' +
+      '<link href="${BS_CSS}" rel="stylesheet">' +
+      '<style>.box{background:#cfe2ff;border:1px solid #9ec5fe;padding:10px;text-align:center;}</style>' +
+      '<div class="container-fluid"><div class="row g-2 mt-1">' +
+      '<div class="col-12 col-md-6 col-lg-3"><div class="box">Box 1</div></div>' +
+      '<div class="col-12 col-md-6 col-lg-3"><div class="box">Box 2</div></div>' +
+      '<div class="col-12 col-md-6 col-lg-3"><div class="box">Box 3</div></div>' +
+      '<div class="col-12 col-md-6 col-lg-3"><div class="box">Box 4</div></div>' +
+      '</div></div>';
+    var frame = document.getElementById("frame");
+    var wrap = document.getElementById("wrap");
+    frame.srcdoc = page;
+
+    function setW(w){
+      var avail = document.body.clientWidth - 16;
+      var scale = Math.min(1, avail / w);      // shrink the preview if the screen is narrower
+      frame.style.width = w + "px";
+      frame.style.transformOrigin = "0 0";
+      frame.style.transform = "scale(" + scale + ")";
+      wrap.style.height = Math.round(256 * scale) + "px";
+      document.getElementById("label").innerHTML = "Pretend screen width: " + w + "px";
+    }
+    setW(360);
+  </script>
+</body>`;
+
+CONTENT.bsgrid2 = `
+  ${explain(`<p>Once you know the basic grid, three tricks give you much more control: <strong>nesting</strong> columns inside columns, <strong>offsetting</strong> a column to push it right, and <strong>forcing a line break</strong> between columns.</p>`)}
+
+  <h3>1. Nested columns</h3>
+  <p>Put a <em>new row</em> inside a column, and that column becomes its own little 12-column grid.</p>
+  ${demoCard("bsnested", "Try it: a nested row inside col-md-8", 200)}
+
+  <h3 style="margin-top:20px;">2. Offsetting columns</h3>
+  <p>The class <code>offset-*-*</code> pushes a column to the right by leaving empty columns before it. The first star is the <strong>device size</strong> and the second is the <strong>number of columns</strong> to skip.</p>
+  ${codeBlock(`<div class="row">
+    <div class="col-lg-4 col1"><h6>Hello Ppl!</h6></div>
+    <div class="col-lg-4 offset-lg-4 col2"><h6>Hello Ppl!</h6></div>
+</div>`)}
+  <p style="font-size:14.5px;">The live version below uses <code>md</code> so you can see the gap in this box: the second column skips 4 columns, leaving a gap in the middle.</p>
+  ${demoCard("bsoffset", "Try it: offset-md-4", 150)}
+
+  <h3 style="margin-top:20px;">3. Forcing a new line: the w-100 trick</h3>
+  <p>An empty <code>&lt;div class="w-100"&gt;&lt;/div&gt;</code> between columns is 100% wide, so it breaks the flex row and pushes the next columns onto a new line — even if there was still room.</p>
+  ${demoCard("bswrap", "Try it: columns 3 and 4 forced onto a new line", 190)}
+
+  ${remember(["Nesting: put a new .row inside a column","offset-md-4 skips 4 columns before the column starts","<div class=\"w-100\"></div> forces the next columns onto a new line","Nested rows get their own fresh set of 12 columns"])}
+`;
+
+DEMOS.bsnested = `<head>
+  ${BS_HEAD}
+  <style>
+    .box   { background:#cfe2ff; border:1px solid #9ec5fe; padding:10px; }
+    .inner { background:#ffe69c; border:1px solid #ffda6a; padding:8px; text-align:center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 box">col-md-8
+        <div class="row mt-2">
+          <div class="col-6 inner">nested col-6</div>
+          <div class="col-6 inner">nested col-6</div>
+        </div>
+      </div>
+      <div class="col-md-4 box">col-md-4</div>
+    </div>
+  </div>
+</body>`;
+
+DEMOS.bsoffset = `<head>
+  ${BS_HEAD}
+  <style> .box { background:#cfe2ff; border:1px solid #9ec5fe; padding:10px; text-align:center; } </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 box">col-md-4</div>
+      <div class="col-md-4 offset-md-4 box">col-md-4 offset-md-4</div>
+    </div>
+  </div>
+</body>`;
+
+DEMOS.bswrap = `<head>
+  ${BS_HEAD}
+  <style> .box { background:#cfe2ff; border:1px solid #9ec5fe; padding:10px; text-align:center; } </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row g-2">
+      <div class="col-4 box">1</div>
+      <div class="col-4 box">2</div>
+      <div class="w-100"></div>
+      <div class="col-4 box">3 (forced to a new line)</div>
+      <div class="col-4 box">4</div>
+    </div>
+  </div>
+</body>`;
+
+CONTENT.bscomponents = `
+  ${explain(`<p>Buttons, headers, menus and cards show up on almost every website. Bootstrap's <strong>components</strong> are ready-made versions of them — add a few class names and you have a polished feature in seconds.</p>`)}
+
+  <h3>Page headers</h3>
+  <p>A page header is a big banner at the top of a page. Two common choices:</p>
+  <div class="chiprow">
+    <span class="chip">Content stretches the <strong>full width</strong> of the viewport</span>
+    <span class="chip">Inside a <strong>.container</strong>: width limited to Bootstrap's breakpoints, centred horizontally</span>
+  </div>
+  ${demoCard("bsheader", "Try it: a full-width header and a container header", 330)}
+
+  <h3 style="margin-top:20px;">Cards</h3>
+  <p>A <strong>card</strong> shows text or images inside a box with rounded corners.</p>
+  ${demoCard("bscards", "Try it: a card with header, body, footer and buttons", 270)}
+
+  ${refTable(["Class","What it does"],[
+    ["<code>card</code>","The Bootstrap card component"],
+    ["<code>border</code>","Adds a border"],
+    ["<code>rounded-3</code>","Medium rounded corners (1 = slightly rounded, 5 = very rounded)"],
+    ["<code>shadow-sm</code>","A small, light shadow"],
+    ["<code>card-header</code> · <code>card-body</code> · <code>card-footer</code>","The top, main and bottom sections"],
+    ["<code>bg-light</code>","A light background colour"],
+    ["<code>btn</code> · <code>btn-danger</code> · <code>btn-sm</code> · <code>btn-secondary</code>","A button · red 'danger' style · small size · neutral grey style"]
+  ])}
+
+  <h3 style="margin-top:20px;">Colour means something</h3>
+  ${demoCard("bscolors", "Try it: five card colours", 150)}
+  ${refTable(["Class","Meaning"],[
+    ["<code>bg-primary text-white</code>","Dark blue — main or important"],
+    ["<code>bg-success text-white</code>","Green — success, positive actions, completed tasks"],
+    ["<code>bg-info text-white</code>","Sky blue — informational or neutral messages"],
+    ["<code>bg-warning text-dark</code>","Yellow — warnings and caution"],
+    ["<code>bg-danger text-white</code>","Red — errors, danger or critical alerts"]
+  ])}
+
+  <h3 style="margin-top:20px;">Image + text side by side</h3>
+  ${demoCard("bsimgtext", "Try it: an image beside its text", 190)}
+  <ul>
+    <li><code>d-flex</code> makes the div a flex container, so its children (image + text) sit in a row.</li>
+    <li><code>align-items-start</code> aligns the children to the top; without it they would be centred vertically.</li>
+    <li><code>me-3</code> adds margin on the <strong>end</strong> (right side in left-to-right languages) so the text doesn't touch the image.</li>
+    <li><code>rounded</code> rounds the image corners.</li>
+  </ul>
+
+  ${more("🔎 Where did the jumbotron go?","<p>Older Bootstrap versions had a <code>.jumbotron</code> class for big page headers. Bootstrap 5 removed it — you now build the same effect with utility classes like <code>p-5</code>, <code>bg-primary</code> and <code>text-white</code>, as in the demo above.</p>")}
+
+  ${remember(["Components = ready-made features: headers, cards, buttons, lists, navs","Card = card + card-header / card-body / card-footer; add border, rounded-3, shadow-sm for polish","bg-primary / success / info / warning / danger give colour meaning","d-flex + align-items-start + me-3 puts an image beside text"])}
+`;
+
+DEMOS.bsheader = `<head>
+  ${BS_HEAD}
+</head>
+<body>
+  <!-- 1. Full-width header -->
+  <div class="p-4 bg-primary text-white text-center">
+    <h2>Full-width header</h2>
+    <p class="mb-0">The content stretches across the whole viewport.</p>
+  </div>
+
+  <!-- 2. Header inside a container -->
+  <div class="container mt-3">
+    <div class="p-4 bg-success text-white text-center rounded">
+      <h2>Container header</h2>
+      <p class="mb-0">Limited to Bootstrap's breakpoints and centred.</p>
+    </div>
+  </div>
+</body>`;
+
+DEMOS.bscards = `<head>
+  ${BS_HEAD}
+</head>
+<body class="p-3">
+  <div class="card border rounded-3 shadow-sm" style="max-width:360px;">
+    <div class="card-header bg-light"><strong>Course Card</strong></div>
+    <div class="card-body">
+      <h5 class="card-title">UI, UX and Design Thinking</h5>
+      <p class="card-text">A hands-on course on designing and building friendly websites.</p>
+      <button class="btn btn-danger btn-sm">Drop</button>
+      <button class="btn btn-secondary btn-sm">Maybe later</button>
+    </div>
+    <div class="card-footer text-muted">23CS/PE/XI15</div>
+  </div>
+</body>`;
+
+DEMOS.bscolors = `<head>
+  ${BS_HEAD}
+</head>
+<body class="p-2">
+  <div class="row g-2">
+    <div class="col"><div class="card bg-primary text-white p-2">Primary</div></div>
+    <div class="col"><div class="card bg-success text-white p-2">Success</div></div>
+    <div class="col"><div class="card bg-info text-white p-2">Info</div></div>
+    <div class="col"><div class="card bg-warning text-dark p-2">Warning</div></div>
+    <div class="col"><div class="card bg-danger text-white p-2">Danger</div></div>
+  </div>
+</body>`;
+
+DEMOS.bsimgtext = `<head>
+  ${BS_HEAD}
+</head>
+<body>
+  <div class="d-flex align-items-start p-3">
+    <img src="swiss-mountains.jpg" width="130" class="rounded me-3" alt="Snow-covered Swiss Alps">
+    <div>
+      <h5>A mountain village</h5>
+      <p>The text sits beside the image. The image has rounded corners, and a gap on its right so the words don't touch it.</p>
+    </div>
+  </div>
+</body>`;
+
+CONTENT.bslists = `
+  ${explain(`<p>Two more handy components organise <em>links</em>: <strong>list groups</strong> (stacked lists of items) and <strong>navs</strong> (links placed side by side for navigation).</p>`)}
+
+  <h3>List group — links</h3>
+  ${demoCard("bslist", "Try it: a list group of links (hover over them)", 230)}
+  <ul>
+    <li><code>list-group</code> goes on the container.</li>
+    <li><code>list-group-item</code> turns an element into a list item, with default padding, border and background.</li>
+    <li><code>list-group-item-action</code> makes the item <strong>interactive</strong> — it reacts when hovered or focused. Use it with <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> elements.</li>
+  </ul>
+
+  <h3 style="margin-top:22px;">Navs</h3>
+  <p>A <strong>nav</strong> is a group of links placed inline with each other for navigation. You can show them as plain links, as <strong>tabs</strong>, or as small buttons called <strong>pills</strong>.</p>
+  ${demoCard("bsnavs", "Try it: nav, nav-tabs and nav-pills", 270)}
+  ${refTable(["Class","Look"],[
+    ["<code>nav</code>","Plain inline links"],
+    ["<code>nav nav-tabs</code>","Links that look like folder tabs"],
+    ["<code>nav nav-pills</code>","Links that look like rounded buttons"]
+  ])}
+
+  ${remember(["list-group → list-group-item → list-group-item-action (interactive)","nav gives inline links; add nav-tabs for tabs or nav-pills for button-like pills","Mark the current page with the active class"])}
+`;
+
+DEMOS.bslist = `<head>
+  ${BS_HEAD}
+</head>
+<body class="p-3">
+  <div class="list-group" style="max-width:360px;">
+    <a href="#" class="list-group-item list-group-item-action active">Home</a>
+    <a href="#" class="list-group-item list-group-item-action">Programmes</a>
+    <a href="#" class="list-group-item list-group-item-action">Admissions</a>
+    <a class="list-group-item list-group-item-action disabled">Disabled link</a>
+  </div>
+</body>`;
+
+DEMOS.bsnavs = `<head>
+  ${BS_HEAD}
+</head>
+<body class="p-3">
+  <p class="mb-1"><strong>nav</strong></p>
+  <ul class="nav">
+    <li class="nav-item"><a class="nav-link active" href="#">Active</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+  </ul>
+
+  <p class="mb-1 mt-3"><strong>nav nav-tabs</strong></p>
+  <ul class="nav nav-tabs">
+    <li class="nav-item"><a class="nav-link active" href="#">Active</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+  </ul>
+
+  <p class="mb-1 mt-3"><strong>nav nav-pills</strong></p>
+  <ul class="nav nav-pills">
+    <li class="nav-item"><a class="nav-link active" href="#">Active</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+  </ul>
+</body>`;
+
+CONTENT.bstry = `
+  ${explain(`<p>Two more components are on the "Try it!" list — a <strong>navbar</strong> (the menu bar across the top of a site) and <strong>forms</strong> — and then the most important habit of all: <strong>testing your page at different screen sizes</strong>.</p>`)}
+
+  <h3>Try it: Navbar and Forms</h3>
+  ${demoCard("bsnavbarform", "Try it: a navbar plus a styled form", 390)}
+  <ul>
+    <li><code>navbar</code> builds the top bar; <code>navbar-dark bg-dark</code> sets a dark bar with light text; <code>navbar-expand</code> keeps the links in a row.</li>
+    <li><code>form-control</code> styles text inputs; <code>form-label</code> styles their labels; <code>mb-3</code> adds spacing below each group.</li>
+    <li><code>form-check</code>, <code>form-check-input</code> and <code>form-check-label</code> style checkboxes and radio buttons.</li>
+    <li><code>btn btn-primary</code> is the main blue button.</li>
+  </ul>
+
+  <h3 style="margin-top:22px;">Responsive development with the browser</h3>
+  <p>You don't need ten different devices to test your page. Your browser can pretend to be a phone or tablet:</p>
+  <div class="chiprow">
+    <span class="chip">1️⃣ Open your page, then right-click and choose <strong>Inspect</strong></span>
+    <span class="chip">2️⃣ Click the <strong>device toolbar</strong> icon (a phone-and-tablet symbol) in Developer Tools</span>
+    <span class="chip">3️⃣ Pick a device, or drag to any width, and watch the layout respond</span>
+  </div>
+
+  ${analogy(`<p>Testing on one screen size is like trying on a pair of shoes only in your own size and shipping them to everyone. Device mode lets you "try on" every size before you ship.</p>`)}
+
+  ${remember(["navbar + navbar-expand + navbar-dark bg-dark = a simple top menu bar","Forms: form-control, form-label, form-check, btn btn-primary","Use Inspect → device toolbar to test phone, tablet and desktop widths","Always test a responsive page at more than one size"])}
+`;
+
+DEMOS.bsnavbarform = `<head>
+  ${BS_HEAD}
+</head>
+<body>
+  <nav class="navbar navbar-expand navbar-dark bg-dark px-3">
+    <a class="navbar-brand" href="#">SMC</a>
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Autonomy</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Programmes</a></li>
+    </ul>
+  </nav>
+
+  <div class="container mt-3" style="max-width:420px;">
+    <form>
+      <div class="mb-3">
+        <label class="form-label" for="em">Email address</label>
+        <input type="email" class="form-control" id="em" placeholder="name@example.com">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="pw">Password</label>
+        <input type="password" class="form-control" id="pw">
+      </div>
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="rm">
+        <label class="form-check-label" for="rm">Remember me</label>
+      </div>
+      <button type="button" class="btn btn-primary">Sign in</button>
+    </form>
+  </div>
+</body>`;
+
 /* ================= PRACTICAL EXERCISES ================= */
 
 DEMOS.ex1 = `<!DOCTYPE html>
@@ -2748,6 +4212,325 @@ CONTENT.ex7walk = `
 `;
 
 
+
+/* ================= PRACTICAL EXERCISES 8–10 ================= */
+
+CONTENT.ex8walk = `
+  ${explain(`
+    <p><strong>Exercise 8 — Wireframing an App.</strong> The brief: create a Pencil document with a wireframe of an app. Exercise 7 planned a <em>website</em> for a wide desktop screen; this time you plan a screen for a <strong>mobile phone</strong>, where space is tight and every element must earn its place.</p>
+  `)}
+
+  <div class="imgcard">
+    <img src="wireframe_app.png" alt="Wireframe of a mobile app screen inside a phone outline. At the top is a crossed-out Logo box beside the title Crazy Deals Offer. Below is a scrolling table with columns Product and Deal Ends in, listing Iron Box 23 mins, LG Mobile 30 mins and LP Shirt 40 mins, each with a checkbox. At the bottom is a panel titled Iron Box, Select one, with radio buttons Model 1, Model 2 (selected) and Model 3, and a Next button.">
+    <p class="imgcaption">Sample output: one app screen, "Crazy Deals Offer" — a logo and title, a table of deals with checkboxes, and a model chooser with a Next button.</p>
+  </div>
+
+  <h3 style="margin-top:20px;">Reading the wireframe like a designer would</h3>
+  <ul>
+    <li>The <strong>crossed-out "Logo" box</strong> and the title <strong>Crazy Deals Offer</strong> form the header — brand first, so the user knows where they are.</li>
+    <li>The <strong>table</strong> has two columns, <em>Product</em> and <em>Deal Ends in</em>. A <strong>checkbox</strong> at the start of each row lets the user pick items, and the <strong>scroll bar</strong> on the right hints that more rows exist than fit on a small screen.</li>
+    <li>The blue panel below is a <strong>detail area</strong> for the chosen product (Iron Box). A group of <strong>radio buttons</strong> — Model 1, 2, 3 — means "pick exactly one".</li>
+    <li>The <strong>Next</strong> button sits at the bottom of the panel: one clear action to move forward.</li>
+    <li>Everything lives inside a <strong>phone outline</strong>. Drawing the device frame reminds you of the real screen size you are designing for.</li>
+  </ul>
+
+  <h3 style="margin-top:20px;">Tips for building it in Pencil</h3>
+  <div class="chiprow">
+    <span class="chip">📱 Look for a phone outline in Pencil's <strong>mobile / Android</strong> shape collections</span>
+    <span class="chip">🖼️ Use the <strong>Image</strong> placeholder for the logo</span>
+    <span class="chip">📊 Use <strong>Table</strong>, <strong>Checkbox</strong> and <strong>Radio</strong> shapes from the form controls</span>
+    <span class="chip">🔘 Add a <strong>Button</strong> for Next</span>
+  </div>
+
+  ${analogy(`<p>A phone wireframe is like the plan for a tiny studio flat — you can't afford a single wasted square metre. Every box, checkbox and button has to justify the space it takes, which is exactly why you plan the layout first.</p>`)}
+
+  ${mistake(`<p>Copying a desktop wireframe onto a phone-sized canvas. On a small screen, long menus and wide tables don't fit — you need fewer elements, bigger tap targets (a finger is much less precise than a mouse), and scrolling areas such as the table here.</p>`)}
+
+  ${remember(["Exercise 8 = a Pencil wireframe of an APP (mobile) screen, not a website","Show structure only: placeholder logo, table, checkboxes, radio buttons, button","Checkboxes = pick any number · Radio buttons = pick exactly one","Design for thumbs: clear, large, uncluttered controls","Same Pencil tool you practised in Exercise 7 and the Wireframing station"])}
+`;
+
+/* ---------- Exercise 9 ---------- */
+DEMOS.ex9 = `<!DOCTYPE html>
+<html>
+<head>
+<title>Online Course Registration</title>
+<style>
+  body { background: lightblue; font-family: serif; padding: 14px; }
+  h2   { color: firebrick; text-align: center; }
+  td   { padding: 6px 14px; }
+  .platform {
+    width: 130px; height: 42px; border-radius: 10px; color: white;
+    font: bold 15px Arial; display: flex; align-items: center;
+    justify-content: center; margin-bottom: 8px; cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<h2>Online Course Registration</h2>
+
+<form id="regform">
+<table>
+  <tr>
+    <td>Course Level</td>
+    <td>
+      <select id="level" onchange="levelChosen()">
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>Department Number</td>
+    <td><input type="text" id="dept" onfocus="focusIn(this)" onblur="focusOut(this)"></td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td><input type="text" id="uname" onfocus="focusIn(this)" onblur="focusOut(this)"></td>
+  </tr>
+  <tr>
+    <td>Mobile Number</td>
+    <td><input type="text" id="mobile" placeholder="click here" onclick="askMobile()"></td>
+  </tr>
+  <tr>
+    <td>Online Platform</td>
+    <td>
+      <div class="platform" style="background:#00897b;" onmouseover="alert('You have chosen Google Meet')">Google Meet</div>
+      <div class="platform" style="background:#2d8cff;" onmouseover="alert('You have chosen Zoom')">Zoom</div>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><input type="button" value="Register" onclick="submitForm()"></td>
+  </tr>
+</table>
+</form>
+
+<script>
+  // onchange - fires when the dropdown value changes
+  function levelChosen(){
+    alert("You chose: " + document.getElementById("level").value);
+  }
+
+  // onfocus / onblur - change the field colour when the cursor enters / leaves
+  function focusIn(box){  box.style.backgroundColor = "yellow";     }
+  function focusOut(box){ box.style.backgroundColor = "lightgreen"; }
+
+  // onclick - ask for the mobile number and show it in the box
+  function askMobile(){
+    var no = prompt("Enter your mobile number:");
+    if(no !== null){                      // null means the user pressed Cancel
+      document.getElementById("mobile").value = no;
+    }
+  }
+
+  // onclick on Register - basic validation, then a confirm box
+  function submitForm(){
+    var dept   = document.getElementById("dept").value;
+    var name   = document.getElementById("uname").value;
+    var mobile = document.getElementById("mobile").value;
+
+    if(dept === "" || name === "" || mobile === ""){
+      alert("Please fill in all the fields.");
+      return;
+    }
+    if(confirm("Are you sure to submit?")){
+      alert("You have successfully registered");
+    } else {
+      alert("Make changes and register again");
+    }
+  }
+</script>
+</body>
+</html>`;
+
+CONTENT.ex9walk = `
+  ${explain(`
+    <p><strong>Exercise 9 — JavaScript Event Handling and Basic Validation in a HTML5 Form.</strong> The brief: build an online course registration page that reacts to the user with these event handlers: <code>onchange</code>, <code>onfocus</code>, <code>onblur</code>, <code>onclick</code>, <code>onmouseover</code>/<code>onmouseout</code>, plus a confirm box on submit.</p>
+  `)}
+
+  ${demoCard("ex9", "Live Output — Exercise 9 (try every field!)", 430)}
+
+  <p style="font-size:14.5px;">In this demo the Google Meet and Zoom "images" are simple coloured labels. In your own solution you'll use real <code>&lt;img&gt;</code> tags with the logo pictures, and the <code>onmouseover</code> attribute goes on each image in exactly the same way.</p>
+
+  <h3 style="margin-top:20px;">Walking through the code</h3>
+  <ul>
+    <li><strong><code>onchange="levelChosen()"</code></strong> on the dropdown — runs when the user picks a different course level, and the function alerts <code>document.getElementById("level").value</code>, the chosen option.</li>
+    <li><strong><code>onfocus</code> / <code>onblur</code></strong> on Department Number and Name — <code>focusIn(this)</code> turns the box yellow when the cursor enters, <code>focusOut(this)</code> turns it light green when the cursor leaves. The word <code>this</code> hands the function the very box that triggered the event, so one function serves both fields. This is the dynamic styling idea: <code>box.style.backgroundColor</code>.</li>
+    <li><strong><code>onclick="askMobile()"</code></strong> on Mobile Number — <code>prompt()</code> pops up a box asking for the number, and the answer is written into the input with <code>.value</code>. If the user presses Cancel, <code>prompt</code> returns <code>null</code>, so we check for that first.</li>
+    <li><strong><code>onmouseover</code></strong> on each platform — the alert text is simply different for Google Meet and for Zoom. <code>onmouseout</code> is the partner event, for when the mouse leaves.</li>
+    <li><strong>Basic validation</strong> in <code>submitForm()</code> — if department, name or mobile is empty, stop with <code>return</code> after alerting the user. That's the "mandatory fields" job from the validation station.</li>
+    <li><strong>The confirm box</strong> — <code>confirm()</code> shows OK / Cancel and returns <code>true</code> or <code>false</code>, so an <code>if / else</code> chooses between "You have successfully registered" and "Make changes and register again".</li>
+  </ul>
+
+  ${mistake(`<p>Mixing up the three pop-up boxes: <code>alert()</code> only tells the user something, <code>confirm()</code> asks a yes/no question and gives back <code>true</code>/<code>false</code>, and <code>prompt()</code> asks for typed text and gives back that text (or <code>null</code> if cancelled).</p>`)}
+
+  ${remember(["onchange → a value changed · onfocus → cursor enters · onblur → cursor leaves","onclick → a click · onmouseover / onmouseout → mouse enters / leaves","this inside a handler call = the element that fired the event","alert() tells · confirm() asks OK/Cancel (true/false) · prompt() asks for text (or null)","style.backgroundColor changes a colour from JavaScript","Basic validation = check mandatory fields are not empty before continuing"])}
+`;
+
+/* ---------- Exercise 10 ---------- */
+DEMOS.ex10 = `<!DOCTYPE html>
+<html>
+<head>
+<title>Student Registration Form</title>
+<style>
+  body  { font-family: Arial, sans-serif; background: #e8fbff; padding: 10px; }
+  form  { width: 330px; margin: 0 auto; padding: 16px; background: #f4f4f4;
+          border: 1px solid #999; border-radius: 6px; }
+  h3    { text-align: center; margin: 0 0 4px; }
+  .note { text-align: right; font-size: 11px; margin: 0 0 10px; }
+  .row  { display: flex; align-items: flex-start; font-size: 13px; margin-bottom: 2px; }
+  .row label { width: 105px; padding-top: 4px; }
+  .row input, .row select, .row textarea { width: 170px; padding: 4px; font-size: 13px; }
+  .err  { color: #c00; font-size: 11px; margin: 0 0 8px 105px; min-height: 13px; }
+  .bad  { background: #ffd6d6; border: 1px solid red; }
+  #reg  { background: #7dff9a; border: 1px solid #444; padding: 6px 28px;
+          margin-left: 105px; cursor: pointer; }
+</style>
+</head>
+<body>
+<form id="sform" novalidate>
+  <h3>Student Registration Form</h3>
+  <p class="note">* denotes a required field</p>
+
+  <div class="row"><label for="fname">First Name *</label>
+    <input type="text" id="fname" pattern="[A-Za-z]+" data-label="First name"
+           data-msg="First name must contain only alphabets" required></div>
+  <div class="err" id="e_fname"></div>
+
+  <div class="row"><label for="lname">Last Name *</label>
+    <input type="text" id="lname" pattern="[A-Za-z]+" data-label="Last name"
+           data-msg="Last name must contain only alphabets" required></div>
+  <div class="err" id="e_lname"></div>
+
+  <div class="row"><label for="father">Father Name *</label>
+    <input type="text" id="father" pattern="[A-Za-z]+" data-label="Father name"
+           data-msg="Father name must contain only alphabets" required></div>
+  <div class="err" id="e_father"></div>
+
+  <div class="row"><label for="dob">Date of Birth *</label>
+    <input type="date" id="dob" data-label="Date of birth" required></div>
+  <div class="err" id="e_dob"></div>
+
+  <div class="row"><label for="tel">Telephone *</label>
+    <input type="tel" id="tel" pattern="[0-9]{10}" maxlength="10" data-label="Telephone"
+           data-msg="Telephone must be exactly 10 digits" required></div>
+  <div class="err" id="e_tel"></div>
+
+  <div class="row"><label for="college">College Name *</label>
+    <input type="text" id="college" data-label="College name" required></div>
+  <div class="err" id="e_college"></div>
+
+  <div class="row"><label for="address">Address *</label>
+    <textarea id="address" rows="2" data-label="Address" required></textarea></div>
+  <div class="err" id="e_address"></div>
+
+  <div class="row"><label for="year">Year *</label>
+    <select id="year" data-label="Year" required>
+      <option value="">Select Year</option>
+      <option>I</option><option>II</option><option>III</option>
+    </select></div>
+  <div class="err" id="e_year"></div>
+
+  <div class="row"><label for="email">Email *</label>
+    <input type="email" id="email" data-label="Email" required></div>
+  <div class="err" id="e_email"></div>
+
+  <button type="button" id="reg">Register</button>
+</form>
+
+<script>
+  var fields = ["fname","lname","father","dob","tel","college","address","year","email"];
+  var form = document.getElementById("sform");
+
+  // Date of birth cannot be in the future: set max to today
+  document.getElementById("dob").max = new Date().toISOString().split("T")[0];
+
+  // Check ONE field: set a custom message (or clear it) and colour the field
+  function check(id){
+    var f = document.getElementById(id);
+    var label = f.dataset.label;
+    f.setCustomValidity("");                       // 1. wipe the old custom message
+
+    if(f.validity.valueMissing){                   // 2. choose the right message
+      f.setCustomValidity(label + " is required");
+    } else if(f.validity.typeMismatch){
+      f.setCustomValidity("Please enter a valid " + label.toLowerCase());
+    } else if(f.validity.patternMismatch){
+      f.setCustomValidity(f.dataset.msg);
+    } else if(f.validity.rangeOverflow){
+      f.setCustomValidity(label + " cannot be in the future");
+    } else if(id === "father" &&
+              f.value !== document.getElementById("lname").value){
+      f.setCustomValidity("Father name must be the same as last name");
+    }
+
+    var ok = f.checkValidity();                    // 3. ask the field if it is valid now
+    f.classList.toggle("bad", !ok);                // 4. red background/border when invalid
+    document.getElementById("e_" + id).textContent = ok ? "" : f.validationMessage;
+    return ok;
+  }
+
+  // Check a field whenever the user types in it or leaves it
+  fields.forEach(function(id){
+    var f = document.getElementById(id);
+    f.addEventListener("input",  function(){ check(id); });
+    f.addEventListener("change", function(){ check(id); });
+  });
+  // last name changed -> father name must be compared again
+  document.getElementById("lname").addEventListener("input", function(){
+    if(document.getElementById("father").value !== "") check("father");
+  });
+
+  document.getElementById("reg").addEventListener("click", function(){
+    var allValid = true;
+    fields.forEach(function(id){ if(!check(id)) allValid = false; });
+
+    if(allValid){
+      alert("Registration successful! Welcome, " + document.getElementById("fname").value + ".");
+    } else {
+      form.reportValidity();                       // show the first problem to the user
+    }
+  });
+</script>
+</body>
+</html>`;
+
+CONTENT.ex10walk = `
+  ${explain(`
+    <p><strong>Exercise 10 — Form Handling and JavaScript Validation using the DOM Constraint API.</strong> The brief: take a Student Registration Form and add these validations — all fields required; custom messages for every field; last name and father name must match; first, last and father name only alphabets; telephone exactly 10 digits; checks based on each field's <code>type</code>; invalid fields turn red; and if everything is valid, clicking Register shows an alert.</p>
+  `)}
+
+  ${demoCard("ex10", "Live Output — Exercise 10 (try leaving fields empty, or typing numbers in a name)", 640)}
+
+  <h3 style="margin-top:20px;">Matching each requirement to the code</h3>
+  ${refTable(["Requirement","How the code does it"],[
+    ["a. All fields required","The <code>required</code> attribute on every field; <code>validity.valueMissing</code> detects an empty one"],
+    ["b. Custom validation messages","<code>setCustomValidity(\"...\")</code> with a friendly message for each situation"],
+    ["c. Last name = father name","Compare the two <code>.value</code>s; if different, set a custom message on father name. A listener on last name re-checks father name too"],
+    ["d. Names: alphabets only","<code>pattern=\"[A-Za-z]+\"</code>, and <code>validity.patternMismatch</code> picks the message"],
+    ["e. Telephone: exactly 10","<code>pattern=\"[0-9]{10}\"</code> plus <code>maxlength=\"10\"</code> (stops extra typing)"],
+    ["f. Based on <code>type</code>","<code>type=\"email\"</code> (typeMismatch), <code>type=\"date\"</code> with a <code>max</code> of today (rangeOverflow), <code>type=\"tel\"</code>"],
+    ["g. Invalid → red","<code>classList.toggle(\"bad\", !ok)</code> adds a red-background CSS class when the field is invalid"],
+    ["h. All valid → alert","On Register, check every field; if all pass, <code>alert()</code>; otherwise <code>reportValidity()</code>"]
+  ])}
+
+  <h3 style="margin-top:22px;">The heart of it: one function, four steps</h3>
+  <ol>
+    <li><strong>Clear</strong> — <code>setCustomValidity("")</code> wipes any message from last time, so a fixed field can become valid again.</li>
+    <li><strong>Choose</strong> — look at the <code>validity</code> flags in turn (<code>valueMissing</code>, <code>typeMismatch</code>, <code>patternMismatch</code>, <code>rangeOverflow</code>) and set the matching custom message.</li>
+    <li><strong>Ask</strong> — <code>checkValidity()</code> answers true or false now that the message is set.</li>
+    <li><strong>Show</strong> — colour the field and print <code>validationMessage</code> beneath it.</li>
+  </ol>
+  <p>That same function is reused by every field through a loop and <code>addEventListener</code>, so the form checks as the user types — not only at the end.</p>
+
+  ${more("🔎 Why novalidate on the form?","<p>The <code>novalidate</code> attribute stops the browser from popping up its own message at submit time, so <em>our</em> code stays in charge of the messages and the red colouring. We then call <code>form.reportValidity()</code> ourselves to show the first problem.</p>")}
+
+  ${mistake(`<p>Forgetting <code>setCustomValidity("")</code>. Once any custom message is set, the field stays invalid even after the user corrects it — the form would refuse to submit with no visible reason. Always clear first, then decide.</p>`)}
+
+  ${remember(["Constraint API = validity flags + validationMessage + checkValidity() + setCustomValidity()","Order inside the checker: clear → choose message → checkValidity() → show result","Compare two fields with their .value for rules like 'last name = father name'","pattern for formats (letters only, exactly 10 digits); type for email/date/tel","classList.toggle(\"bad\", !ok) turns the red style on or off","reportValidity() shows the first problem; alert() confirms success"])}
+`;
+
 /* ================= QUIZ DATA ================= */
 const QUIZZES = {
   quizUnit1: [
@@ -2815,6 +4598,46 @@ const QUIZZES = {
     {q:"Which display method writes to the developer console only (not visible to users)?", opts:["document.write()","innerHTML","window.alert()","console.log()"], a:3},
     {q:"document.createElement() is used to:", opts:["Delete an element","Create a brand new element","Style an element","Hide an element"], a:1},
   ],
+  quizJsEvents: [
+    {q:'A JavaScript function runs when:', opts:['The page is saved','Something calls (invokes) it','The browser is installed','Its name is written in a comment'], a:1},
+    {q:'Which keyword sends an answer back from a function to whoever called it?', opts:['send','output','return','print'], a:2},
+    {q:'All JavaScript event handler names start with which word?', opts:['do','on','when','event'], a:1},
+    {q:'Which event handler fires when the mouse moves over an element?', opts:['onclick','onchange','onblur','onmouseover'], a:3},
+    {q:'Which approach lets you attach MANY handlers to the same element and event?', opts:['onclick = function(){...}','addEventListener()','An inline onclick attribute','document.write()'], a:1},
+    {q:'Which line correctly sets an element\'s background colour from JavaScript?', opts:['element.style.background-color = "red";','element.style.backgroundColor = "red";','element.css("red");','element.color.background = "red";'], a:1},
+    {q:'By default, a click on a button inside two nested divs travels:', opts:['From the outer div inwards','Only to the button','From the button outwards (it bubbles up)','Nowhere — events do not travel'], a:2},
+    {q:'Client-side validation is performed:', opts:['By the web server, after submission','By the browser, before the data is sent','Only by the database','Never — it is not possible'], a:1},
+    {q:'Which HTML attribute makes a form field mandatory?', opts:['mandatory','needed','required','validate'], a:2},
+    {q:'Which regular expression accepts letters only (one or more)?', opts:['^[0-9]+$','^[A-Za-z]+$','^[^A-Za-z]$','/stella/i'], a:1},
+    {q:'Which CSS pseudo-class styles fields that currently hold valid input?', opts:[':valid',':optional',':disabled',':checked'], a:0},
+    {q:'Which method returns true when a field\'s value passes all its constraints?', opts:['validate()','checkValidity()','isValid()','setCustomValidity()'], a:1},
+    {q:'After calling setCustomValidity("some message"), how do you clear it so the field can be valid again?', opts:['setCustomValidity("")','clearValidity()','validity.valid = true','There is no way'], a:0},
+    {q:'What is the difference between disabled and readonly?', opts:['No difference','readonly fields are still submitted; disabled fields are not','disabled fields are submitted; readonly are not','Both only work on buttons'], a:1},
+  ],
+  quizJsWeb: [
+    {q:'Which BOM object powers the browser\'s Back button?', opts:['screen','navigator','history','location'], a:2},
+    {q:'What makes location.replace() different from location.assign()?', opts:['It reloads faster','The current page is removed from history, so Back skips it','It opens a new window','It only works offline'], a:1},
+    {q:'Which storage is kept indefinitely, even after the browser closes?', opts:['sessionStorage','localStorage','document.write','console.log'], a:1},
+    {q:'Keys and values saved in Web Storage must be:', opts:['Numbers','Objects','Strings','Booleans'], a:2},
+    {q:'What does setInterval() do?', opts:['Runs a function once, immediately','Calls a function again and again at a fixed interval','Pauses the page','Stops a timer'], a:1},
+    {q:'Which is the basic jQuery syntax?', opts:['$(selector).action()','jQuery->selector.action','select(action)$','$.action[selector]'], a:0},
+    {q:'TypeScript is best described as:', opts:['A database','A typed superset of JavaScript','A CSS framework','A browser'], a:1},
+    {q:'Where do all of a page\'s cookies arrive as one semicolon-separated string?', opts:['window.cookies','document.cookie','localStorage.cookie','navigator.cookie'], a:1},
+  ],
+  quizBootstrap: [
+    {q:'Responsive web design means:', opts:['Building a separate site for each device','One site whose layout adapts to every device','A site that responds only to voice','A site with no CSS'], a:1},
+    {q:'Which content value in the viewport meta tag makes a page follow the device\'s screen width?', opts:['width=device-width','width=100px','device=auto','screen=full'], a:0},
+    {q:'How many columns are in Bootstrap\'s grid?', opts:['6','10','12','16'], a:2},
+    {q:'What does .container-fluid do?', opts:['Gives a fixed width','Spans the full width of the screen','Hides the content','Adds animation'], a:1},
+    {q:'What does col-md-6 mean?', opts:['Half width from medium screens (768px) upwards','6 pixels wide','Always 60% wide','Only visible on phones'], a:0},
+    {q:'Which class pushes a medium-screen column to the right by leaving 4 empty columns before it?', opts:['margin-md-4','push-md-4','offset-md-4','space-md-4'], a:2},
+    {q:'What is an empty div with class w-100 used for between columns?', opts:['Making a 100px gap','Forcing the next columns onto a new line','Hiding columns','Adding a border'], a:1},
+    {q:'Which class combination gives a green "success" card?', opts:['bg-success text-white','bg-green','card-green','text-success-bg'], a:0},
+    {q:'What does list-group-item-action do?', opts:['Deletes the item','Makes the list item interactive (reacts on hover/focus)','Sorts the list','Makes the list horizontal'], a:1},
+    {q:'Which class shows nav links as small rounded buttons?', opts:['nav-tabs','nav-pills','nav-buttons','nav-fluid'], a:1},
+    {q:'Why do grid examples set box-sizing: border-box?', opts:['To hide borders','Padding and border count inside the width, so columns add up to 100%','To make text bold','To speed up the page'], a:1},
+    {q:'Bootstrap is best described as:', opts:['A back-end database','A front-end framework with ready-made CSS and JavaScript','A text editor','A programming language'], a:1},
+  ],
   quizPractical: [
     {q:"In Exercise 1, which tag was used to cross out the age '36'?", opts:["del","strike","u","mark"], a:1},
     {q:"In Exercise 1, the Dreams list used which list type to get A, B, C numbering?", opts:["ul","ol type='A'","ol type='1'","dl"], a:1},
@@ -2828,6 +4651,14 @@ const QUIZZES = {
     {q:"In Exercise 6's Transform demo, which transform slants a box along both axes?", opts:["translate","rotate","scale","skew"], a:3},
     {q:"In Exercise 7, why do wireframes use plain crossed-out boxes instead of real photos?", opts:["Pencil can't import images","To keep the focus on structure and layout, not visual polish","It's faster to export as PDF","Real images aren't allowed by the college"], a:1},
     {q:"In Exercise 7's wireframe, what does labelling a box '164 × 100' communicate to a developer?", opts:["The exact pixel size to reserve for that element","The font size to use","The number of images needed","The page's total width"], a:0},
+    {q:"In Exercise 8's app wireframe, which control lets the user pick exactly ONE of Model 1, Model 2 or Model 3?", opts:["Checkboxes","Radio buttons","A text box","A scroll bar"], a:1},
+    {q:"Why does the Exercise 8 wireframe include a phone outline?", opts:["It is required by Pencil","It reminds you that you are designing for a small mobile screen","It makes the file smaller","Apps always have outlines"], a:1},
+    {q:"In Exercise 9, which event handler runs when the user picks a different course level?", opts:["onclick","onfocus","onchange","onblur"], a:2},
+    {q:"In Exercise 9, what does prompt() return if the user presses Cancel?", opts:["An empty string","0","false","null"], a:3},
+    {q:"In Exercise 9, which pop-up box returns true or false?", opts:["alert()","confirm()","prompt()","console.log()"], a:1},
+    {q:"In Exercise 10, which method sets your own error message on a field?", opts:["checkValidity()","reportValidity()","setCustomValidity()","willValidate()"], a:2},
+    {q:"In Exercise 10, why does the checker call setCustomValidity('') first?", opts:["To make the form load faster","To clear an old message so a corrected field can become valid again","To hide the field","To submit the form"], a:1},
+    {q:"In Exercise 10, which attributes make the telephone field accept exactly 10 digits?", opts:["pattern=[0-9]{10} with maxlength=10","type=number only","required only","min=10 max=10"], a:0},
   ],
 };
 
@@ -2863,12 +4694,15 @@ function buildSummaryHTML(){
       </ul>
     </div>
     <div class="card">
-      <h3 style="margin-bottom:8px;">Unit 5 · JavaScript</h3>
+      <h3 style="margin-bottom:8px;">Unit 5 · JavaScript, Form Validation, Browser APIs &amp; Bootstrap</h3>
       <ul>
         <li><strong>Basics:</strong> client-side, interpreted; script tags, noscript, external JS, comments.</li>
-        <li><strong>BOM &amp; DOM:</strong> window object and its console; the HTML DOM tree structure.</li>
-        <li><strong>Accessing Elements:</strong> getElementById, getElementsByClassName, getElementsByTagName.</li>
-        <li><strong>Output &amp; Creation:</strong> document.write, innerHTML, alert, console.log; createElement/createTextNode.</li>
+        <li><strong>BOM &amp; DOM:</strong> window and console; screen, location, history, navigator; the HTML DOM tree.</li>
+        <li><strong>Accessing &amp; Creating:</strong> getElementById / ByClassName / ByTagName; document.write, innerHTML, alert, console.log; createElement/createTextNode.</li>
+        <li><strong>Functions &amp; Events:</strong> function name(params){ } with return; event handlers (onclick, onchange, onmouseover...); inline vs JS registration; style.cssProperty; addEventListener and bubbling.</li>
+        <li><strong>Form Validation:</strong> client-side vs server-side; required, pattern, min/max/step, type; regular expressions; :valid / :invalid; validity, validationMessage, checkValidity(), setCustomValidity().</li>
+        <li><strong>Web APIs &amp; libraries:</strong> cookies, localStorage / sessionStorage, setTimeout / setInterval; jQuery $(selector).action(); TypeScript.</li>
+        <li><strong>Bootstrap:</strong> responsive design and the viewport; 12-column grid; container / row / col-*; breakpoints sm md lg xl xxl; nesting, offset, w-100; cards, list groups, navs, navbar, forms.</li>
       </ul>
     </div>
     <div class="card">
@@ -2876,6 +4710,8 @@ function buildSummaryHTML(){
       <ul>
         <li><strong>Ex1-3:</strong> Personal Profile, Travel Blog, Input Form.</li>
         <li><strong>Ex4-6:</strong> Professional Layout, Flexbox Page, Animations &amp; Transforms.</li>
+        <li><strong>Ex7-8:</strong> Wireframing the College Website and an App in Pencil.</li>
+        <li><strong>Ex9-10:</strong> JavaScript Event Handling &amp; Basic Validation; Form Validation with the DOM Constraint API.</li>
       </ul>
     </div>
     ${remember(["Revisit any station any time from the side menu","Try each quiz again until you score full marks!"])}
