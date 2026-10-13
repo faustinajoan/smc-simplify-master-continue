@@ -2,6 +2,7 @@
    SMC — Simplify • Master • Continue
    23CS/PE/XI15 · UI, UX and Design Thinking
    Unit 1: UI, UX & The Design Process
+   Unit 2: Visual Design Principles & Processes; Designing Behaviour
    Unit 3: Wireframing, Prototyping, UI Design & Frontend Implementation
    Unit 4: Website Development — HTML5 & CSS3
    Unit 5: JavaScript, Form Validation, Browser APIs & Bootstrap
@@ -23,6 +24,25 @@ const STATIONS = [
   { id:"gestalt",      icon:"🧠", label:"Gestalt Theory", kind:"topic", group:"unit1" },
   { id:"psychology",   icon:"💡", label:"Psychology in UX", kind:"topic", group:"unit1" },
   { id:"quizUnit1",    icon:"🧠", label:"Unit 1 Quiz", kind:"quiz", group:"unit1", quizId:"quizUnit1" },
+
+  /* ---------- UNIT 2 ---------- */
+  { id:"visualintro", icon:"🖼️", label:"What is Visual Design?", kind:"topic", group:"unit2vis" },
+  { id:"vlines", icon:"📏", label:"Lines", kind:"topic", group:"unit2vis" },
+  { id:"vshapes", icon:"🔷", label:"Shapes", kind:"topic", group:"unit2vis" },
+  { id:"colorbasics", icon:"🌈", label:"Colour Basics", kind:"topic", group:"unit2vis" },
+  { id:"colorsystems", icon:"🎡", label:"Colour Systems & the Wheel", kind:"topic", group:"unit2vis" },
+  { id:"colormeaning", icon:"❤️", label:"Colour Meaning & Contrast", kind:"topic", group:"unit2vis" },
+  { id:"typography1", icon:"🔤", label:"Typography: Typefaces", kind:"topic", group:"unit2vis" },
+  { id:"typography2", icon:"📖", label:"Typography: Setting Text", kind:"topic", group:"unit2vis" },
+  { id:"texturesforms", icon:"🧱", label:"Texture & Form", kind:"topic", group:"unit2vis" },
+  { id:"principles1", icon:"📐", label:"Principles: Alignment, Hierarchy, Contrast", kind:"topic", group:"unit2vis" },
+  { id:"principles2", icon:"⚖️", label:"Principles: Repetition, Proximity, Balance, Space", kind:"topic", group:"unit2vis" },
+  { id:"quizVisual", icon:"🧠", label:"Visual Design Quiz", kind:"quiz", group:"unit2vis", quizId:"quizVisual" },
+  { id:"foggmodel", icon:"🎯", label:"The Fogg Behaviour Model", kind:"topic", group:"unit2beh" },
+  { id:"fivefactors", icon:"🔔", label:"Five Factors of Behaviour", kind:"topic", group:"unit2beh" },
+  { id:"behaviourmodels", icon:"🧩", label:"Models of Behaviour Change", kind:"topic", group:"unit2beh" },
+  { id:"behaviourproduct", icon:"🚀", label:"Designing Behaviour in a Product", kind:"topic", group:"unit2beh" },
+  { id:"quizBehaviour", icon:"🧠", label:"Designing Behaviour Quiz", kind:"quiz", group:"unit2beh", quizId:"quizBehaviour" },
 
   /* ---------- UNIT 3 ---------- */
   { id:"wireframebasics", icon:"📐", label:"What is Wireframing?", kind:"topic", group:"unit3" },
@@ -128,6 +148,8 @@ const STATIONS = [
 
 const GROUP_META = {
   unit1:     { title:"Unit 1 · UI, UX & The Design Process", eyebrow:"UNIT 1" },
+  unit2vis:  { title:"Unit 2 · Visual Design Principles & Processes", eyebrow:"UNIT 2 · VISUAL" },
+  unit2beh:  { title:"Unit 2 · Designing Behaviour", eyebrow:"UNIT 2 · BEHAVIOUR" },
   unit3:     { title:"Unit 3 · Wireframing, Prototyping & Frontend", eyebrow:"UNIT 3" },
   unit4html: { title:"Unit 4 · Website & HTML5", eyebrow:"UNIT 4 · HTML5" },
   unit4css:  { title:"Unit 4 · CSS3 Styling", eyebrow:"UNIT 4 · CSS3" },
@@ -161,9 +183,10 @@ CONTENT.home = `
     <div class="hero-deco">🎨</div>
     <span class="eyebrow" style="background:rgba(255,255,255,.22);">SMC PORTAL</span>
     <h1>Simplify • Master • Continue</h1>
-    <p>Welcome! This portal covers UI/UX &amp; the Design Process (Unit 1), Wireframing/Prototyping/Frontend Implementation (Unit 3), Website Development with HTML5 &amp; CSS3 (Unit 4), and JavaScript, Form Validation &amp; Bootstrap (Unit 5) — one small idea at a time, with pictures, real code, live outputs, and quick checks along the way.</p>
+    <p>Welcome! This portal covers UI/UX &amp; the Design Process (Unit 1), Visual Design Principles &amp; Designing Behaviour (Unit 2), Wireframing/Prototyping/Frontend Implementation (Unit 3), Website Development with HTML5 &amp; CSS3 (Unit 4), and JavaScript, Form Validation &amp; Bootstrap (Unit 5) — one small idea at a time, with pictures, real code, live outputs, and quick checks along the way.</p>
     <div class="stat-row">
       <div class="stat-pill">🧭 Unit 1 · UX Design Process</div>
+      <div class="stat-pill">🎨 Unit 2 · Visual Design &amp; Behaviour</div>
       <div class="stat-pill">📐 Unit 3 · Wireframing &amp; Frontend</div>
       <div class="stat-pill">🌐 Unit 4 · HTML5 &amp; CSS3</div>
       <div class="stat-pill">📜 Unit 5 · JavaScript &amp; Bootstrap</div>
@@ -176,6 +199,16 @@ CONTENT.home = `
   <h3 style="margin-top:26px;">Unit 1 · UI, UX &amp; The Design Process</h3>
   <div class="route-preview">
     ${STATIONS.filter(s=>s.group==="unit1" && s.kind==="topic").map(s=>`<div class="route-item"><span class="emoji">${s.icon}</span>${s.label}</div>`).join("")}
+  </div>
+
+  <h3 style="margin-top:26px;">Unit 2 · Visual Design Principles &amp; Processes</h3>
+  <div class="route-preview">
+    ${STATIONS.filter(s=>s.group==="unit2vis" && s.kind==="topic").map(s=>`<div class="route-item"><span class="emoji">${s.icon}</span>${s.label}</div>`).join("")}
+  </div>
+
+  <h3 style="margin-top:26px;">Unit 2 · Designing Behaviour</h3>
+  <div class="route-preview">
+    ${STATIONS.filter(s=>s.group==="unit2beh" && s.kind==="topic").map(s=>`<div class="route-item"><span class="emoji">${s.icon}</span>${s.label}</div>`).join("")}
   </div>
 
   <h3 style="margin-top:26px;">Unit 3 · Wireframing, Prototyping &amp; Frontend</h3>
@@ -581,6 +614,968 @@ CONTENT.psychology = `
 
   ${remember(["Action happens only when Motivation + Ability + Trigger all align","Motivation: Extrinsic (external reward) vs Intrinsic (internal satisfaction)","Ability: how easy or hard the task feels to complete","Triggers: the prompt or cue that reminds someone to act right now"])}
 `;
+/* ================= UNIT 2: VISUAL DESIGN & BEHAVIOUR ================= */
+/* ================= UNIT 2: VISUAL DESIGN PRINCIPLES & PROCESSES ================= */
+
+/* 12-hue traditional colour wheel (red-yellow-blue), drawn as SVG wedges */
+const WHEEL_HUES = [
+  {n:"Yellow",        c:"#FFE600", t:"primary"},
+  {n:"Yellow-orange", c:"#FFBE00", t:"tertiary"},
+  {n:"Orange",        c:"#FF8A00", t:"secondary"},
+  {n:"Red-orange",    c:"#F2480A", t:"tertiary"},
+  {n:"Red",           c:"#E3162B", t:"primary"},
+  {n:"Red-purple",    c:"#A8136C", t:"tertiary"},
+  {n:"Purple",        c:"#6B1F9E", t:"secondary"},
+  {n:"Blue-purple",   c:"#3E32A8", t:"tertiary"},
+  {n:"Blue",          c:"#1E55D6", t:"primary"},
+  {n:"Blue-green",    c:"#0E9BA8", t:"tertiary"},
+  {n:"Green",         c:"#2EA84A", t:"secondary"},
+  {n:"Yellow-green",  c:"#9ACD32", t:"tertiary"},
+];
+function wheelSVG(){
+  const cx=120, cy=120, R=105, r=38, step=Math.PI/6;
+  let out = `<svg viewBox="0 0 240 240" role="img" aria-label="A twelve-colour wheel: yellow at the top, then clockwise orange, red, purple, blue and green, with in-between colours">`;
+  WHEEL_HUES.forEach((h,i)=>{
+    const a0 = -Math.PI/2 - step/2 + i*step, a1 = a0 + step;
+    const p = (rad,a)=>[(cx+rad*Math.cos(a)).toFixed(1),(cy+rad*Math.sin(a)).toFixed(1)];
+    const [x0,y0]=p(R,a0), [x1,y1]=p(R,a1), [x2,y2]=p(r,a1), [x3,y3]=p(r,a0);
+    out += `<path d="M${x0},${y0} A${R},${R} 0 0 1 ${x1},${y1} L${x2},${y2} A${r},${r} 0 0 0 ${x3},${y3} Z" fill="${h.c}" stroke="#fff" stroke-width="2"/>`;
+  });
+  out += `<text x="120" y="117" text-anchor="middle" font-size="11" font-weight="700" fill="var(--ink)">12 basic</text><text x="120" y="131" text-anchor="middle" font-size="11" font-weight="700" fill="var(--ink)">colours</text></svg>`;
+  return out;
+}
+
+CONTENT.visualintro = `
+  ${explain(`<p><strong>Visual design</strong> shapes and improves the user experience by thinking carefully about how <strong>illustrations, photography, typography, space, layout and colour</strong> affect two things: how <em>usable</em> a product is, and how <em>attractive</em> it feels.</p>`)}
+
+  ${analogy(`<p>Think of dressing for an interview. The outfit doesn't change how skilled you are — but it changes how people <em>feel</em> about you in the first few seconds. Visual design is the outfit of a product, and it also helps people find their way around it.</p>`)}
+
+  <h3>The six basic elements of visual design</h3>
+  <p>Every screen, poster or page is built from just six ingredients. Tap each one to see what it means.</p>
+  <div class="diagram">
+    <div class="node clickable" data-pop="A line is a row of points next to each other. Lines organise, divide, frame and guide the eye."><span class="emoji">➖</span>Lines<div class="node-pop"></div></div>
+    <div class="node clickable" data-pop="One or more lines joined up, or areas made by differences in colour or texture: squares, circles, triangles, leaves, icons."><span class="emoji">🔷</span>Shapes<div class="node-pop"></div></div>
+    <div class="node clickable" data-pop="Set the mood, create emotion, and guide users towards the next action."><span class="emoji">🎨</span>Colours<div class="node-pop"></div></div>
+    <div class="node clickable" data-pop="The art of arranging type so written language is legible, readable and pleasant to look at."><span class="emoji">🔤</span>Typography<div class="node-pop"></div></div>
+    <div class="node clickable" data-pop="How a surface looks or feels — rough, smooth, patterned. Used to grab attention and create a focal point."><span class="emoji">🪨</span>Textures<div class="node-pop"></div></div>
+    <div class="node clickable" data-pop="Three-dimensional nature: height, width and depth."><span class="emoji">🧊</span>Form<div class="node-pop"></div></div>
+  </div>
+
+  ${remember(["Visual design = illustrations, photography, typography, space, layout and colour working together","It improves BOTH usability and aesthetic appeal","6 basic elements: Lines, Shapes, Colours, Typography, Textures, Form","The next stations explore each element, then the principles that combine them"])}
+`;
+
+CONTENT.vlines = `
+  ${explain(`<p>A <strong>line</strong> is a number of points sitting next to each other. It can go on forever or have two end points — and the shortest distance between two points is a straight line. Lines look simple, but designers use them for a lot of jobs.</p>`)}
+
+  <h3>What lines can do</h3>
+  <div class="chiprow">
+    <span class="chip">🧱 Add <strong>structure</strong> to a layout</span>
+    <span class="chip">🖼️ <strong>Frame</strong> information</span>
+    <span class="chip">✂️ <strong>Divide</strong> information into sections</span>
+    <span class="chip">🧭 Guide the eye (arrows)</span>
+    <span class="chip">🎭 Make a statement, or create patterns and decoration</span>
+  </div>
+
+  <h3 style="margin-top:20px;">Lines can look very different</h3>
+  <p>They can be <strong>straight, curved or angled</strong>; <strong>thick or thin</strong>; <strong>solid or dashed</strong>; and run <strong>horizontally, vertically or diagonally</strong>. Each choice changes the feel — horizontal lines feel calm, diagonal lines feel energetic.</p>
+
+  ${demoCard("linesdemo", "See it: lines used for emphasis, borders, division and background", 330)}
+
+  ${refTable(["Job of a line","Example in the demo"],[
+    ["Emphasis","The underline beneath the heading, and the stress on key words"],
+    ["Border","The frame drawn around the quote box"],
+    ["Division","The thin rule separating the two text sections"],
+    ["Background","The diagonal stripes behind the banner"]
+  ])}
+
+  ${mistake(`<p>Too many lines make a page feel like a cage. Use a line only when it <em>does a job</em> — separating, framing, or pointing. If removing the line changes nothing, remove it.</p>`)}
+
+  ${remember(["A line = adjacent points; it can be straight, curved, angled, thick, thin, solid or dashed","Uses: organise, frame, divide, guide the eye with arrows, create patterns, make a statement","Common roles: emphasis, borders, division and backgrounds","Horizontal lines feel calm; diagonals feel energetic"])}
+`;
+
+DEMOS.linesdemo = `<style>
+  body { font-family: Georgia, serif; margin: 0; padding: 10px; }
+  .banner { background: repeating-linear-gradient(45deg, #dff3f5, #dff3f5 10px, #bfe6ea 10px, #bfe6ea 20px);
+            padding: 14px; text-align: center; border-radius: 6px; }
+  .banner h2 { margin: 0; display: inline-block; border-bottom: 4px solid #00a3b4; padding-bottom: 4px; } /* emphasis */
+  .quote { border: 3px double #333; padding: 10px 14px; margin: 12px 0; font-style: italic; }          /* border */
+  .col { width: 48%; display: inline-block; vertical-align: top; box-sizing: border-box; padding: 4px 8px; font-size: 14px; }
+  .col + .col { border-left: 2px dashed #888; }                                                          /* division */
+</style>
+<div class="banner"><h2>Lines at work</h2></div>
+<div class="quote">"Design is not just what it looks like. Design is how it works."</div>
+<div><div class="col">Section one sits on the left of the dashed line.</div><div class="col">Section two sits on the right, clearly separate.</div></div>`;
+
+CONTENT.vshapes = `
+  ${explain(`<p><strong>Shapes</strong> are made by joining one or more lines, or by differences in colour and texture. They can be natural or man-made, regular or irregular, organic or inorganic, angular or round, big or small, open or closed, flat (2D) or solid (3D).</p>`)}
+
+  <h3>Three families of shapes</h3>
+  <div class="imgcard">
+    <svg viewBox="0 0 420 130" role="img" aria-label="Geometric shapes, organic shapes and abstract shapes">
+      <rect x="20" y="30" width="36" height="36" fill="var(--rail)"/><circle cx="90" cy="48" r="19" fill="var(--rail)"/><polygon points="125,66 143,30 161,66" fill="var(--rail)"/>
+      <text x="90" y="105" text-anchor="middle" font-size="13" fill="var(--ink)" font-weight="700">Geometric</text>
+      <path d="M215,70 C200,40 230,20 245,40 C262,25 280,55 262,70 C250,80 228,82 215,70 Z" fill="var(--spark)"/><path d="M290,60 C285,35 315,30 322,50 C330,70 300,80 290,60 Z" fill="var(--spark)"/>
+      <text x="260" y="105" text-anchor="middle" font-size="13" fill="var(--ink)" font-weight="700">Organic</text>
+      <circle cx="370" cy="38" r="9" fill="var(--ink)"/><line x1="370" y1="47" x2="370" y2="75" stroke="var(--ink)" stroke-width="5"/><line x1="370" y1="55" x2="355" y2="68" stroke="var(--ink)" stroke-width="5"/><line x1="370" y1="55" x2="385" y2="68" stroke="var(--ink)" stroke-width="5"/>
+      <text x="370" y="105" text-anchor="middle" font-size="13" fill="var(--ink)" font-weight="700">Abstract</text>
+    </svg>
+    <p class="imgcaption">Geometric (squares, circles, triangles) · Organic (leaves, flowers, splashes) · Abstract (icons, stick figures, symbols).</p>
+  </div>
+
+  <div class="flow-grid">
+    <div class="flow-card"><h4>📐 Geometric</h4><p style="font-size:14.5px;">Clean, regular shapes: squares, circles, triangles, pentagons, hexagons, octagons.</p></div>
+    <div class="flow-card"><h4>🍃 Organic</h4><p style="font-size:14.5px;">Natural, irregular, flowing: leaves, flowers, ink splatters, pebbles.</p></div>
+    <div class="flow-card"><h4>🔣 Abstract</h4><p style="font-size:14.5px;">Simplified stand-ins for real things: icons, stick figures, symbols, logos. Emojis and map pins are good examples.</p></div>
+  </div>
+
+  <h3 style="margin-top:22px;">Geometric shapes carry meaning</h3>
+  <p>Tap a shape to see what it tends to say to the viewer.</p>
+  <div class="diagram">
+    <div class="node clickable" data-pop="Squares are reliable and give stability — they suggest order."><span class="emoji">⬛</span>Square<div class="node-pop"></div></div>
+    <div class="node clickable" data-pop="Circles represent completion, wholeness and harmony. They appear in solid dots, rings, suns and round compositions."><span class="emoji">⚫</span>Circle<div class="node-pop"></div></div>
+    <div class="node clickable" data-pop="Triangles that point UP represent direction and power — think mountains and pyramids."><span class="emoji">🔺</span>Triangle up<div class="node-pop"></div></div>
+    <div class="node clickable" data-pop="Triangles that point DOWN suggest instability, but still provide direction."><span class="emoji">🔻</span>Triangle down<div class="node-pop"></div></div>
+    <div class="node clickable" data-pop="Pentagons, hexagons and octagons give a design a unique feel, or recall an already-known use: a school-crossing sign (pentagon), a beehive (hexagon), a stop sign (octagon)."><span class="emoji">⬡</span>Pentagon · Hexagon · Octagon<div class="node-pop"></div></div>
+  </div>
+  <p style="font-size:14.5px;">Triangles also appear in the "play" and "fast-forward / reverse" symbols, mountains, pennants and pizza slices.</p>
+
+  <h3 style="margin-top:22px;">Positive and negative shapes</h3>
+  <p>The shape itself is the <strong>positive</strong> shape; the empty space around and between is the <strong>negative</strong> shape. A good design uses both — sometimes the negative space draws a second picture.</p>
+  ${demoCard("posneg", "See it: the same shape as positive and as negative", 190)}
+
+  ${analogy(`<p>Shapes in a design work like road signs: you don't read them, you <em>recognise</em> them. A red octagon means "stop" before you've read the word. Choose shapes the way a city chooses signs — for instant meaning.</p>`)}
+
+  ${remember(["Shapes = joined lines, or areas made by colour/texture differences","Families: Geometric, Organic, Abstract","Square = stability/order · Circle = completion/harmony · Triangle up = power · Triangle down = instability but direction","Positive shape = the object; negative shape = the space around it","Shapes create focal points and direct the user's flow through a design"])}
+`;
+
+DEMOS.posneg = `<style>
+  body { font-family: Arial, sans-serif; margin: 8px; text-align: center; }
+  .box { display: inline-block; width: 130px; height: 130px; margin: 6px 14px; vertical-align: top; }
+  .cap { font-size: 13px; margin-top: 4px; }
+</style>
+<div class="box"><svg viewBox="0 0 100 100" width="130" height="130"><rect width="100" height="100" fill="#fff" stroke="#999"/>
+  <circle cx="50" cy="50" r="30" fill="#111"/></svg><div class="cap">Positive: black circle</div></div>
+<div class="box"><svg viewBox="0 0 100 100" width="130" height="130"><rect width="100" height="100" fill="#111"/>
+  <circle cx="50" cy="50" r="30" fill="#fff"/></svg><div class="cap">Negative: same shape, reversed</div></div>
+<div class="box"><svg viewBox="0 0 100 100" width="130" height="130"><rect width="100" height="100" fill="#fff" stroke="#999"/>
+  <path d="M50 14 C20 14 14 50 40 62 L40 86 L60 86 L60 62 C86 50 80 14 50 14 Z" fill="#111"/>
+  <path d="M50 34 C44 34 44 46 50 46 C56 46 56 34 50 34 Z" fill="#fff"/></svg><div class="cap">Space inside a shape can draw another shape</div></div>`;
+
+/* ---------- Colour ---------- */
+CONTENT.colorbasics = `
+  ${explain(`<p>Colour is the most powerful element of visual design. Colour in visuals is said to <strong>increase attention span by 82%</strong>. Designers use it to present <strong>mood and atmosphere</strong>, <strong>generate emotions</strong> and <strong>guide users to the next action</strong>.</p>`)}
+
+  <h3>Colour theory starts with light</h3>
+  <p>Colours are different <strong>wavelengths</strong> of visible light — the narrow slice of the electromagnetic spectrum that human eyes can see, running from red (longest wavelength) to violet (shortest).</p>
+
+  <h3 style="margin-top:20px;">Describing a colour: the Munsell colour system</h3>
+  <p>The Munsell system describes any colour with three simple questions. Move the sliders to feel each one.</p>
+  <div class="flow-grid">
+    <div class="flow-card"><h4>🌈 Hue</h4><p style="font-size:14.5px;">"Simply the colour" — red, yellow, green, blue... where it sits around the colour circle.</p></div>
+    <div class="flow-card"><h4>☀️ Value</h4><p style="font-size:14.5px;">How <strong>light or dark</strong> the colour is — the amount of light it reflects. Scale 0 (black) to 10 (white).</p></div>
+    <div class="flow-card"><h4>💧 Chroma</h4><p style="font-size:14.5px;">The <strong>purity</strong> of the colour — how far it is from grey. Scale 0 to 10: low chroma looks washed out, high chroma looks vivid.</p></div>
+  </div>
+  ${demoCard("hsldemo", "Try it: change hue, saturation and lightness", 330)}
+
+  <h3 style="margin-top:20px;">More words you'll hear</h3>
+  ${refTable(["Word","Meaning"],[
+    ["Saturation","How strong or vivid a colour is, from full strength to grey (absence of any colour)"],
+    ["Intensity","Adding or removing <strong>brightness</strong> from a colour"],
+    ["Value / Lightness","How dark or light a colour is"],
+    ["Tint","Pure hue + <strong>white</strong> (lighter)"],
+    ["Tone","Pure hue + <strong>grey</strong> (duller, softer)"],
+    ["Shade","Pure hue + <strong>black</strong> (darker)"]
+  ])}
+
+  ${mistake(`<p>People often use "saturation", "chroma", "intensity" and "brightness" as if they were the same. They are close cousins but not twins — in this course: <strong>chroma = purity</strong>, <strong>value = lightness</strong>, <strong>intensity = brightness added or removed</strong>. Tint, tone and shade are the three easy recipes for making variations of one hue.</p>`)}
+
+  ${remember(["Colour in visuals increases attention span (82%) and sets mood, emotion and next actions","Munsell: Hue (the colour) · Value (light/dark, 0–10) · Chroma (purity, 0–10)","Tint = + white · Tone = + grey · Shade = + black","Saturation = vividness · Intensity = brightness added or removed"])}
+`;
+
+DEMOS.hsldemo = `<style>
+  body { font-family: Arial, sans-serif; margin: 10px; font-size: 14px; }
+  label { display: block; margin: 8px 0 2px; }
+  input[type=range] { width: 100%; }
+  #sw { height: 64px; border-radius: 8px; border: 1px solid #888; display: flex; align-items: center;
+        justify-content: center; font-weight: bold; margin-top: 10px; }
+  .row { display: flex; gap: 8px; margin-top: 8px; }
+  .row div { flex: 1; height: 50px; border-radius: 6px; border: 1px solid #888; font-size: 12px;
+             display: flex; align-items: center; justify-content: center; text-align: center; }
+</style>
+<label>Hue (the colour itself): <b id="hv"></b>&deg;</label>
+<input id="h" type="range" min="0" max="360" value="210">
+<label>Saturation (how vivid): <b id="sv"></b>%</label>
+<input id="s" type="range" min="0" max="100" value="80">
+<label>Lightness (how light or dark): <b id="lv"></b>%</label>
+<input id="l" type="range" min="0" max="100" value="45">
+<div id="sw"></div>
+<div class="row"><div id="tint">Tint<br>+ white</div><div id="tone">Tone<br>+ grey</div><div id="shade">Shade<br>+ black</div></div>
+
+<script>
+  function el(id){ return document.getElementById(id); }
+  function update(){
+    var h = +el("h").value, s = +el("s").value, l = +el("l").value;
+    el("hv").textContent = h; el("sv").textContent = s; el("lv").textContent = l;
+    el("sw").style.background = "hsl(" + h + "," + s + "%," + l + "%)";
+    el("sw").style.color = l > 55 ? "#000" : "#fff";
+    el("sw").textContent = "hsl(" + h + ", " + s + "%, " + l + "%)";
+    el("tint").style.background  = "hsl(" + h + "," + s + "%," + Math.min(l + 30, 95) + "%)";      // add white
+    el("tone").style.background  = "hsl(" + h + "," + Math.round(s * 0.35) + "%," + l + "%)";      // add grey
+    el("shade").style.background = "hsl(" + h + "," + s + "%," + Math.round(l * 0.45) + "%)";      // add black
+    el("shade").style.color = "#fff";
+  }
+  ["h","s","l"].forEach(function(id){ el(id).addEventListener("input", update); });
+  update();
+</script>`;
+
+CONTENT.colorsystems = `
+  ${explain(`<p>Colour <em>systems</em> are the recipes that actually create colours. Two matter most: <strong>RGB</strong> for screens and <strong>CMYK</strong> for printing.</p>`)}
+
+  <div class="flow-grid">
+    <div class="flow-card">
+      <h4>💡 RGB — additive</h4>
+      <p style="font-size:14.5px;"><strong>R</strong>ed + <strong>G</strong>reen + <strong>B</strong>lue <em>light</em>. Mixing light: add all three at full strength and you get <strong>white</strong>; no light at all is black. Used by phones, monitors, TVs. "What you see on screen."</p>
+    </div>
+    <div class="flow-card">
+      <h4>🖨️ CMYK — subtractive</h4>
+      <p style="font-size:14.5px;"><strong>C</strong>yan + <strong>M</strong>agenta + <strong>Y</strong>ellow + blac<strong>K</strong> <em>ink</em>. Mixing ink: each layer soaks up more light, so mixing them all gives a dark <strong>black</strong>. Used for printing. "How it will print."</p>
+    </div>
+  </div>
+
+  ${demoCard("rgbmix", "Try it: mix red, green and blue light", 260)}
+
+  ${mistake(`<p>A design that looks glowing and vivid on screen (RGB) can look dull when printed (CMYK), because ink cannot reproduce every colour that light can. If something is going to be printed, check it in CMYK mode before sending it off.</p>`)}
+
+  <h3 style="margin-top:22px;">The colour wheel</h3>
+  <p>Arranging colours in a circle shows how they relate. The traditional wheel has <strong>12 basic colours</strong>:</p>
+  <div class="imgcard">${wheelSVG()}<p class="imgcaption">Yellow sits at the top; going clockwise: orange, red, purple, blue, green.</p></div>
+
+  ${refTable(["Group","Colours","How they arise"],[
+    ["<strong>Primary</strong>","Yellow, Red, Blue","The starting points — can't be made by mixing others"],
+    ["<strong>Secondary</strong>","Orange, Purple, Green","Mix of two primaries"],
+    ["<strong>Tertiary</strong>","Yellow-orange, red-orange, red-purple, blue-purple, blue-green, yellow-green","Mix of a primary and its neighbouring secondary"]
+  ])}
+
+  <h3 style="margin-top:22px;">Warm and cool colours</h3>
+  <div class="flow-grid">
+    <div class="flow-card"><h4>🔥 Warm colours</h4><p style="font-size:14.5px;">Reds, oranges, yellows. Feel of <strong>energy, brightness and action</strong>.</p></div>
+    <div class="flow-card"><h4>❄️ Cool colours</h4><p style="font-size:14.5px;">Blues, greens, purples. Feel of <strong>calm, peace and serenity</strong>.</p></div>
+  </div>
+
+  <h3 style="margin-top:22px;">Complementary colours</h3>
+  <p>Colours directly <strong>opposite</strong> each other on the wheel are <strong>complementary</strong> — yellow/purple, red/green, blue/orange. Side by side they make each other look brighter. Tap a wedge to find its partner.</p>
+  ${demoCard("colorwheel", "Try it: tap any colour to find its complement", 330)}
+
+  ${remember(["RGB = additive light (screens): all three at full = white","CMYK = subtractive ink (print): all mixed = black","12-colour wheel: 3 primary (Y, R, B), 3 secondary (O, P, G), 6 tertiary","Warm = energy, brightness, action · Cool = calm, peace, serenity","Complementary colours sit directly opposite each other on the wheel"])}
+`;
+
+DEMOS.rgbmix = `<style>
+  body { font-family: Arial, sans-serif; margin: 10px; font-size: 14px; }
+  label { display: block; margin: 8px 0 2px; }
+  input[type=range] { width: 100%; }
+  #sw { height: 70px; border-radius: 8px; border: 1px solid #888; margin-top: 10px; display: flex;
+        align-items: center; justify-content: center; font-weight: bold; }
+</style>
+<label style="color:#c00;">Red light: <b id="rv"></b></label><input id="r" type="range" min="0" max="255" value="255">
+<label style="color:#080;">Green light: <b id="gv"></b></label><input id="g" type="range" min="0" max="255" value="140">
+<label style="color:#00c;">Blue light: <b id="bv"></b></label><input id="b" type="range" min="0" max="255" value="0">
+<div id="sw"></div>
+<p style="margin:6px 0 0;">Tip: set all three to 255 for white, and all three to 0 for black.</p>
+
+<script>
+  function el(id){ return document.getElementById(id); }
+  function hex(n){ var s = n.toString(16); return s.length < 2 ? "0" + s : s; }
+  function update(){
+    var r = +el("r").value, g = +el("g").value, b = +el("b").value;
+    el("rv").textContent = r; el("gv").textContent = g; el("bv").textContent = b;
+    el("sw").style.background = "rgb(" + r + "," + g + "," + b + ")";
+    el("sw").style.color = (r * 0.3 + g * 0.6 + b * 0.1) > 140 ? "#000" : "#fff";
+    el("sw").textContent = "rgb(" + r + ", " + g + ", " + b + ")  =  #" + hex(r) + hex(g) + hex(b);
+  }
+  ["r","g","b"].forEach(function(id){ el(id).addEventListener("input", update); });
+  update();
+</script>`;
+
+DEMOS.colorwheel = `<style>
+  body { font-family: Arial, sans-serif; margin: 6px; text-align: center; }
+  svg { width: 250px; height: 250px; }
+  path { cursor: pointer; stroke: #fff; stroke-width: 2; }
+  path.sel { stroke: #111; stroke-width: 5; }
+  #msg { font-size: 15px; margin-top: 4px; min-height: 24px; }
+</style>
+<svg id="wheel" viewBox="0 0 240 240"></svg>
+<div id="msg">Tap a colour on the wheel.</div>
+
+<script>
+  var hues = [
+    ["Yellow","#FFE600"],["Yellow-orange","#FFBE00"],["Orange","#FF8A00"],["Red-orange","#F2480A"],
+    ["Red","#E3162B"],["Red-purple","#A8136C"],["Purple","#6B1F9E"],["Blue-purple","#3E32A8"],
+    ["Blue","#1E55D6"],["Blue-green","#0E9BA8"],["Green","#2EA84A"],["Yellow-green","#9ACD32"]
+  ];
+  var cx = 120, cy = 120, R = 108, r = 36, step = Math.PI / 6, svg = document.getElementById("wheel");
+  var paths = [];
+  function pt(rad, a){ return (cx + rad * Math.cos(a)).toFixed(1) + "," + (cy + rad * Math.sin(a)).toFixed(1); }
+  hues.forEach(function(h, i){
+    var a0 = -Math.PI / 2 - step / 2 + i * step, a1 = a0 + step;
+    var p = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    p.setAttribute("d", "M" + pt(R,a0) + " A" + R + "," + R + " 0 0 1 " + pt(R,a1) +
+                        " L" + pt(r,a1) + " A" + r + "," + r + " 0 0 0 " + pt(r,a0) + " Z");
+    p.setAttribute("fill", h[1]);
+    p.addEventListener("click", function(){ choose(i); });
+    svg.appendChild(p); paths.push(p);
+  });
+  function choose(i){
+    var j = (i + 6) % 12;                          // opposite wedge = 6 steps round the wheel
+    paths.forEach(function(p){ p.setAttribute("class", ""); });
+    paths[i].setAttribute("class", "sel"); paths[j].setAttribute("class", "sel");
+    document.getElementById("msg").innerHTML =
+      "<b>" + hues[i][0] + "</b> is complementary to <b>" + hues[j][0] + "</b>";
+  }
+</script>`;
+
+CONTENT.colormeaning = `
+  ${explain(`<p>Colours don't just look — they <em>mean</em>. People attach feelings and ideas to them, and brands choose colours on purpose. As a designer you pick colours for their message first and their beauty second.</p>`)}
+
+  <h3>What colours commonly say</h3>
+  ${refTable(["Colour","Common meanings"],[
+    ["<strong style=\"color:#d62828\">Red</strong>","Intense, energetic, strength, danger; associated with food"],
+    ["<strong style=\"color:#e67700\">Orange</strong>","Hot, aggressive, success; associated with younger generations"],
+    ["<strong style=\"color:#b38b00\">Yellow</strong>","Optimistic, cheerful, energetic; also associated with food"],
+    ["<strong style=\"color:#2e8b3d\">Green</strong>","Wealth, nature, freshness; an easy colour for the eye to process"],
+    ["<strong style=\"color:#0b6fbd\">Blue</strong>","Trust, security, corporate, peaceful, faith, wisdom"],
+    ["<strong style=\"color:#6b2c91\">Purple</strong>","Royalty, luxury, calming, mysterious"],
+    ["<strong>Black</strong>","Powerful, formal, sophisticated"],
+    ["<strong>White</strong>","Clean, positive; associated with the medical profession"]
+  ])}
+
+  <h3 style="margin-top:20px;">Colour psychology in brands</h3>
+  ${refTable(["Colour","Emotion","How brands use it"],[
+    ["Red","Strength, passion, excitement","Used a lot in the food industry to trigger appetite; high energy and visibility"],
+    ["Yellow","Intellect, joy, energy","Conveys positivity and optimism; a fun, cheerful, 'happy' brand image"],
+    ["Blue","Loyalty, trust, intelligence","The most popular brand colour; suggests precision and reliability"],
+    ["Green","Freshness, growth, safety","Easiest colour for human vision; relaxing; used to signal 'environmentally friendly'"]
+  ])}
+  <p style="font-size:14.5px;">Meanings also change with culture and context — a colour that means celebration in one place can mean mourning in another — so always think about <em>your</em> audience.</p>
+
+  <h3 style="margin-top:20px;">Choosing a palette</h3>
+  <p>You rarely pick colours from scratch. Palette tools suggest combinations that work together:</p>
+  <div class="chiprow">
+    <span class="chip"><a href="https://mycolor.space/" target="_blank" rel="noopener">mycolor.space</a></span>
+    <span class="chip"><a href="http://colormind.io/" target="_blank" rel="noopener">colormind.io</a></span>
+    <span class="chip"><a href="https://color.adobe.com/" target="_blank" rel="noopener">color.adobe.com</a></span>
+    <span class="chip"><a href="https://coolors.co/" target="_blank" rel="noopener">coolors.co</a></span>
+    <span class="chip"><a href="https://www.canva.com/colors/color-wheel/" target="_blank" rel="noopener">canva colour wheel</a></span>
+  </div>
+
+  <h3 style="margin-top:22px;">Contrast: can people actually read it?</h3>
+  <p><strong>Contrast</strong> is how different the text colour is from the background colour. Three equally "bright" colours side by side can still be a bad choice if the text blends into the background — beautiful but unreadable. Try picking colours below and watch the contrast ratio.</p>
+  ${demoCard("contrastdemo", "Try it: a live contrast checker", 350)}
+  <p style="font-size:14.5px;">Online contrast checkers do the same job: <a href="https://colourcontrast.cc/" target="_blank" rel="noopener">colourcontrast.cc</a>, <a href="https://coolors.co/contrast-checker/ffffff-000000" target="_blank" rel="noopener">coolors contrast checker</a>, <a href="https://contrastchecker.com/" target="_blank" rel="noopener">contrastchecker.com</a>.</p>
+
+  ${more("🔎 Where do the 4.5 and 3 come from?","<p>The Web Content Accessibility Guidelines (WCAG) set minimum contrast ratios: <strong>4.5 : 1</strong> for normal text, <strong>3 : 1</strong> for large text, and <strong>7 : 1</strong> for the stricter AAA level. Black on white is 21 : 1, the maximum possible.</p>")}
+
+  ${mistake(`<p>Choosing colours by how they look to <em>you</em>. A colour pair that seems fine on your bright monitor can be unreadable for someone with low vision, a colour-vision difference, or just a phone in sunlight. Always measure the contrast, never trust your eyes alone.</p>`)}
+
+  ${remember(["Colours carry meaning: red = energy/danger, blue = trust, green = nature/fresh, yellow = optimism, purple = luxury...","Brands pick colours for the emotion they create","Palette tools: mycolor.space, colormind, Adobe Color, Coolors","Contrast = difference between text and background colours; check it with a contrast checker","WCAG minimums: 4.5:1 normal text, 3:1 large text"])}
+`;
+
+DEMOS.contrastdemo = `<style>
+  body { font-family: Arial, sans-serif; margin: 10px; font-size: 14px; }
+  .pick { display: inline-block; margin-right: 16px; }
+  #sample { margin: 12px 0; padding: 16px; border-radius: 8px; border: 1px solid #888; }
+  #sample h2 { margin: 0 0 6px; }
+  .ok   { color: #0a7a2f; font-weight: bold; }
+  .fail { color: #c00;    font-weight: bold; }
+  #presets button { margin: 4px 4px 0 0; cursor: pointer; }
+</style>
+<span class="pick">Text colour: <input type="color" id="fg" value="#ff3b30"></span>
+<span class="pick">Background colour: <input type="color" id="bg" value="#00a000"></span>
+<div id="presets">Try: <button data-f="#000000" data-b="#ffffff">Black on white</button>
+  <button data-f="#ffffff" data-b="#0b6fbd">White on blue</button>
+  <button data-f="#ffe600" data-b="#ffffff">Yellow on white</button>
+  <button data-f="#ff3b30" data-b="#00a000">Red on green</button></div>
+<div id="sample"><h2>Large heading sample</h2><div>Normal body text sample: the quick brown fox jumps over the lazy dog.</div></div>
+<div id="result"></div>
+
+<script>
+  function el(id){ return document.getElementById(id); }
+  function lum(hex){
+    var c = [1, 3, 5].map(function(i){
+      var v = parseInt(hex.substr(i, 2), 16) / 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    });
+    return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];       // brightness as the eye sees it
+  }
+  function ratio(a, b){
+    var l1 = lum(a), l2 = lum(b);
+    return (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05);
+  }
+  function verdict(ok){ return ok ? '<span class="ok">Pass</span>' : '<span class="fail">Fail</span>'; }
+  function update(){
+    var f = el("fg").value, b = el("bg").value, r = ratio(f, b);
+    el("sample").style.color = f; el("sample").style.background = b;
+    el("result").innerHTML = "Contrast ratio: <b>" + r.toFixed(2) + " : 1</b><br>" +
+      "Normal text (needs 4.5): " + verdict(r >= 4.5) + "<br>" +
+      "Large text (needs 3): " + verdict(r >= 3) + "<br>" +
+      "Strict AAA (needs 7): " + verdict(r >= 7);
+  }
+  el("fg").addEventListener("input", update);
+  el("bg").addEventListener("input", update);
+  document.querySelectorAll("#presets button").forEach(function(btn){
+    btn.addEventListener("click", function(){ el("fg").value = btn.dataset.f; el("bg").value = btn.dataset.b; update(); });
+  });
+  update();
+</script>`;
+
+/* ---------- Typography ---------- */
+CONTENT.typography1 = `
+  ${explain(`<p><strong>Typography</strong> is the art and technique of arranging type so that written language is <strong>legible</strong> (letters are clear), <strong>readable</strong> (text is comfortable to read) and <strong>appealing</strong> when displayed.</p>`)}
+
+  <h3>Font vs Typeface</h3>
+  <div class="flow-grid">
+    <div class="flow-card"><h4>🔤 Typeface</h4><p style="font-size:14.5px;">A <strong>family</strong> of fonts. Examples: Arial, Times New Roman, Verdana.</p></div>
+    <div class="flow-card"><h4>🅰️ Font</h4><p style="font-size:14.5px;">One <strong>variation</strong> within the family — a particular weight or style. Examples: Arial Regular, Arial Italic, Arial Bold.</p></div>
+  </div>
+  ${analogy(`<p>Typeface is like a family surname — "Arial". Each font is one family member: Arial Regular, Arial Italic, Arial Bold. They look related, but each has its own personality.</p>`)}
+
+  <h3 style="margin-top:20px;">Three categories of typefaces</h3>
+  <div class="tabbar" id="typeTabs">
+    <button class="tabbtn active" data-tab="tserif">Serif</button>
+    <button class="tabbtn" data-tab="tsans">Sans-Serif</button>
+    <button class="tabbtn" data-tab="tdeco">Decorative</button>
+  </div>
+  <div class="tabpanel active" data-tab="tserif"><div class="card">
+    <p style="font-family:Georgia,'Times New Roman',serif; font-size:30px; margin:0 0 8px;">Seriously Serif</p>
+    <p>Serif letters have tiny "feet" (strokes) at the ends. They feel <strong>traditional, formal and trustworthy</strong>. Long ago they were thought easier to read in printed books, newspapers and long text.</p>
+  </div></div>
+  <div class="tabpanel" data-tab="tsans"><div class="card">
+    <p style="font-family:Arial,Helvetica,sans-serif; font-size:30px; margin:0 0 8px;">Strictly Sans-serif</p>
+    <p><em>Sans</em> means "without". These letters have clean ends with no feet. They feel <strong>modern, simple and neutral</strong> and are a popular choice for screens, apps and small text.</p>
+  </div></div>
+  <div class="tabpanel" data-tab="tdeco"><div class="card">
+    <p style="font-family:'Brush Script MT','Comic Sans MS',cursive; font-size:32px; margin:0 0 8px;">Dramatic Display</p>
+    <p>Decorative (display) typefaces are full of personality — script, handwritten, ornate. They are great for a logo or a short title but <strong>tiring to read in paragraphs</strong>.</p>
+  </div></div>
+
+  <h3 style="margin-top:20px;">Mixing and pairing fonts</h3>
+  <p>A reliable approach: pair <strong>one serif with one sans-serif</strong> — for example, a serif heading with sans-serif body text. Other safe tricks: Regular + <em>Italic</em> of the same family, ALL CAPS for short labels with lowercase for the rest, and fonts whose styles complement each other.</p>
+
+  ${mistake(`<p>Using many decorative fonts in one design. A document with five different "fun" fonts looks messy and is hard to read. Keep body text simple, and let one decorative font play the starring role in a title or logo.</p>`)}
+
+  ${remember(["Typography = making written language legible, readable and appealing","Typeface = the family (Arial); font = one variation (Arial Bold)","3 categories: Serif (feet, traditional), Sans-serif (no feet, modern), Decorative (personality, for short text)","Pair a serif with a sans-serif; avoid piling up decorative fonts","Fonts matter — they change how a message feels"])}
+`;
+
+CONTENT.typography2 = `
+  ${explain(`<p>Choosing a typeface is only half the job. How you <em>set</em> the text decides whether people actually enjoy reading it. Five things to note: <strong>alignment, proximity, measure, leading and weight</strong>.</p>`)}
+
+  ${refTable(["Idea","What it means","Why it matters"],[
+    ["Alignment","Text lines up left, centre, right, or justified (both edges)","Left-aligned is easiest for long text; centre suits short headings"],
+    ["Proximity","Related text sits close together; unrelated text is separated","Groups ideas so readers see the structure at a glance"],
+    ["Measure","The length of a line of text","Too long tires the eye; too short breaks the rhythm"],
+    ["Leading (line height)","The space between lines","Too tight is cramped; comfortable spacing makes reading easier"],
+    ["Weight","The thickness of the letters, from hairline to black","Heavier weight = more importance; builds hierarchy"]
+  ])}
+
+  <h3 style="margin-top:20px;">Try it: set the type yourself</h3>
+  <p>Drag the sliders and change the typeface category. Notice how the same words feel different.</p>
+  ${demoCard("typodemo", "Try it: alignment, measure, leading, weight and typeface", 480)}
+
+  ${more("📏 What is a good measure?","<p>A commonly used guideline is about <strong>45 to 75 characters per line</strong> for comfortable reading of body text. On very small screens a shorter line is fine; on large screens, don't let text stretch across the whole width.</p>")}
+
+  ${mistake(`<p>Justified text (both edges straight) can look neat, but in narrow columns it creates ugly uneven gaps between words that make reading harder. For most web text, left-aligned is the safest choice.</p>`)}
+
+  ${remember(["Alignment: left / centre / right / justify","Proximity: group related text, separate unrelated text","Measure = line length · Leading = space between lines (line-height) · Weight = thickness","A comfortable line is roughly 45–75 characters","Heavier weight signals more important text"])}
+`;
+
+DEMOS.typodemo = `<style>
+  body { font-family: Arial, sans-serif; margin: 8px; font-size: 13px; }
+  .controls { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; margin-bottom: 8px; }
+  label { display: block; }
+  input[type=range], select { width: 100%; }
+  #sample { border: 1px dashed #888; padding: 10px; background: #fffef8; }
+</style>
+<div class="controls">
+  <label>Typeface category
+    <select id="face"><option value="serif">Serif</option><option value="sans" selected>Sans-serif</option><option value="deco">Decorative</option></select></label>
+  <label>Alignment
+    <select id="align"><option>left</option><option>center</option><option>right</option><option>justify</option></select></label>
+  <label>Weight: <b id="wv">400</b><input id="wt" type="range" min="100" max="900" step="100" value="400"></label>
+  <label>Leading (line height): <b id="lv">1.5</b><input id="lh" type="range" min="1" max="2.4" step="0.1" value="1.5"></label>
+  <label style="grid-column: 1 / 3;">Measure (line length): <b id="mv">45</b> characters wide<input id="ms" type="range" min="15" max="100" step="5" value="45"></label>
+</div>
+<div id="sample">
+  <h3 style="margin:0 0 6px;">Reading comfortably</h3>
+  <p style="margin:0;">Good typography is invisible. The reader never thinks about the letters; they simply follow the ideas. Spacing between the lines, the length of each line and the thickness of the letters all decide whether a page feels welcoming or tiring to read.</p>
+</div>
+
+<script>
+  var faces = {
+    serif: "Georgia, 'Times New Roman', serif",
+    sans:  "Arial, Helvetica, sans-serif",
+    deco:  "'Brush Script MT', 'Comic Sans MS', cursive"
+  };
+  function el(id){ return document.getElementById(id); }
+  function update(){
+    var s = el("sample");
+    s.style.fontFamily = faces[el("face").value];
+    s.style.textAlign = el("align").value;
+    s.style.fontWeight = el("wt").value;
+    s.style.lineHeight = el("lh").value;
+    s.style.maxWidth = el("ms").value + "ch";
+    el("wv").textContent = el("wt").value;
+    el("lv").textContent = el("lh").value;
+    el("mv").textContent = el("ms").value;
+  }
+  ["face","align","wt","lh","ms"].forEach(function(id){ el(id).addEventListener("input", update); });
+  update();
+</script>`;
+
+/* ---------- Textures & forms ---------- */
+CONTENT.texturesforms = `
+  ${explain(`<p><strong>Textures</strong> are created to get the user's attention and to create a <strong>focal point</strong> in a composition. <strong>Form</strong> brings in the third dimension.</p>`)}
+
+  <h3>Two kinds of texture</h3>
+  <div class="flow-grid">
+    <div class="flow-card">
+      <h4>🪨 Physical texture</h4>
+      <p style="font-size:14.5px;">Texture you could actually <strong>touch</strong> — rough stone, wood grain, fabric, paper. In a design it usually appears as a photograph of a real surface.</p>
+    </div>
+    <div class="flow-card">
+      <h4>👁️ Visual texture</h4>
+      <p style="font-size:14.5px;">Texture you can only <strong>see</strong> — a repeated pattern or an illustrated surface that <em>suggests</em> how something would feel.</p>
+    </div>
+  </div>
+  <div class="imgcard">
+    <div style="height:90px; border-radius:10px; background: repeating-linear-gradient(135deg, var(--rail) 0 8px, var(--rail-bright) 8px 16px);"></div>
+    <p class="imgcaption">A visual texture made only from repeating diagonal stripes — nothing here could be felt with a finger, yet it clearly reads as "textured".</p>
+  </div>
+  <p><strong>Use of texture:</strong> designers lay patterns or surfaces behind headings, logos and sections to add depth and pull the eye to a focal point — as long as the text on top stays readable.</p>
+
+  <h3 style="margin-top:22px;">Form</h3>
+  <p><strong>Form</strong> refers to elements of a <strong>three-dimensional</strong> nature: <strong>height, width and depth</strong>. Shapes are flat; forms have volume. On a flat screen, designers suggest form with shadows, gradients, overlapping and perspective.</p>
+  <div class="imgcard">
+    <svg viewBox="0 0 320 130" role="img" aria-label="A flat square becomes a cube when sides are shaded">
+      <rect x="30" y="35" width="60" height="60" fill="var(--rail)"/><text x="60" y="115" text-anchor="middle" font-size="12" fill="var(--ink)">Shape (flat)</text>
+      <polygon points="170,50 215,50 240,30 195,30" fill="var(--rail-bright)"/><rect x="170" y="50" width="45" height="50" fill="var(--rail)"/><polygon points="215,50 240,30 240,80 215,100" fill="var(--spark)"/>
+      <text x="205" y="118" text-anchor="middle" font-size="12" fill="var(--ink)">Form (3D)</text>
+    </svg>
+    <p class="imgcaption">Add a lit top and a shaded side and a flat square suddenly feels like a solid cube.</p>
+  </div>
+
+  ${remember(["Texture grabs attention and creates a focal point","Physical texture = can be touched (a photo of stone, wood) · Visual texture = only seen (patterns)","Form = 3D: height, width and depth","On screens, form is suggested with shadows, shading and overlap"])}
+`;
+
+/* ---------- Design principles ---------- */
+CONTENT.principles1 = `
+  ${explain(`<p><strong>Design principles</strong> are widely applicable laws, guidelines, biases and design considerations that designers apply <em>with discretion</em> — they are guides, not handcuffs. Their purpose: to create something that is <strong>aesthetically pleasing</strong> and <strong>optimises the user experience</strong>.</p>`)}
+
+  <p>Seven principles do most of the work: <strong>Alignment, Hierarchy, Contrast, Repetition, Proximity, Balance and Space</strong>. This station covers the first three.</p>
+
+  <h3>1. Alignment</h3>
+  <p>Alignment <strong>orders and balances</strong> all the elements. When edges line up — left edges, centres, baselines — the page feels tidy and deliberate. Misaligned items look accidental, even when each piece is nice on its own.</p>
+  ${demoCard("alignmentdemo", "See it: the same items, aligned and not aligned", 230)}
+
+  <h3 style="margin-top:22px;">2. Hierarchy</h3>
+  <p>Hierarchy puts the <strong>more important elements in the forefront</strong> and the less important ones in the background. Three things control it:</p>
+  <div class="chiprow">
+    <span class="chip"><strong>Size</strong> — bigger reads first</span>
+    <span class="chip"><strong>Shape</strong> — distinctive shapes stand out</span>
+    <span class="chip"><strong>Placement</strong> — top and centre get noticed first</span>
+  </div>
+  ${demoCard("hierarchydemo", "See it: the same content without and with hierarchy", 300)}
+
+  <h3 style="margin-top:22px;">3. Contrast</h3>
+  <p>Contrast is how <strong>different</strong> elements are in a design, especially elements that sit next to each other. It is the quickest way to <strong>grab the user's attention</strong>. Contrast can come from colour (light vs dark), size (big vs small), shape, weight, or texture.</p>
+  <div class="imgcard">
+    <svg viewBox="0 0 360 100" role="img" aria-label="High, medium and low contrast circles">
+      <rect x="10" y="10" width="100" height="80" fill="#fff" stroke="var(--line)"/><circle cx="60" cy="50" r="26" fill="#111"/><circle cx="60" cy="50" r="12" fill="#ffe600"/>
+      <rect x="130" y="10" width="100" height="80" fill="#fff" stroke="var(--line)"/><circle cx="180" cy="50" r="26" fill="#3d4fa8"/><circle cx="180" cy="50" r="12" fill="#6b82d6"/>
+      <rect x="250" y="10" width="100" height="80" fill="#fff" stroke="var(--line)"/><circle cx="300" cy="50" r="26" fill="#2c3a63"/><circle cx="300" cy="50" r="12" fill="#35466f"/>
+    </svg>
+    <p class="imgcaption">High contrast (left) · medium (middle) · low (right). The more different the centre is from its surroundings, the faster it grabs your eye.</p>
+  </div>
+
+  ${analogy(`<p>Imagine a classroom photo where everyone wears the same grey uniform — nobody stands out. Put one student in a bright red coat and your eye jumps to her instantly. That jump is contrast; deciding <em>who</em> deserves the red coat is hierarchy.</p>`)}
+
+  ${remember(["Principles are guides applied with discretion; goal = aesthetic appeal + better user experience","7 principles: Alignment, Hierarchy, Contrast, Repetition, Proximity, Balance, Space","Alignment orders and balances all elements","Hierarchy: important in front, less important behind — controlled by size, shape and placement","Contrast: differences between neighbouring elements grab attention"])}
+`;
+
+DEMOS.alignmentdemo = `<style>
+  body { font-family: Arial, sans-serif; margin: 8px; }
+  .pair { display: flex; gap: 14px; }
+  .panel { flex: 1; border: 2px solid #999; border-radius: 8px; padding: 10px; background: #fff; min-height: 150px; }
+  .panel h4 { margin: 0 0 8px; font-size: 13px; text-transform: uppercase; color: #555; }
+  .item { background: #cfe8ff; border: 1px solid #8ec0f0; padding: 6px 8px; margin-bottom: 8px; width: 70%; font-size: 13px; }
+  .messy .item:nth-child(2) { margin-left: 22px; }
+  .messy .item:nth-child(3) { margin-left: 6px;  width: 85%; }
+  .messy .item:nth-child(4) { margin-left: 34px; }
+</style>
+<div class="pair">
+  <div class="panel"><h4>Not aligned</h4><div class="messy">
+    <div class="item">Home</div><div class="item">Programmes</div><div class="item">Admissions</div><div class="item">Contact</div></div></div>
+  <div class="panel"><h4>Aligned</h4>
+    <div class="item">Home</div><div class="item">Programmes</div><div class="item">Admissions</div><div class="item">Contact</div></div>
+</div>`;
+
+DEMOS.hierarchydemo = `<style>
+  body { font-family: Arial, sans-serif; margin: 8px; }
+  .pair { display: flex; gap: 14px; }
+  .panel { flex: 1; border: 2px solid #999; border-radius: 8px; padding: 12px; background: #fff; }
+  .panel > h4 { margin: 0 0 8px; font-size: 12px; text-transform: uppercase; color: #555; }
+  .flat * { font-size: 14px; font-weight: normal; margin: 4px 0; }
+  .rich .title { font-size: 24px; font-weight: 800; margin: 0 0 4px; color: #0b3d91; }
+  .rich .sub   { font-size: 14px; color: #555; margin: 0 0 10px; }
+  .rich .btn   { display: inline-block; background: #e8590c; color: #fff; padding: 8px 16px; border-radius: 6px; font-weight: bold; }
+  .rich .fine  { font-size: 11px; color: #888; margin-top: 10px; }
+</style>
+<div class="pair">
+  <div class="panel flat"><h4>No hierarchy</h4>
+    <div>Annual Art Festival</div><div>Join us for a weekend of painting and music</div><div>Register now</div><div>Terms and conditions apply</div></div>
+  <div class="panel rich"><h4>With hierarchy</h4>
+    <div class="title">Annual Art Festival</div><div class="sub">Join us for a weekend of painting and music</div>
+    <span class="btn">Register now</span><div class="fine">Terms and conditions apply</div></div>
+</div>`;
+
+CONTENT.principles2 = `
+  ${explain(`<p>The remaining four principles — <strong>Repetition, Proximity, Balance and Space</strong> — turn separate pieces into one design that feels complete.</p>`)}
+
+  <h3>4. Repetition</h3>
+  <p>Repeating colours, fonts, shapes or layouts creates a <strong>strong, consistent visual design</strong> and <strong>unifies</strong> a design that has many elements. It is why all the pages of a good website feel like they belong together.</p>
+  ${demoCard("repetitiondemo", "See it: four cards, one repeated pattern", 170)}
+
+  <h3 style="margin-top:22px;">5. Proximity</h3>
+  <p>Proximity means <strong>grouping similar elements together</strong> and creating a relationship between them. Things placed close together are assumed to belong together; space between groups says "this is something different". (This is the same idea as the Gestalt law of proximity from Unit 1.)</p>
+  ${demoCard("proximitydemo", "See it: a label floating in the middle vs. grouped with its field", 230)}
+
+  <h3 style="margin-top:22px;">6. Balance</h3>
+  <p>Balance gives <strong>form and stability</strong> to a design. It makes sure that elements are distributed so nothing feels like it is about to tip over. There are three groups:</p>
+  <div class="imgcard">
+    <svg viewBox="0 0 460 150" role="img" aria-label="Symmetrical, asymmetrical and radial balance">
+      <g fill="var(--rail)"><rect x="20" y="25" width="30" height="60"/><rect x="100" y="25" width="30" height="60"/></g><rect x="62" y="25" width="26" height="60" fill="var(--spark)"/><line x1="75" y1="15" x2="75" y2="95" stroke="var(--ink-soft)" stroke-dasharray="4"/>
+      <text x="75" y="125" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">Symmetrical</text>
+      <rect x="180" y="25" width="64" height="64" fill="var(--rail)"/><rect x="254" y="25" width="26" height="26" fill="var(--spark)"/><rect x="254" y="60" width="26" height="29" fill="var(--rail-bright)"/>
+      <text x="230" y="125" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">Asymmetrical</text>
+      <circle cx="390" cy="58" r="14" fill="var(--spark)"/>
+      ${[0,60,120,180,240,300].map(a=>`<circle cx="${(390+38*Math.cos(a*Math.PI/180)).toFixed(1)}" cy="${(58+38*Math.sin(a*Math.PI/180)).toFixed(1)}" r="9" fill="var(--rail)"/>`).join("")}
+      <text x="390" y="125" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">Radial</text>
+    </svg>
+    <p class="imgcaption">Symmetrical: mirrored. Asymmetrical: off-centre but still balanced. Radial: spreading out from a central point.</p>
+  </div>
+  ${refTable(["Type","How it works"],[
+    ["Symmetrical","Elements <strong>mirror each other</strong>, horizontally or vertically — formal, calm, stable"],
+    ["Asymmetrical","Elements are <strong>off-centre</strong>; the uneven arrangement creates movement that guides the viewer through the piece — dynamic, modern"],
+    ["Radial","Elements make a <strong>circular pattern</strong> that spreads out from a central point"]
+  ])}
+
+  <h3 style="margin-top:22px;">7. Space</h3>
+  <p>Space (also called white space, whether or not it is white) is the empty area around and between elements. <strong>Negative space highlights important components</strong> by giving them room to breathe — which is why a clean search page can feel so calm and easy to use.</p>
+  ${demoCard("spacedemo", "See it: the same button crowded and with space", 200)}
+
+  <h3 style="margin-top:22px;">Tools and inspiration</h3>
+  <p>Great designers look at a lot of other designs. These sites show excellent work and trends:</p>
+  <div class="chiprow">
+    <span class="chip"><a href="https://www.behance.net/" target="_blank" rel="noopener">Behance</a></span>
+    <span class="chip"><a href="https://dribbble.com/" target="_blank" rel="noopener">Dribbble</a></span>
+    <span class="chip"><a href="https://www.awwwards.com/" target="_blank" rel="noopener">Awwwards</a></span>
+    <span class="chip">Inspiration Grid</span>
+    <span class="chip">Adobe Creative Suite (design software)</span>
+  </div>
+
+  <blockquote style="border-left:4px solid var(--spark); margin:22px 0; padding:4px 16px; font-style:italic; color:var(--ink-soft);">
+    "The best design is the simplest one that works." — Albert Einstein<br>
+    "Good design is as little design as possible." — Dieter Rams
+  </blockquote>
+
+  ${remember(["Repetition: repeat colours, fonts, shapes for consistency and unity","Proximity: group related things; space between groups shows separation","Balance: symmetrical (mirrored), asymmetrical (off-centre but balanced), radial (spreading from a centre)","Space: negative space highlights important components","Inspiration: Behance, Dribbble, Awwwards, Inspiration Grid; software: Adobe Creative Suite"])}
+`;
+
+DEMOS.repetitiondemo = `<style>
+  body { font-family: Arial, sans-serif; margin: 8px; }
+  .row { display: flex; gap: 10px; }
+  .card { flex: 1; background: #fff; border: 2px solid #0b6fbd; border-top: 8px solid #0b6fbd; border-radius: 6px; padding: 8px; text-align: center; }
+  .card .ico { font-size: 28px; }
+  .card h4 { margin: 4px 0; color: #0b3d91; }
+  .card p { margin: 0; font-size: 12px; color: #555; }
+</style>
+<div class="row">
+  <div class="card"><div class="ico">📚</div><h4>Learn</h4><p>Same border, same icon size, same heading style</p></div>
+  <div class="card"><div class="ico">✏️</div><h4>Practise</h4><p>Same border, same icon size, same heading style</p></div>
+  <div class="card"><div class="ico">🧪</div><h4>Test</h4><p>Same border, same icon size, same heading style</p></div>
+  <div class="card"><div class="ico">🏆</div><h4>Celebrate</h4><p>Same border, same icon size, same heading style</p></div>
+</div>`;
+
+DEMOS.proximitydemo = `<style>
+  body { font-family: Arial, sans-serif; margin: 8px; }
+  .pair { display: flex; gap: 14px; }
+  .panel { flex: 1; border: 2px solid #999; border-radius: 8px; padding: 12px; background: #fff; }
+  .panel > h4 { margin: 0 0 10px; font-size: 12px; text-transform: uppercase; color: #555; }
+  label { display: block; font-size: 13px; }
+  input { width: 90%; padding: 4px; }
+  .far label { margin-top: 26px; }
+  .far input { margin-bottom: 26px; }
+  .near .grp { margin-bottom: 18px; }
+  .near label { margin-bottom: 2px; }
+</style>
+<div class="pair">
+  <div class="panel far"><h4>Poor proximity</h4>
+    <label>Name</label><input><label>Email</label><input></div>
+  <div class="panel near"><h4>Good proximity</h4>
+    <div class="grp"><label>Name</label><input></div><div class="grp"><label>Email</label><input></div></div>
+</div>`;
+
+DEMOS.spacedemo = `<style>
+  body { font-family: Arial, sans-serif; margin: 8px; }
+  .pair { display: flex; gap: 14px; }
+  .panel { flex: 1; border: 2px solid #999; border-radius: 8px; background: #fff; }
+  .panel > h4 { margin: 8px 10px; font-size: 12px; text-transform: uppercase; color: #555; }
+  .cramped { padding: 2px; }
+  .cramped p, .cramped h3 { margin: 0; font-size: 13px; }
+  .cramped .btn { margin: 0; }
+  .roomy { padding: 24px 20px; text-align: center; }
+  .roomy h3 { margin: 0 0 8px; }
+  .roomy p { margin: 0 0 18px; font-size: 13px; color: #555; }
+  .btn { display: inline-block; background: #e8590c; color: #fff; padding: 8px 16px; border-radius: 6px; font-weight: bold; font-size: 13px; }
+</style>
+<div class="pair">
+  <div class="panel"><h4>Crowded</h4><div class="cramped"><h3>Join our workshop</h3><p>Learn UX basics in a day.</p><span class="btn">Sign up</span><p>Seats are limited. Bring a laptop. Lunch included.</p></div></div>
+  <div class="panel"><h4>With space</h4><div class="roomy"><h3>Join our workshop</h3><p>Learn UX basics in a day.</p><span class="btn">Sign up</span></div></div>
+</div>`;
+
+/* ================= UNIT 2.1: DESIGNING BEHAVIOUR ================= */
+
+CONTENT.foggmodel = `
+  ${explain(`<p>Why does a user tap "Buy" in one app but ignore it in another? <strong>Designing behaviour</strong> is about understanding what makes people act. Back in Unit 1 we met the three psychological factors — <strong>Motivation, Ability and Triggers</strong>. The <strong>Fogg Behaviour Model</strong> puts them on one picture.</p>`)}
+
+  <h3>The picture: the action line</h3>
+  <p>Motivation runs up the side (low to high). Ability runs along the bottom (hard to do → easy to do). A curved <strong>action line</strong> separates the zone where behaviour happens from the zone where it doesn't.</p>
+  <ul>
+    <li><strong>Above the line</strong> and a trigger arrives → the behaviour <em>succeeds</em>.</li>
+    <li><strong>Below the line</strong> → the trigger <em>fails</em>: either the behaviour is too hard, or motivation is too low.</li>
+    <li><strong>No trigger at all</strong> → nothing happens, however high the motivation and ability.</li>
+  </ul>
+
+  ${demoCard("foggdemo", "Try it: move motivation and ability, then send a trigger", 400)}
+
+  <h3 style="margin-top:20px;">We fail to take action if...</h3>
+  <div class="chiprow">
+    <span class="chip">📉 The behaviour falls <strong>below the action line</strong></span>
+    <span class="chip">🧗 The behaviour is <strong>too hard</strong></span>
+    <span class="chip">😴 Our <strong>motivation is too low</strong></span>
+    <span class="chip">🔕 We are <strong>not triggered</strong></span>
+  </div>
+
+  <h3 style="margin-top:20px;">User behaviour ≠ design behaviour</h3>
+  <p>What a user <em>does</em> and what a designer <em>makes it easy to do</em> are not the same thing. A designer cannot force a user's behaviour, but can shape the three elements of the user's product experience — <strong>motivation, ability and triggers</strong> — so the helpful behaviour becomes more likely.</p>
+
+  ${analogy(`<p>Picture a sleepy student and a ringing alarm. If the student really wants to attend class (motivation), the classroom is next door (easy), and the alarm rings at the right moment (trigger) — they get up. Make the classroom a long, hard trip, or remove the alarm, and no amount of good intention helps. Designers adjust the alarm and the distance, not the student's character.</p>`)}
+
+  ${more("🔎 The simple formula behind it","<p>The model is often written as <strong>B = M A T</strong> — Behaviour happens when Motivation, Ability and a Trigger come together at the same moment. The demo above uses a simplified action line to teach the idea; the real model is a diagram, not a precise calculator.</p>")}
+
+  ${remember(["Fogg Behaviour Model: Motivation × Ability, with a Trigger at the right moment","Above the action line + trigger = behaviour succeeds","Fail if: below the line, too hard, motivation too low, or no trigger","Designers can't control users, but can design the three elements of the experience","B = M A T"])}
+`;
+
+DEMOS.foggdemo = `<style>
+  body { font-family: Arial, sans-serif; margin: 6px; font-size: 13px; }
+  .wrap { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-start; }
+  svg { background: #fafafa; border: 1px solid #bbb; border-radius: 6px; }
+  .ctl { flex: 1; min-width: 210px; }
+  label { display: block; margin-top: 8px; }
+  input[type=range] { width: 100%; }
+  button { margin-top: 12px; padding: 8px 14px; cursor: pointer; font-weight: bold; }
+  #msg { margin-top: 10px; padding: 8px; border-radius: 6px; min-height: 40px; background: #eee; }
+</style>
+<div class="wrap">
+  <svg id="g" width="300" height="230" viewBox="0 0 300 230">
+    <line x1="40" y1="200" x2="290" y2="200" stroke="#333" stroke-width="2"/>
+    <line x1="40" y1="200" x2="40" y2="10" stroke="#333" stroke-width="2"/>
+    <text x="165" y="222" text-anchor="middle" font-size="12">ABILITY (hard to do → easy to do)</text>
+    <text x="12" y="105" text-anchor="middle" font-size="12" transform="rotate(-90 12 105)">MOTIVATION (low → high)</text>
+    <polyline id="curve" fill="none" stroke="#e03131" stroke-width="3"/>
+    <text x="220" y="60" font-size="11" fill="#e03131">action line</text>
+    <text x="85" y="40" font-size="11" fill="#2b8a3e">above: behaviour happens</text>
+    <text x="150" y="185" font-size="11" fill="#868e96">below: fails</text>
+    <circle id="dot" r="8" stroke="#000" stroke-width="1.5"/>
+  </svg>
+  <div class="ctl">
+    <label>Motivation: <b id="mv"></b></label><input id="m" type="range" min="5" max="100" value="40">
+    <label>Ability (how easy): <b id="av"></b></label><input id="a" type="range" min="5" max="100" value="40">
+    <button id="trig">🔔 Send a trigger</button>
+    <div id="msg">Move the sliders, then press the trigger.</div>
+  </div>
+</div>
+
+<script>
+  var K = 2000;                                   // simplified action line: motivation x ability = K
+  function el(id){ return document.getElementById(id); }
+  function px(a){ return 40 + a * 2.5; }          // ability 0..100 -> x
+  function py(m){ return 200 - m * 1.9; }         // motivation 0..100 -> y
+  var pts = [];
+  for (var a = 20; a <= 100; a += 2){ pts.push(px(a) + "," + py(K / a)); }
+  el("curve").setAttribute("points", pts.join(" "));
+
+  function above(){ return (+el("m").value) * (+el("a").value) >= K; }
+  function update(){
+    var m = +el("m").value, a = +el("a").value;
+    el("mv").textContent = m; el("av").textContent = a;
+    el("dot").setAttribute("cx", px(a)); el("dot").setAttribute("cy", py(m));
+    el("dot").setAttribute("fill", above() ? "#2b8a3e" : "#e03131");
+  }
+  el("m").addEventListener("input", update);
+  el("a").addEventListener("input", update);
+  el("trig").addEventListener("click", function(){
+    var box = el("msg");
+    if(above()){
+      box.style.background = "#d3f9d8";
+      box.innerHTML = "✅ <b>Trigger succeeds.</b> The user is motivated enough and it is easy enough, so they act.";
+    } else if(+el("a").value < 50){
+      box.style.background = "#ffe3e3";
+      box.innerHTML = "❌ <b>Trigger fails.</b> Below the line: the behaviour is too hard. Make it easier!";
+    } else {
+      box.style.background = "#ffe3e3";
+      box.innerHTML = "❌ <b>Trigger fails.</b> Below the line: motivation is too low. Give a reason to care!";
+    }
+  });
+  update();
+</script>`;
+
+CONTENT.fivefactors = `
+  ${explain(`<p>To get a user to act, a design must win <strong>five small battles in a row</strong>. Lose any one and the user drops out — like water draining through a funnel.</p>`)}
+
+  <h3>5 factors for users to take action</h3>
+  <div class="flow-grid">
+    <div class="flow-card"><h4>1️⃣ Cue</h4><p style="font-size:14.5px;"><strong>Do they notice?</strong> Is the prompt visible at all?</p></div>
+    <div class="flow-card"><h4>2️⃣ Reaction</h4><p style="font-size:14.5px;"><strong>Do they react?</strong> Does it spark a feeling or interest?</p></div>
+    <div class="flow-card"><h4>3️⃣ Evaluation</h4><p style="font-size:14.5px;"><strong>Is it worth it?</strong> Benefit versus effort and cost.</p></div>
+    <div class="flow-card"><h4>4️⃣ Ability</h4><p style="font-size:14.5px;"><strong>Can they do it?</strong> Is the task simple enough?</p></div>
+    <div class="flow-card"><h4>5️⃣ Timing</h4><p style="font-size:14.5px;"><strong>Will they do it now?</strong> Or does it get put off?</p></div>
+  </div>
+
+  <div class="imgcard">
+    <svg viewBox="0 0 400 190" role="img" aria-label="A funnel with five levels: Cue, Reaction, Evaluation, Ability, Timing, narrowing down to action">
+      <polygon points="20,10 380,10 350,45 50,45" fill="var(--rail)"/><text x="200" y="33" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">Cue — do they notice?</text>
+      <polygon points="50,49 350,49 320,84 80,84" fill="var(--rail)" opacity=".88"/><text x="200" y="72" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">Reaction — do they react?</text>
+      <polygon points="80,88 320,88 290,123 110,123" fill="var(--rail)" opacity=".76"/><text x="200" y="111" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">Evaluation — worth it?</text>
+      <polygon points="110,127 290,127 265,162 135,162" fill="var(--spark)" opacity=".9"/><text x="200" y="150" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">Ability — can they?</text>
+      <polygon points="135,166 265,166 245,186 155,186" fill="var(--spark)"/><text x="200" y="181" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">Timing — now?</text>
+    </svg>
+    <p class="imgcaption">Each level filters people out. Only those who pass all five take the action.</p>
+  </div>
+
+  <h3 style="margin-top:20px;">To design good behaviour</h3>
+  <div class="chiprow">
+    <span class="chip">🎯 <strong>Match</strong> our own goal with the user's goal</span>
+    <span class="chip">🧩 Design keeping the <strong>different factors</strong> in mind</span>
+    <span class="chip">📘 Follow <strong>UI and UX best practices</strong></span>
+  </div>
+
+  <h3 style="margin-top:20px;">Behaviour = A → B → C</h3>
+  <p>Behaviour is often described in three steps: the <strong>Antecedent</strong> (what comes before — the cue), the <strong>Behaviour</strong> (what the person does), and the <strong>Consequence</strong> (what follows — a reward or a cost). People repeat behaviour that has pleasant consequences.</p>
+
+  ${mistake(`<p>Designing only for <em>your</em> goal ("get them to sign up!"). A user who sees no benefit for themselves will not pass the Evaluation step — however shiny the button. Good behaviour design lines up your goal with a goal the user already has.</p>`)}
+
+  ${remember(["5 factors: Cue → Reaction → Evaluation → Ability → Timing","Questions: Do they notice? React? Is it worth it? Can they? Will they do it now?","Good behaviour design: match goals, consider the factors, follow UI and UX best practice","Behaviour: Antecedent → Behaviour → Consequence (A-B-C)"])}
+`;
+
+CONTENT.behaviourmodels = `
+  ${explain(`<p>Psychologists have built several <strong>models of behaviour change</strong> — maps of how and why people change what they do. Designers borrow them to understand their users. Three are worth knowing by name.</p>`)}
+
+  <h3>1. Ajzen's Theory of Planned Behaviour</h3>
+  <p>Behaviour follows <strong>intent</strong> — and intent is built from three things, each answering a question the user quietly asks:</p>
+  ${refTable(["Influence","The question in the user's mind","Made of"],[
+    ["Attitudes","<em>What do I think will happen if I do it?</em>","Behavioural beliefs × outcome evaluations"],
+    ["Subjective norms","<em>What do others think I should do?</em>","Normative beliefs × motivation to comply"],
+    ["Perceived behavioural control","<em>Can I actually do this?</em>","Control beliefs × influence of control beliefs"]
+  ])}
+  <p>All three feed <strong>Intent</strong>, and intent leads to <strong>Behaviour</strong>.</p>
+
+  <h3 style="margin-top:20px;">2. Transtheoretical Model (Prochaska &amp; Velicer)</h3>
+  <p>Also called the <strong>Stages of Change</strong> model. It says people move through a series of stages in a <strong>circular, not straight-line</strong>, path — they can slip backwards and try again.</p>
+  <div class="imgcard">
+    <svg viewBox="0 0 420 170" role="img" aria-label="Six stages of change arranged as a loop">
+      ${["Precontemplation|not ready","Contemplation|getting ready","Preparation|ready, with a plan","Action|moving forward","Maintenance|preventing drift","Termination|when appropriate"].map((s,i)=>{const [t,d]=s.split("|"); const x=10+(i%3)*135, y=i<3?18:96; return `<rect x="${x}" y="${y}" width="125" height="56" rx="10" fill="${i<3?'var(--rail)':'var(--spark)'}"/><text x="${x+62}" y="${y+24}" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">${i+1}. ${t}</text><text x="${x+62}" y="${y+42}" text-anchor="middle" font-size="11" fill="#fff">(${d})</text>`}).join("")}
+      <text x="210" y="88" text-anchor="middle" font-size="11" fill="var(--ink-soft)">→ → → then round again if needed ↺</text>
+    </svg>
+    <p class="imgcaption">Precontemplation → Contemplation → Preparation → Action → Maintenance → Termination.</p>
+  </div>
+
+  <h3 style="margin-top:20px;">3. Others to recognise</h3>
+  <div class="chiprow">
+    <span class="chip"><strong>Social Cognitive Theory / Self-Efficacy</strong> — Bandura</span>
+    <span class="chip"><strong>Heuristic-Systematic Model (HSM)</strong> — Chaiken, Liberman and Eagly</span>
+    <span class="chip"><strong>Elaboration Likelihood Model (ELM)</strong> — Petty and Cacioppo</span>
+  </div>
+
+  <h3 style="margin-top:20px;">How does the Fogg model differ?</h3>
+  <p>The Fogg model focuses on <strong>behavioural change only</strong>, whereas the others focus on <strong>information processing or attitude change</strong>. That's what makes it so practical for UX: it asks "what can we adjust right now so the action happens?"</p>
+
+  ${analogy(`<p>Think of learning to swim. Stage by stage: you aren't thinking about it (precontemplation), you start considering lessons (contemplation), you buy a costume and book a class (preparation), you practise (action), you keep going weekly (maintenance). If you stop for a month and start again, that's the circle in action — not a failure.</p>`)}
+
+  ${remember(["Planned Behaviour: attitudes + subjective norms + perceived control → intent → behaviour","Transtheoretical (Stages of Change): precontemplation → contemplation → preparation → action → maintenance → termination; circular, not linear","Others: Bandura's Self-Efficacy, HSM, ELM","Fogg = behaviour change only; others = information processing or attitude change"])}
+`;
+
+CONTENT.behaviourproduct = `
+  ${explain(`<p>How do all these ideas turn into a real product? Follow the user's journey, and for each step ask "what would help?" — the answers fall into four groups.</p>`)}
+
+  <div class="tabbar" id="behTabs">
+    <button class="tabbtn active" data-tab="bh1">1️⃣ Get attention</button>
+    <button class="tabbtn" data-tab="bh2">2️⃣ Make it clear</button>
+    <button class="tabbtn" data-tab="bh3">3️⃣ Guide the steps</button>
+    <button class="tabbtn" data-tab="bh4">4️⃣ Reward &amp; learn</button>
+  </div>
+
+  <div class="tabpanel active" data-tab="bh1"><div class="card">
+    <h3 style="margin-top:0;">Grab user attention</h3>
+    <ul>
+      <li>UI design that <strong>stands out</strong></li>
+      <li>Show more <strong>personalised</strong> content</li>
+      <li>Use <strong>warm and inviting</strong> language</li>
+      <li><strong>Notify</strong> users of activity</li>
+    </ul>
+    <p style="font-size:14.5px;">This is the <em>Cue</em> and <em>Reaction</em> of the five factors.</p>
+  </div></div>
+
+  <div class="tabpanel" data-tab="bh2"><div class="card">
+    <h3 style="margin-top:0;">Provide clear and simple content</h3>
+    <ul>
+      <li>Offer <strong>recommendations</strong></li>
+      <li>Describe the <strong>benefits</strong></li>
+      <li>Send <strong>messages encouraging</strong> users to take action</li>
+    </ul>
+    <p style="font-size:14.5px;">This answers <em>Is it worth it?</em> — the Evaluation step.</p>
+  </div></div>
+
+  <div class="tabpanel" data-tab="bh3"><div class="card">
+    <h3 style="margin-top:0;">Guide them about the next steps</h3>
+    <ul>
+      <li><strong>Break down</strong> actions into small, achievable steps</li>
+      <li>Help them create <strong>plans</strong></li>
+      <li>Ask them to take the <strong>right action at the right time</strong></li>
+    </ul>
+    <p style="font-size:14.5px;">This raises <em>Ability</em> (smaller steps feel easier) and fixes <em>Timing</em>.</p>
+  </div></div>
+
+  <div class="tabpanel" data-tab="bh4"><div class="card">
+    <h3 style="margin-top:0;">Reward and learn</h3>
+    <ul>
+      <li><strong>Reward</strong> them with positive feedback</li>
+      <li>Get <strong>feedback from them</strong> for improvement</li>
+    </ul>
+    <p style="font-size:14.5px;">Pleasant consequences make the behaviour likely to repeat — the "C" in A-B-C — and user feedback feeds the next design round.</p>
+  </div></div>
+
+  <h3 style="margin-top:22px;">Putting it together: signing up for a fitness app</h3>
+  ${refTable(["Step","Design move","Factor helped"],[
+    ["A friendly notification: 'Ready for a 5-minute walk today?'","Warm language + personalised cue","Cue, Reaction"],
+    ["A card showing 'Walk 5 minutes, feel more energetic'","Describe the benefit","Evaluation"],
+    ["One big 'Start' button; the walk is split into tiny goals","Break actions into small steps","Ability"],
+    ["Reminder arrives at the usual walking time","Right action at the right time","Timing"],
+    ["A cheerful badge and a 'How was it?' question","Positive feedback + feedback for improvement","Consequence, learning"]
+  ])}
+
+  ${remember(["Grab attention: stand-out UI, personalised content, warm language, notifications","Be clear: simple content, recommendations, benefits, encouraging messages","Guide: next steps, small achievable steps, help with plans, right action at the right time","Reward with positive feedback; ask for feedback to improve"])}
+`;
+
+
 /* ================= UNIT 3: WIREFRAMING, PROTOTYPING & FRONTEND ================= */
 
 CONTENT.wireframebasics = `
@@ -4533,6 +5528,31 @@ CONTENT.ex10walk = `
 
 /* ================= QUIZ DATA ================= */
 const QUIZZES = {
+  quizVisual: [
+    {q:'Which of these is NOT one of the six basic elements of visual design?', opts:['Lines','Typography','Hierarchy','Textures'], a:2},
+    {q:'What is a "negative shape"?', opts:['A shape drawn in a dark colour','The space around the main object','A shape that looks sad','A shape with no edges'], a:1},
+    {q:'In the Munsell system, "Value" tells you:', opts:['How pure the colour is','Which colour it is','How light or dark it is','How expensive it is'], a:2},
+    {q:'A TINT is made by adding:', opts:['White','Grey','Black','Another primary colour'], a:0},
+    {q:'Which colour system is used for screens, and why?', opts:['CMYK — ink absorbs light','RGB — it adds light, so all three at full strength make white','CMYK — all colours make white','RGB — it only works on paper'], a:1},
+    {q:'Complementary colours are:', opts:['Next to each other on the wheel','Directly opposite each other on the wheel','The same colour in different sizes','Only black and white'], a:1},
+    {q:'Which group of colours feels calm and peaceful?', opts:['Warm colours','Cool colours','Only red','Only yellow'], a:1},
+    {q:'What is the minimum WCAG contrast ratio for normal-size text?', opts:['1.5 : 1','3 : 1','4.5 : 1','10 : 1'], a:2},
+    {q:'What is the difference between a typeface and a font?', opts:['None at all','A typeface is the family (Arial); a font is one variation (Arial Bold)','A font is the family; a typeface is one size','Typefaces are only for print'], a:1},
+    {q:'"Leading" in typography means:', opts:['The length of a line','The space between lines of text','The thickness of letters','The text colour'], a:1},
+    {q:'Which principle says important items should stand out in front and less important ones sit behind?', opts:['Repetition','Balance','Hierarchy','Proximity'], a:2},
+    {q:'Which type of balance mirrors one side onto the other?', opts:['Symmetrical','Asymmetrical','Radial','Random'], a:0},
+    {q:'What is the job of negative (empty) space in a design?', opts:['It is wasted space','It highlights the important components','It makes pages load faster','It replaces colour'], a:1},
+  ],
+  quizBehaviour: [
+    {q:'In the Fogg Behaviour Model, which three things must come together for a behaviour to happen?', opts:['Money, Time, Luck','Motivation, Ability, Trigger','Colour, Shape, Text','Idea, Design, Launch'], a:1},
+    {q:'A user is highly motivated but the task is very hard. What does the Fogg model predict?', opts:['They will do it anyway','They will fail unless the task is made easier','They will be triggered twice','Nothing — ability does not matter'], a:1},
+    {q:'A user is above the action line but never sees a prompt. What is missing?', opts:['Motivation','Ability','A trigger','A budget'], a:2},
+    {q:'What is the correct order of the five factors of behaviour?', opts:['Cue, Reaction, Evaluation, Ability, Timing','Timing, Ability, Cue, Reaction, Evaluation','Ability, Cue, Timing, Reaction, Evaluation','Reaction, Cue, Timing, Evaluation, Ability'], a:0},
+    {q:'In the A-B-C view of behaviour, what does the "A" stand for?', opts:['Action','Antecedent (what comes before)','Attitude','Audience'], a:1},
+    {q:'In Ajzen\'s Theory of Planned Behaviour, behaviour follows from:', opts:['Intent','Luck only','The colour of the button','The size of the screen'], a:0},
+    {q:'The Stages of Change (Transtheoretical Model) are best described as:', opts:['A strict straight line that never repeats','A cycle — people can move back and forth between stages','Only two stages','A model about fonts'], a:1},
+    {q:'Which is a good way to help users who are unsure where to go next?', opts:['Hide the menu','Show clear next steps and small achievable steps','Add more text','Remove all feedback'], a:1},
+  ],
   quizUnit1: [
     {q:"UI is best described as:", opts:["The overall experience of a product","The vehicle / look-and-feel that connects users to a product","A type of database","A programming language"], a:1},
     {q:"Which should generally come first: understanding user needs, or designing the visual interface?", opts:["Visual interface first","Understanding user needs first","They must happen at exactly the same time","Neither matters"], a:1},
@@ -4674,6 +5694,17 @@ function buildSummaryHTML(){
         <li><strong>User Personas:</strong> fictional characters built from real research.</li>
         <li><strong>Gestalt Theory:</strong> Proximity, Similarity, Closure, Figure-Ground, Common Region.</li>
         <li><strong>Psychology in UX:</strong> Motivation + Ability + Triggers drive user action.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-bottom:8px;">Unit 2 · Visual Design &amp; Designing Behaviour</h3>
+      <ul>
+        <li><strong>6 elements:</strong> Lines, Shapes, Colours, Typography, Textures, Form.</li>
+        <li><strong>Colour:</strong> Hue/Value/Chroma; tint, tone, shade; RGB (screens) vs CMYK (print); warm vs cool; contrast at least 4.5:1 for normal text.</li>
+        <li><strong>Typography:</strong> typeface vs font; serif, sans-serif, decorative; alignment, proximity, measure, leading, weight.</li>
+        <li><strong>7 principles:</strong> Alignment, Hierarchy, Contrast, Repetition, Proximity, Balance, Space.</li>
+        <li><strong>Fogg Behaviour Model:</strong> Behaviour = Motivation + Ability + Trigger (B = M A T).</li>
+        <li><strong>Five factors:</strong> Cue → Reaction → Evaluation → Ability → Timing. Models: Planned Behaviour, Stages of Change.</li>
       </ul>
     </div>
     <div class="card">
